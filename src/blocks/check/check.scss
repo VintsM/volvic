@@ -1,0 +1,14 @@
+.check {
+  background: url(../img/check/bg.jpg) center no-repeat;
+  background-size: cover;
+  padding: rem(60) 0;
+  &__title {
+    text-align: center;
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(20);
+    }
+  }
+}

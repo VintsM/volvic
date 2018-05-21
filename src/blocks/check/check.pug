@@ -1,0 +1,57 @@
+.check
+  .l-page__container
+    +title({
+      tag: 'h2',
+      text: 'Регистрация чека',
+      mods: 'title_1 check__title'
+    })
+    form#check.form.check__form
+      .form__row
+        .form__field
+          +input({
+            tag: 'input',
+            placeholder: 'Имя',
+            attrs: {
+              type: 'text',
+              name: 'name'
+            }
+          })
+        .form__field
+          +input({
+            tag: 'input',
+            placeholder: 'Email',
+            attrs: {
+              type: 'text',
+              name: 'email'
+            }
+          })
+      .form__row
+        .form__field
+          +input({
+            tag: 'input',
+            placeholder: 'Телефон',
+            attrs: {
+              type: 'text',
+              name: 'tel'
+            }
+          })
+        .form__field
+          +select({
+            mods: '',
+            name: 'shop',
+            placeholder: 'Магазин покупки',
+            list: ['Магазин 1', 'Магазин 2', 'Магазин 3'],
+            attrs: {
+              required: ''
+            }
+          })
+      .form__row
+        .form__field
+          +input({
+            tag: 'input',
+            placeholder: 'Дата и номер покупки <span class="grey">(данные из чека)</span>',
+            attrs: {
+              type: 'text',
+              name: 'data'
+            }
+          })

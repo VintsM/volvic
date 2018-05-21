@@ -1,0 +1,15 @@
+include ../code-reg/code-reg
+
+.top
+  .l-page__container
+    .top__content
+      +title({
+        tag: 'h1',
+        mods: 'title_1 top__title',
+        text: 'Пробуди в себе силу фаната'
+      })
+      .top__code-reg-container
+        +code-reg({
+          mods: 'top__code-reg'
+        })
+      a(href='#').top__link Подробные условия участия в акции

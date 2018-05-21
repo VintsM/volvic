@@ -1,0 +1,50 @@
+.top {
+  background: url(../img/top/top-mobile-bg.jpg) center no-repeat;
+  background-size: cover;
+  padding: svw(20) 0 svw(300);
+  text-align: center;
+  @include breakpoint(medium) {
+    text-align: left;
+    background: url(../img/top/top.jpg) center no-repeat;
+    padding: mvw(80) 0 mvw(420);
+  }
+  @include breakpoint(large) {
+    padding: rem(80) 0 rem(420);
+  }
+  &__content {
+    @include breakpoint(medium) {
+      max-width: mvw(660);
+    }
+    @include breakpoint(large) {
+      max-width: rem(660);
+    }
+  }
+  &__title {
+    margin-bottom: svw(30);
+    text-align: left;
+    @include breakpoint(medium) {
+      margin-bottom: mvw(30);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(50);
+    }
+  }
+  &__code-reg-container {
+    margin-bottom: svw(10);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(15);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(20);
+    }
+  }
+  &__link {
+    color: $white;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: svw(12);
+    @include breakpoint(large) {
+      font-size: rem(16);
+    }
+  }
+}

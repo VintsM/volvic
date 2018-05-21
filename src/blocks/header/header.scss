@@ -1,0 +1,227 @@
+.header {
+  background-color: $mine-shaft;
+  color: $white;
+  padding: svw(5) 0;
+  @include breakpoint(medium) {
+    padding: mvw(15) 0;
+  }
+  @include breakpoint(large) {
+    padding: rem(35) 0;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint(large) {
+      justify-content: flex-start;
+      max-width: $global-width;
+      margin: 0 auto;
+    }
+  }
+  &__logo {
+    flex: 2 0 0;
+    width: 50%;
+    position: relative;
+    text-align: center;
+    @include breakpoint(large) {
+      width: rem(185);
+      height: rem(30);
+      margin-right: rem(35);
+    }
+    img {
+      max-height: 100%;
+      width: svw(60);
+      @include breakpoint(medium) {
+        width: mvw(90);
+      }
+      @include breakpoint(large) {
+        max-height: none;
+        position: absolute;
+        width: rem(185);
+        height: rem(134);
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &__nav {
+    display: none;
+    flex: 1 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    @include breakpoint(large) {
+      display: flex;
+    }
+  }
+  &__nav-item {
+    display: inline-block;
+    font-size: rem(20);
+    line-height: 1.1;
+    padding: rem(5);
+    color: $white;
+    &:not(:last-child) {
+      margin-right: rem(45);
+    }
+    &.active,
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+  &__login {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: svw(20);
+    line-height: 1.1;
+    padding: svw($small-container-padding);
+    color: $white;
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+      padding: mvw($medium-container-padding);
+    }
+    @include breakpoint(large) {
+      width: auto;
+      font-size: rem(20);
+      padding: rem(5);
+      text-align: right;
+    }
+  }
+  &__login-icon {
+    width: svw(16);
+    height: svw(16);
+    margin-right: svw(10);
+    fill: $white;
+    @include breakpoint(medium) {
+      width: mvw(16);
+      height: mvw(16);
+      margin-right: mvw(10);
+    }
+    @include breakpoint(large) {
+      width: rem(18);
+      height: rem(20);
+      margin-right: rem(10);
+    }
+  }
+  &__login-text {
+    font-size: svw(14);
+    vertical-align: middle;
+    @include breakpoint(medium) {
+      font-size: mvw(16);
+    }
+    @include breakpoint(large) {
+      font-size: rem(16);
+    }
+  }
+  &__burger {
+    flex: 1 0 0 ;
+    height: svw(38);
+    padding: svw($small-container-padding);
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    @include breakpoint(medium) {
+      height: mvw(38);
+      padding: 0 mvw($medium-container-padding);
+    }
+    @include breakpoint(large) {
+      display: none;
+    }
+    &.active {
+      .header__mobile-close {
+        display: block;
+      }
+    }
+  }
+  &__burger-body {
+    span {
+      display: block;
+      width: svw(25);
+      height: svw(2);
+      background-color: $white;
+      border-radius: svw(2);
+      position: relative;
+      transition: background-color .5s ease;
+      will-change: background-color;
+      &:not(:last-child) {
+        margin-bottom: svw(5);
+        @include breakpoint(medium) {
+          margin-bottom: mvw(5);
+        }
+      }
+      @include breakpoint(medium) {
+        width: mvw(25);
+        height: mvw(2);
+        border-radius: mvw(2);
+      }
+    }
+  }
+  &__mobile-nav {
+    display: none;
+    background: rgba($mine-shaft, .9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+  }
+  &__mobile-inner {
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__mobile-close {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: svw(45);
+    height: svw(38);
+    z-index: 40;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: svw(27);
+      height: svw(2);
+      background-color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &__mobile-list {
+    margin: svw(120) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__mobile-el {
+    display: block;
+    width: 100%;
+    margin-bottom: svw(30);
+    text-align: center;
+  }
+  &__mobile-link {
+    font-size: svw(22);
+    line-height: 1.09;
+    color: $white;
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}

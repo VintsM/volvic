@@ -1,0 +1,40 @@
+//
+
+-
+  let qa = [
+    {
+      q: 'Подробные условия участия в акции',
+      a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+      q: 'Какой-то очень-очень-очень длинный вопрос от пользователя',
+      a: 'Nunc laoreet dolor ut fermentum pulvinar. Nullam consectetur, mauris placerat rhoncus molestie, diam sem dictum orci, a ultricies nisi lectus in velit.'
+    },
+    {
+      q: 'Какой-то просто очень длинный вопрос',
+      a: 'Aenean non sapien diam. Pellentesque dignissim iaculis ex vel ullamcorper.'
+    },
+    {
+      q: 'Какой-то очень-очень-очень длинный вопрос от пользователя',
+      a: 'Ut eu urna purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc tincidunt libero id euismod luctus.'
+    },
+    {
+      q: 'Какой-то очень-очень-очень длинный вопрос от пользователя',
+      a: 'Nam vitae dictum nulla, nec euismod mauris. Proin a quam at risus pellentesque pretium sit amet vel justo.'
+    }
+  ]
+
+.faq
+  .l-page__container.faq__container
+    +title({
+      tag: 'h2',
+      text: 'FAQ',
+      mods: 'title_1 faq__title'
+    })
+    .faq__inner
+      each item in qa
+        .faq__item
+          .faq__question= item.q
+    .faq__bottom
+      a(href='#').faq__link Задать свой вопрос
+      a(href='#').faq__link Магазины-участники

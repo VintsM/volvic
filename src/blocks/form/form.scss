@@ -1,0 +1,49 @@
+.form {
+  &__row {
+    //margin-bottom: 20px;
+    //&_important {
+    //  @include breakpoint(medium) {
+    //    margin-top: 25px;
+    //    margin-bottom: 25px;
+    //  }
+    //}
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 mvw(-$medium-container-padding);
+    }
+    @include breakpoint(large) {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 rem(-$large-container-padding);
+    }
+    &.form__row_medium-up-mb0 {
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+      }
+    }
+    &.form__row_large-up-mb0 {
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__field {
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 0 mvw($medium-container-padding);
+      margin-bottom: mvw(20);
+    }
+    @include breakpoint(large) {
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 0 rem($large-container-padding);
+      margin-bottom: rem(20);
+    }
+  }
+  &__controls {
+    margin-top: 20px;
+  }
+}

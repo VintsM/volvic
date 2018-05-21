@@ -1,0 +1,149 @@
+.faq {
+  background: url(../img/faq/grass.jpg) center no-repeat;
+  background-size: cover;
+  padding: svw(20) 0;
+  @include breakpoint(medium) {
+    padding: mvw(20) 0;
+  }
+  @include breakpoint(large) {
+    padding: rem(60) 0;
+  }
+  &__container {
+    position: relative;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      text-align: left;
+      margin-bottom: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(20);
+    }
+  }
+  &__inner {
+    @include breakpoint(large) {
+      padding: 0 rem(12);
+    }
+  }
+  &__item {
+    &:nth-child(odd) {
+      text-align: left;
+      .faq__question {
+        background-color: $pattens-blue;
+        &:before {
+          border-bottom-color: $pattens-blue;
+          left: svw(-5);
+          transform: rotate(-45deg);
+          @include breakpoint(medium) {
+            left: mvw(-7);
+          }
+          @include breakpoint(large) {
+            left: rem(-12);
+          }
+        }
+      }
+    }
+    &:nth-child(even) {
+      text-align: right;
+      .faq__question {
+        background-color: $frostee;
+        &:before {
+          border-bottom-color: $frostee;
+          right: rem(-5);
+          transform: rotate(45deg);
+          @include breakpoint(medium) {
+            right: mvw(-7);
+          }
+          @include breakpoint(large) {
+            right: rem(-12);
+          }
+        }
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+  &__question {
+    text-align: left;
+    padding: svw(10) svw(20);
+    border-radius: svw(40);
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      border-bottom-width: svw(20);
+      border-bottom-style: solid;
+      border-left: svw(10) solid transparent;
+      border-right: svw(10) solid transparent;
+      position: absolute;
+      top: svw(-5);
+    }
+    @include breakpoint(medium) {
+      display: inline-block;
+      border-radius: mvw(40);
+      padding: mvw(25) mvw(50);
+      &:before {
+        content: '';
+        display: block;
+        border-bottom-width: mvw(20);
+        border-left: mvw(10) solid transparent;
+        border-right: mvw(10) solid transparent;
+        top: mvw(-5);
+      }
+    }
+    @include breakpoint(large) {
+      border-radius: rem(40);
+      font-size: rem(24);
+      line-height: 1.42;
+      padding: rem(25) rem(50);
+      &:before {
+        border-bottom-width: rem(30);
+        border-left: rem(15) solid transparent;
+        border-right: rem(15) solid transparent;
+        top: rem(-8);
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: svw(30);
+    @include breakpoint(medium) {
+      flex-direction: row;
+      margin-top: mvw(40);
+    }
+    @include breakpoint(large) {
+      margin-top: rem(40);
+    }
+  }
+  &__link {
+    display: inline-block;
+    color: $white;
+    border-bottom: svw(1px) dashed $white;
+    &:hover {
+      border-bottom-color: transparent;
+    }
+    &:not(:last-child) {
+      margin-bottom: svw(15);
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+        margin-right: mvw(15);
+      }
+      @include breakpoint(large) {
+        margin-right: rem(15);
+      }
+    }
+    @include breakpoint(medium) {
+      border-bottom: mvw(1px) dashed $white;
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+      border-bottom: rem(1px) dashed $white;
+    }
+  }
+}

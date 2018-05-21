@@ -1,0 +1,258 @@
+.prizes {
+  position: relative;
+  overflow: hidden;
+  background: url(../img/prizes/stadium.jpg) center no-repeat;
+  background-size: cover;
+  padding: svw(20) 0 svw(30);
+  @include breakpoint(medium) {
+    padding: mvw(60) 0 mvw(200);
+  }
+  @include breakpoint(large) {
+    padding: rem(60) 0 rem(200);
+  }
+  &__container {
+    position: relative;
+  }
+  &__round {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba($primary, .45);
+    display: none;
+    @include breakpoint(medium) {
+      display: block;
+      width: mvw(615);
+      height: mvw(615);
+    }
+    @include breakpoint(large) {
+      width: rem(834);
+      height: rem(834);
+    }
+    &_1 {
+      @include breakpoint(medium) {
+        top: mvw(-85);
+        left: mvw(-200);
+      }
+      @include breakpoint(large) {
+        top: rem(335);
+        left: rem(-200);
+      }
+    }
+    &_2 {
+      @include breakpoint(medium) {
+        bottom: mvw(-500);
+        right: mvw(-50);
+      }
+      @include breakpoint(large) {
+        bottom: rem(-880);
+        right: rem(-50);
+      }
+    }
+  }
+  &__inner {
+    .slick-track {
+      display: flex;
+    }
+    &.slick-initialized {
+      .slick-slide {
+        float: none;
+        height: auto;
+        display: flex !important;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        & > div {
+          height: 100%;
+          & > div {
+            height: 100%;
+          }
+        }
+      }
+    }
+    .slick-dots {
+      width: 100%;
+      position: static;
+      text-align: center;
+      margin-top: svw(30);
+      li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 svw(5);
+        font-size: 0;
+        &.slick-active {
+          button {
+            background-color: $white;
+          }
+        }
+        button {
+          width: svw(10);
+          height: svw(10);
+          background-color: transparent;
+          border-radius: 50%;
+          border-width: svw(1);
+          border-style: solid;
+          border-color: $white;
+        }
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      text-align: left;
+      margin-bottom: mvw(60);
+    }
+    @include breakpoint(large) {
+      max-width: rem(860);
+      margin-bottom: rem(60);
+    }
+  }
+  &__sticker {
+    color: $white;
+    text-align: center;
+    flex: 0 0 auto;
+    @include breakpoint(medium) {
+      position: absolute;
+      top: mvw(180);
+      right: 0;
+    }
+    @include breakpoint(large) {
+      width: rem(289);
+      height: rem(289);
+      top: rem(80);
+      right: 0;
+    }
+  }
+  &__sticker-inner {
+    background: url(../img/prizes/sticker.png) center no-repeat;
+    background-size: contain;
+    width: svw(250);
+    height: svw(250);
+    margin: 0 auto svw(20);
+    padding: svw(95) svw(20) svw(95);
+    @include breakpoint(medium) {
+      width: mvw(250);
+      height: mvw(250);
+      margin: 0 auto mvw(20);
+      padding: mvw(55) mvw(20) mvw(55);
+    }
+    @include breakpoint(large) {
+      width: rem(289);
+      height: rem(289);
+      font-size: rem(18);
+      line-height: 1.22;
+      padding: rem(65) rem(20) rem(45);
+    }
+  }
+  &__sticker-small-text {
+    font-size: svw(12);
+    line-height: 1.33;
+    flex: 1 1 auto;
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+  &__sticker-medium-text {
+    display: none;
+    @include breakpoint(medium) {
+      display: block;
+      font-size: rem(16);
+      line-height: 1.22;
+    }
+    @include breakpoint(large) {
+      font-size: rem(18);
+    }
+  }
+  &__sticker-img {
+    display: block;
+    margin: rem(10) auto 0;
+  }
+  &__item {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    &_1 {
+      @include breakpoint(medium) {
+        max-width: mvw(400);
+        margin-bottom: 0;
+        display: flex;
+        align-items: flex-start;
+        .prizes__img-container {
+          width: mvw(170);
+          margin-right: mvw(10);
+          flex: 0 0 auto;
+        }
+        .prizes__text {
+          text-align: left;
+          flex: 1 1 auto;
+        }
+      }
+      @include breakpoint(large) {
+        max-width: rem(400);
+        top: rem(660);
+        .prizes__img-container {
+          width: rem(170);
+        }
+      }
+    }
+    &_2 {
+      @include breakpoint(medium) {
+        max-width: mvw(550);
+        position: absolute;
+        top: mvw(490);
+        right: mvw(260);
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        .prizes__img-container {
+          width: mvw(324);
+        }
+      }
+      @include breakpoint(large) {
+        max-width: rem(550);
+        top: rem(1120);
+        right: rem(260);
+        .prizes__img-container {
+          width: rem(170);
+        }
+      }
+      .prizes__img {
+        margin-top: svw(40);
+        @include breakpoint(medium) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &__img-container {
+    min-height: svw(220);
+    width: svw(250);
+    flex: 0 0 auto;
+    margin: 0 auto svw(20);
+    @include breakpoint(medium) {
+      margin: 0 auto mvw(20);
+      min-height: 0;
+      width: auto;
+    }
+    @include breakpoint(large) {
+      margin: 0 auto rem(20);
+    }
+  }
+  &__img {
+    display: inline-block;
+    max-width: 100%;
+  }
+  &__text {
+    color: $white;
+    font-size: svw(12);
+    line-height: 1.33;
+    flex: 1 1 auto;
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+    }
+  }
+}

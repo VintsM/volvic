@@ -1,0 +1,162 @@
+<!--include ../../blocks/button/button-->
+<!--include ../../blocks/form-field/form-field-->
+<!--include ../../blocks/control/control-->
+<!--include ../../blocks/social/social-->
+<!--include ../../blocks/code/code-->
+<!--include ../../blocks/code-reg/code-reg-->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Volvic</title>
+  <meta http-equiv="X-UA-Compatible" content="text/html" charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./favicon.ico" rel="shortcut icon">
+</head>
+
+<body>
+  <div class="l-page">
+    <div class="l-page__inner">
+      <div class="l-page__header">
+        <header class="header">
+          <div class="header__inner">
+            <div class="header__burger">
+              <div class="header__burger-body"><span></span><span></span><span></span></div>
+              <div class="header__mobile-close"></div>
+            </div><a class="header__logo" href="/"><img src="/img/logo.png" alt="logo"></a>
+            <nav class="header__nav"><a class="header__nav-item" href="#rules">Правила</a><a class="header__nav-item" href="/">О бренде</a><a class="header__nav-item" href="#prizes">Призы</a><a class="header__nav-item" href="#faq">FAQ</a><a class="header__nav-item" href="#check">Регистрация чека</a>
+              <a
+                class="header__nav-item" href="#winners">Победители</a>
+            </nav><a class="header__login js-login-link" href="/"><svg class="icon icon-profile header__login-icon"><use xlink:href="/img/icons.svg#icon-profile"></use></svg><span class="header__login-text">Вход</span></a></div>
+          <nav class="header__mobile-nav">
+            <div class="header__mobile-inner">
+              <ul class="header__mobile-list">
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#rules">Правила</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="/">О бренде</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#prizes">Призы</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#faq">FAQ</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#check">Регистрация чека</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#winners">Победители</a></li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+      </div>
+      <div class="l-page__content">
+        <div class="top">
+          <div class="l-page__container">
+            <div class="top__content">
+              <h1 class="title title_1 top__title">Пробуди в себе силу фаната</h1>
+              <div class="top__code-reg-container"><a class="top__code-reg code-reg" href="#">Зарегистрировать чек</a></div><a class="top__link" href="#">Подробные условия участия в акции</a></div>
+          </div>
+        </div><a id="rules"></a>
+        <div class="steps">
+          <div class="steps__item">
+            <!--.steps__item-inner-->
+            <div class="steps__num">1</div>
+            <div class="steps__text">Купи 12 бутылок воды 0,5 л или 6 бутылок воды 1,5 л</div>
+            <div class="steps__img-container"><img class="steps__img" src="/img/steps/bottles.png" alt="Купи 12 бутылок воды 0,5 л или 6 бутылок воды 1,5 л"></div>
+          </div>
+          <div class="steps__item">
+            <!--.steps__item-inner-->
+            <div class="steps__num">2</div>
+            <div class="steps__text">Зарегистрируй чек после покупки на этом сайте</div>
+            <div class="steps__img-container"><img class="steps__img" src="/img/steps/macbook.png" alt="Зарегистрируй чек после покупки на этом сайте"></div>
+          </div>
+          <div class="steps__item">
+            <!--.steps__item-inner-->
+            <div class="steps__num">3</div>
+            <div class="steps__text">Получи гарантированный шанс на победу</div>
+            <div class="steps__img-container"><img class="steps__img" src="/img/steps/camera.png" alt="Получи гарантированный шанс на победу"></div>
+          </div>
+        </div><a id="prizes"></a>
+        <div class="prizes">
+          <div class="prizes__round prizes__round_1 js-parallax js-parallax-1"></div>
+          <div class="prizes__round prizes__round_2 js-parallax js-parallax-1"></div>
+          <div class="l-page__container prizes__container">
+            <h2 class="title title_1 prizes__title">Участвуй и выигрывай призы</h2>
+            <div class="prizes__inner">
+              <div class="prizes__sticker">
+                <div class="prizes__sticker-inner"><span class="prizes__sticker-medium-text">Гарантированный приз<br>Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»</span><img class="prizes__sticker-img" src="/img/prizes/match.png" alt="МАТЧ!"></div>
+                <div class="prizes__sticker-small-text">Гарантированный приз: Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»</div>
+              </div>
+              <div class="prizes__item prizes__item_1 js-parallax js-parallax-2">
+                <div class="prizes__img-container"><img class="prizes__img" src="/img/prizes/ball.png" alt="Hover ball"></div>
+                <div class="prizes__text">Hover ball для настоящих ценителей футбола</div>
+              </div>
+              <div class="prizes__item prizes__item_2 js-parallax js-parallax-2">
+                <div class="prizes__img-container"><img class="prizes__img" src="/img/prizes/camera.png"></div>
+                <div class="prizes__text">Hover ball для настоящих ценителей футбола</div>
+              </div>
+            </div>
+          </div>
+        </div><a id="faq"></a>
+        <!---->
+        <div class="faq">
+          <div class="l-page__container faq__container">
+            <h2 class="title title_1 faq__title">FAQ</h2>
+            <div class="faq__inner">
+              <div class="faq__item">
+                <div class="faq__question">Подробные условия участия в акции</div>
+              </div>
+              <div class="faq__item">
+                <div class="faq__question">Какой-то очень-очень-очень длинный вопрос от пользователя</div>
+              </div>
+              <div class="faq__item">
+                <div class="faq__question">Какой-то просто очень длинный вопрос</div>
+              </div>
+              <div class="faq__item">
+                <div class="faq__question">Какой-то очень-очень-очень длинный вопрос от пользователя</div>
+              </div>
+              <div class="faq__item">
+                <div class="faq__question">Какой-то очень-очень-очень длинный вопрос от пользователя</div>
+              </div>
+            </div>
+            <div class="faq__bottom"><a class="faq__link" href="#">Задать свой вопрос</a><a class="faq__link" href="#">Магазины-участники</a></div>
+          </div>
+        </div><a id="check"></a>
+        <div class="check">
+          <div class="l-page__container">
+            <h2 class="title title_1 check__title">Регистрация чека</h2>
+            <form class="form check__form" id="check">
+              <div class="form__row">
+                <div class="form__field">
+                  <div class="input"><span class="input__placeholder">Имя</span><input class="input__field" type="text" name="name" /></div>
+                </div>
+                <div class="form__field">
+                  <div class="input"><span class="input__placeholder">Email</span><input class="input__field" type="text" name="email" /></div>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <div class="input"><span class="input__placeholder">Телефон</span><input class="input__field" type="text" name="tel" /></div>
+                </div>
+                <div class="form__field">
+                  <div class="select">
+                    <div class="select__main js-select-main">
+                      <div class="select__placeholder js-select-placeholder">Магазин покупки</div><span class="select__main-text js-select-main-text"></span><svg class="icon icon-arrow select__icon"><use xlink:href="/img/icons.svg#icon-arrow"></use></svg></div>
+                    <ul class="select__list js-select-list">
+                      <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 1</span><input class="select__item-input js-select-input" type="radio" name="shop" value="Магазин 1" required="" /></li>
+                      <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 2</span><input class="select__item-input js-select-input" type="radio" name="shop" value="Магазин 2" required="" /></li>
+                      <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 3</span><input class="select__item-input js-select-input" type="radio" name="shop" value="Магазин 3" required="" /></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <div class="input"><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span><input class="input__field" type="text" name="data" /></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div><a id="winners"></a></div>
+    </div>
+  </div>
+  <!--include ../../blocks/modal/modal-message-->
+  <!--include ../../blocks/modal/modal-continue-->
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

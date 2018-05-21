@@ -1,0 +1,45 @@
+.l-page {
+  min-height: 100%;
+  &__container {
+    padding: 0 $small-container-padding;
+    @include breakpoint(medium) {
+      padding: 0 $medium-container-padding;
+    }
+    @include breakpoint(large) {
+      margin: 0 auto;
+      max-width: $global-width;
+    }
+  }
+  &__content {
+    background-color: grey;
+  }
+  &__section {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    .l-page__section {
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    @include breakpoint(medium) {
+      padding-top: 50px;
+      padding-bottom: 70px;
+    }
+  }
+  &__section-header {
+    margin-bottom: 30px;
+    @include breakpoint(medium) {
+      margin-bottom: 45px;
+    }
+  }
+  &__section-desc {
+    font-weight: 700;
+    font-size: rem-calc(22);
+    color: $primary;
+    line-height: .96;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,26 @@
+//-
+  +select({
+    mods: 'js-feedback-theme',
+    name: 'theme',
+    placeholder: 'Выберите тему',
+    list: ['Тема 1', 'Тема 2', 'Тема 3'],
+    attrs: {
+      required: ''
+    }
+  })
+
+mixin select(data)
+  .select(class=data.mods)
+    .select__main.js-select-main
+      .select__placeholder.js-select-placeholder= data.placeholder
+      span.select__main-text.js-select-main-text
+      +icon({
+        name: 'arrow',
+        mods: 'select__icon'
+      })
+    ul.select__list.js-select-list
+      each el, index in data.list
+        li.select__item.js-select-item
+          span.select__item-text.js-select-text= el
+          input.select__item-input.js-select-input(type='radio' name=data.name value=el)&attributes(data.attrs)
+    block

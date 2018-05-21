@@ -1,0 +1,9 @@
+//-
+  +title({
+    tag: 'h1',
+    mods: 'title_1',
+    text: 'Title'
+  })
+
+mixin title(data)
+  #{data.tag}.title(class=data.mods)!= data.text

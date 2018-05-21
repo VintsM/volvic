@@ -1,0 +1,35 @@
+include ../../blocks/title/title
+include ../../blocks/icon/icon
+include ../../blocks/input/input
+include ../../blocks/select/select
+//include ../../blocks/button/button
+//include ../../blocks/form-field/form-field
+//include ../../blocks/control/control
+//include ../../blocks/social/social
+//include ../../blocks/code/code
+//include ../../blocks/code-reg/code-reg
+
+doctype html
+html(lang='ru')
+  head
+    title Volvic
+    meta(http-equiv='X-UA-Compatible', content='text/html', charset='utf-8')
+    meta(name='viewport' content='width=device-width')
+    link(href='./css/styles.css' rel='stylesheet')
+    link(href='./favicon.ico' rel='shortcut icon')
+  body
+    .l-page
+      .l-page__inner
+        .l-page__header
+          include ../../blocks/header/header
+        .l-page__content
+          block content
+
+    //include ../../blocks/modal/modal-message
+    //include ../../blocks/modal/modal-continue
+
+    block addContent
+
+    script(src='./js/app.js')
+
+    block scripts

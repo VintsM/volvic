@@ -1,0 +1,62 @@
+// Colors
+$white: #ffffff;
+$black: #000000;
+$primary: #00a634;
+$mine-shaft: #3d3d3d;
+$jungle-green: #007d3b;
+$algae: #4ba375;
+$pattens-blue: #e0efff;
+$frostee: #ceedd8;
+$grey: #8b8b8b;
+
+// Fonts
+$lucida: 'Lucida Grande', Arial, Helvetica, sans-serif;
+$feast: 'Feast', Arial, Helvetica, sans-serif;
+$main-font: $lucida;
+$alt-font: $feast;
+
+// Other
+$transition: .3s ease;
+$small-container-padding: 10px;
+$medium-container-padding: 15px;
+$large-container-padding: 20px;
+$global-width: 1280px;
+
+// Grid
+$medium: '768px';
+$large: '1280px';
+
+// Functions
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($val) {
+  $val: strip-unit($val) / 16 * 1rem;
+  @return $val;
+}
+
+@function svw($val) {
+  $val: 100vw * strip-unit($val) / 320;
+  @return $val;
+}
+
+@function mvw($val) {
+  $val: 100vw * strip-unit($val) / 768;
+  @return $val;
+}
+
+
+
+@mixin breakpoint ($value) {
+  @if ($value == 'medium') {
+    @media screen and (min-width: $medium) {
+      @content
+    }
+  }
+  @if ($value == 'large') {
+    @media screen and (min-width: $large) {
+      @content
+    }
+  }
+}
