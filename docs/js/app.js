@@ -10495,28 +10495,6 @@ return jQuery;
   });
 })(jQuery);
 },{}],4:[function(require,module,exports){
-"use strict";
-
-(function ($) {
-  $(document).ready(function () {
-
-    // $('.input').on('click', function (e) {
-    //   e.stopPropagation();
-    //   $(this).addClass('focus');
-    // });
-    //
-    // $(document).on('click', function () {
-    //   $('.input').each(function () {
-    //     if ($(this).find('.input__field').val().trim().length == 0) {
-    //       $(this).removeClass('focus');
-    //     }
-    //   })
-    //
-    // })
-
-  });
-})(jQuery);
-},{}],5:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -10539,7 +10517,7 @@ return jQuery;
         $(prizesSlider).each(function () {
           if (state === 'small' && !$(this).hasClass(bProductsInitClass)) {
             $(this).slick(prizesSliderConfig);
-          } else {
+          } else if ($(this).hasClass(bProductsInitClass)) {
             $(this).slick('unslick');
           }
         });
@@ -10553,7 +10531,7 @@ return jQuery;
     });
   });
 })(jQuery);
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -10595,7 +10573,7 @@ return jQuery;
     });
   };
 
-  $.fn.ncpSelect = function () {
+  $.fn.vSelect = function () {
     this.each(function (index, elem) {
       var instance = new Select($(elem));
       $(elem).data('select', instance);
@@ -10604,10 +10582,10 @@ return jQuery;
 
   $(document).ready(function () {
 
-    $('.select').ncpSelect();
+    $('.select').vSelect();
   });
 })(jQuery);
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 require('./jquery-global');
@@ -10622,8 +10600,6 @@ require('../blocks/header/header');
 
 require('../blocks/select/select');
 
-require('../blocks/input/input');
-
 require('../blocks/prizes/prizes');
 
 var _svg4everybody = require('svg4everybody');
@@ -10633,7 +10609,7 @@ var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _svg4everybody2.default)();
-},{"../blocks/header/header":3,"../blocks/input/input":4,"../blocks/prizes/prizes":5,"../blocks/select/select":6,"./common":8,"./jquery-global":9,"./jquery.sticky":10,"./slick":11,"svg4everybody":2}],8:[function(require,module,exports){
+},{"../blocks/header/header":3,"../blocks/prizes/prizes":4,"../blocks/select/select":5,"./common":7,"./jquery-global":8,"./jquery.sticky":9,"./slick":10,"svg4everybody":2}],7:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -10687,7 +10663,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   });
 })(jQuery);
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -10698,7 +10674,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.jQuery = _jquery2.default;
 window.$ = _jquery2.default;
-},{"jquery":1}],10:[function(require,module,exports){
+},{"jquery":1}],9:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -10972,7 +10948,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     setTimeout(scroller, 0);
   });
 });
-},{"jquery":1}],11:[function(require,module,exports){
+},{"jquery":1}],10:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -13730,4 +13706,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return _;
     };
 });
-},{"jquery":1}]},{},[7]);
+},{"jquery":1}]},{},[6]);

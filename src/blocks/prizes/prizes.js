@@ -17,7 +17,7 @@
         $(prizesSlider).each(function () {
           if (state === 'small' && !$(this).hasClass(bProductsInitClass)) {
             $(this).slick(prizesSliderConfig);
-          } else {
+          } else if ($(this).hasClass(bProductsInitClass)) {
             $(this).slick('unslick');
           }
         });

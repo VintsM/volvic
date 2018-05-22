@@ -37,7 +37,7 @@
     });
   };
 
-  $.fn.ncpSelect = function () {
+  $.fn.vSelect = function () {
     this.each(function(index, elem) {
       var instance = new Select($(elem));
       $(elem).data('select' , instance);
@@ -46,7 +46,7 @@
 
   $(document).ready(function () {
 
-    $('.select').ncpSelect();
+    $('.select').vSelect();
 
   });
 })(jQuery);

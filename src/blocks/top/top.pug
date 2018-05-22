@@ -10,6 +10,10 @@ include ../code-reg/code-reg
       })
       .top__code-reg-container
         +code-reg({
-          mods: 'top__code-reg'
+          tag: 'a',
+          mods: 'top__code-reg',
+          attrs: {
+            href: '#check'
+          }
         })
       a(href='#').top__link Подробные условия участия в акции

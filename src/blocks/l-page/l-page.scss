@@ -1,17 +1,15 @@
 .l-page {
   min-height: 100%;
   &__container {
-    padding: 0 $small-container-padding;
+    padding: 0 svw($small-container-padding);
     @include breakpoint(medium) {
-      padding: 0 $medium-container-padding;
+      padding: 0 mvw($medium-container-padding);
     }
     @include breakpoint(large) {
+      padding: rem($large-container-padding);
       margin: 0 auto;
       max-width: $global-width;
     }
-  }
-  &__content {
-    background-color: grey;
   }
   &__section {
     padding-top: 30px;

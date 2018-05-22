@@ -9,9 +9,9 @@
 
 mixin input(data)
   .input(class=data.mods)
-    span.input__placeholder!= data.placeholder
     if data.tag == 'input'
       input&attributes(data.attrs).input__field
+      span.input__placeholder!= data.placeholder
     if data.tag == 'textarea'
       .input__textarea
         textarea&attributes(data.attrs).input__field

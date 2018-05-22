@@ -13,7 +13,8 @@
             placeholder: 'Имя',
             attrs: {
               type: 'text',
-              name: 'name'
+              name: 'name',
+              required: ''
             }
           })
         .form__field
@@ -22,7 +23,8 @@
             placeholder: 'Email',
             attrs: {
               type: 'text',
-              name: 'email'
+              name: 'email',
+              required: ''
             }
           })
       .form__row
@@ -32,7 +34,8 @@
             placeholder: 'Телефон',
             attrs: {
               type: 'text',
-              name: 'tel'
+              name: 'tel',
+              required: ''
             }
           })
         .form__field
@@ -52,6 +55,45 @@
             placeholder: 'Дата и номер покупки <span class="grey">(данные из чека)</span>',
             attrs: {
               type: 'text',
-              name: 'data'
+              name: 'data',
+              required: ''
             }
           })
+      .form__row
+        .form__field.form__field_small-margin
+          +control({
+            text: 'Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a>',
+            mods: '',
+            attrs: {
+              type: 'checkbox',
+              name: 'agree'
+            }
+          })
+      .form__row
+        .form__field.form__field_small-margin
+          +control({
+            text: 'Согласен на обработку своих персональных данных ',
+            mods: '',
+            attrs: {
+              type: 'checkbox',
+              name: 'agreePers'
+            }
+          })
+      .form__row
+        .form__field.form__field_small-margin
+          +control({
+            text: 'Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"',
+            mods: '',
+            attrs: {
+              type: 'checkbox',
+              name: 'agreeMatch'
+            }
+          })
+      .form__controls
+        +code-reg({
+          tag: 'button',
+          mods: 'code-reg_green',
+          attrs: {
+            type: 'submit'
+          }
+        })

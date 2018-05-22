@@ -3,24 +3,23 @@
     {
       num: '1',
       text: 'Купи 12 бутылок воды 0,5 л или 6 бутылок воды 1,5 л',
-      img: '/img/steps/bottles.png'
+      img: './img/steps/bottles.png'
     },
     {
       num: '2',
       text: 'Зарегистрируй чек после покупки на этом сайте',
-      img: '/img/steps/macbook.png'
+      img: './img/steps/macbook.png'
     },
     {
       num: '3',
       text: 'Получи гарантированный шанс на победу',
-      img: '/img/steps/camera.png'
+      img: './img/steps/camera.png'
     }
   ];
 
 .steps
   each step in steps
     .steps__item
-      //.steps__item-inner
       .steps__num= step.num
       .steps__text= step.text
       .steps__img-container

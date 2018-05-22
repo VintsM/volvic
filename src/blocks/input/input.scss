@@ -1,7 +1,13 @@
 input,
 select {
   &.input__field {
-    height: 48px;
+    height: svw(48);
+    @include breakpoint(medium) {
+      height: mvw(48);
+    }
+    @include breakpoint(large) {
+      height: rem(48);
+    }
   }
 }
 
@@ -13,9 +19,11 @@ input:invalid {
 input::-webkit-input-placeholder {
   color: grey;
 }
+
 input::-moz-placeholder {
   color: grey;
 }
+
 input:-ms-input-placeholder {
   color: grey;
 }
@@ -23,22 +31,30 @@ input:-ms-input-placeholder {
 textarea.input__field {
   box-sizing: border-box;
   width: calc(100% + 20px);
-  height: 167px;
+  height: svw(167);
   padding-right: 40px;
   resize: none;
+  @include breakpoint(medium) {
+    height: mvw(167);
+  }
+  @include breakpoint(large) {
+    height: rem(167);
+  }
 }
 
 .input {
   position: relative;
-  //&.focus {
-  //  .input__placeholder {
-  //    transform: translateY(0);
-  //    font-size: rem(16);
-  //  }
-  //}
   &__textarea {
     overflow: hidden;
-    border: 4px solid $white;
+    border-bottom-width: svw(4);
+    border-bottom-style: solid;
+    border-bottom-color: $white;
+    @include breakpoint(medium) {
+      border-width: mvw(4);
+    }
+    @include breakpoint(large) {
+      border-width: rem(4);
+    }
     .input__field {
       border: none;
     }
@@ -46,23 +62,56 @@ textarea.input__field {
   &__field {
     display: block;
     width: 100%;
-    border-bottom: 4px solid $white;
+    border-bottom-width: svw(4);
+    border-bottom-style: solid;
+    border-bottom-color: $white;
     background-color: transparent;
-    padding: 12px 20px;
+    padding: svw(12) svw(20);
     transition: $transition;
-    font-size: rem(20);
+    font-size: svw(18);
     -webkit-appearance: none;
     color: $white;
+    @include breakpoint(medium) {
+      border-width: mvw(4);
+      padding: mvw(12) mvw(20);
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      border-width: rem(4);
+      padding: rem(12px) rem(20);
+      font-size: rem(20);
+    }
     &:focus {
       outline: 0;
+    }
+    &:focus ~ .input__placeholder,
+    &:valid ~ .input__placeholder {
+      top: svw(-20);
+      font-size: rem(16);
+      @include breakpoint(medium) {
+        top: mvw(-20);
+      }
+      @include breakpoint(large) {
+        top: rem(-20);
+      }
     }
   }
   &__placeholder {
     display: inline-block;
     color: $white;
-    line-height: 24px;
-    transform: translateY(0);
-    font-size: rem(16);
+    font-size: svw(24);
     transition: $transition;
+    position: absolute;
+    top: svw(10);
+    left: 0;
+    pointer-events: none;
+    @include breakpoint(medium) {
+      font-size: mvw(24);
+      top: mvw(10);
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+      top: rem(10);
+    }
   }
 }

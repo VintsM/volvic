@@ -189,10 +189,12 @@
         }
       }
       @include breakpoint(large) {
+        display: block;
         max-width: rem(400);
         top: rem(660);
         .prizes__img-container {
-          width: rem(170);
+          margin-right: 0;
+          width: auto;
         }
       }
     }
@@ -200,21 +202,29 @@
       @include breakpoint(medium) {
         max-width: mvw(550);
         position: absolute;
-        top: mvw(490);
-        right: mvw(260);
+        top: mvw(470);
+        right: mvw(60);
         margin-bottom: 0;
         display: flex;
         align-items: center;
         .prizes__img-container {
-          width: mvw(324);
+          flex: 0 0 auto;
+          margin-right: mvw(10);
+          width: mvw(200);
+        }
+        .prizes__text {
+          text-align: left;
+          flex: 1 1 auto;
         }
       }
       @include breakpoint(large) {
         max-width: rem(550);
         top: rem(1120);
         right: rem(260);
+        display: block;
         .prizes__img-container {
-          width: rem(170);
+          width: auto;
+          margin-right: 0;
         }
       }
       .prizes__img {

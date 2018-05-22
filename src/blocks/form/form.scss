@@ -1,12 +1,5 @@
 .form {
   &__row {
-    //margin-bottom: 20px;
-    //&_important {
-    //  @include breakpoint(medium) {
-    //    margin-top: 25px;
-    //    margin-bottom: 25px;
-    //  }
-    //}
     @include breakpoint(medium) {
       display: flex;
       justify-content: space-between;
@@ -34,16 +27,32 @@
       flex-grow: 1;
       flex-basis: 0;
       padding: 0 mvw($medium-container-padding);
-      margin-bottom: mvw(20);
+      margin-bottom: mvw(30);
     }
     @include breakpoint(large) {
       flex-grow: 1;
       flex-basis: 0;
       padding: 0 rem($large-container-padding);
-      margin-bottom: rem(20);
+      margin-bottom: rem(50);
+    }
+    &_small-margin {
+      margin-bottom: svw(10);
+      @include breakpoint(medium) {
+        margin-bottom: mvw(15);
+      }
+      @include breakpoint(large) {
+        margin-bottom: rem(15);
+      }
     }
   }
   &__controls {
-    margin-top: 20px;
+    text-align: center;
+    margin-top: svw(20);
+    @include breakpoint(medium) {
+      margin-top: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-top: rem(20);
+    }
   }
 }

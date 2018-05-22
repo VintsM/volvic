@@ -1,0 +1,21 @@
+//-
+  +control({
+    text: 'Даю согласие на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой OOO «Нестле Россия» по защите персональных данных»</a>',
+    mods: 'form__field',
+    attrs: {
+      type: 'checkbox',
+      name: 'agree'
+    }
+  })
+
+mixin control(data)
+  -
+    if (data.attrs.required == '' || data.attrs.required == 'true') {
+      data.mods = data.mods || ''
+      data.mods += ' control_required'
+    }
+  .control(class=data.mods)
+    label.control__label
+      input(type='checkbox')&attributes(data.attrs).control__input
+      span.control__check
+      span.control__text!= data.text

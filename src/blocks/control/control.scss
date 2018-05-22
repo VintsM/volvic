@@ -1,0 +1,79 @@
+.control {
+  position: relative;
+  color: $white;
+  &__label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  &__input {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    &:checked {
+      & + .control__check {
+        background-color: $primary;
+        background-image: url(/img/control/ok.svg);
+      }
+    }
+  }
+  &__check {
+    flex: 0 0 auto;
+    display: inline-block;
+    height: svw(38);
+    width: svw(38);
+    border: svw(4) solid $primary;
+    border-radius: svw(8);
+    margin-right: svw(25);
+    position: relative;
+    background-size: auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @include breakpoint(medium) {
+      height: mvw(38);
+      width: mvw(38);
+      border: mvw(4) solid $primary;
+      border-radius: mvw(8);
+      margin-right: mvw(25);
+    }
+    @include breakpoint(large) {
+      height: rem(38);
+      width: rem(38);
+      border: rem(4) solid $primary;
+      border-radius: rem(8);
+      margin-right: rem(25);
+    }
+  }
+  &__text {
+    flex: 1 1 auto;
+    font-size: svw(18);
+    line-height: 1.33;
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+    }
+    a {
+      color: $white;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &_required {
+    .control__text {
+      &:after {
+        content: '*';
+        color: $primary;
+      }
+    }
+  }
+  &.error {
+    .control__check {
+      border-color: $primary;
+    }
+  }
+}

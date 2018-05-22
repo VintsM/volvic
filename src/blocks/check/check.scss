@@ -1,14 +1,23 @@
 .check {
   background: url(../img/check/bg.jpg) center no-repeat;
   background-size: cover;
-  padding: rem(60) 0;
+  padding: svw(20) 0;
+  @include breakpoint(medium) {
+    padding: mvw(40) 0;
+  }
+  @include breakpoint(large) {
+    padding: rem(60) 0;
+  }
   &__title {
     text-align: center;
+    margin-bottom: svw(20);
     @include breakpoint(medium) {
       text-align: left;
+      margin-bottom: mvw(30);
     }
     @include breakpoint(large) {
-      margin-bottom: rem(20);
+      text-align: center;
+      margin-bottom: rem(40);
     }
   }
 }

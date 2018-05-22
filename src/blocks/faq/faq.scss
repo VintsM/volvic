@@ -19,6 +19,7 @@
       margin-bottom: mvw(20);
     }
     @include breakpoint(large) {
+      text-align: center;
       margin-bottom: rem(20);
     }
   }
@@ -118,6 +119,7 @@
       margin-top: mvw(40);
     }
     @include breakpoint(large) {
+      justify-content: center;
       margin-top: rem(40);
     }
   }
