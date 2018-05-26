@@ -1,0 +1,12 @@
+.modal.modal-email
+  .modal__inner
+    .modal__close.js-modal-close
+    .modal__content
+      +title({
+        tag: 'h2',
+        mods: 'title_3 modal__title',
+        text: 'Письмо отправлено'
+      })
+      .modal-email__container
+        img(src='/promo/img/mail-circle.svg' alt='' width='' height='').modal-email__img
+        .modal__text

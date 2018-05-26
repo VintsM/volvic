@@ -25,13 +25,13 @@
   $(document).ready(function () {
     $('body').pageStatus();
 
-    $(window).on('scroll', function() {
-      if (window.STATE === 'large') {
-        parallaxScroll();
-      } else {
-        $('.js-parallax').attr('style', '');
-      }
-    });
+    // $(window).on('scroll', function() {
+    //   if (window.STATE === 'large') {
+    //     parallaxScroll();
+    //   } else {
+    //     $('.js-parallax').attr('style', '');
+    //   }
+    // });
 
     function parallaxScroll(){
       var scrolled = $(window).scrollTop();

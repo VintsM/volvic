@@ -1,0 +1,17 @@
+.upload {
+  color: $white;
+  &__input {
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+  }
+  &__button {
+    margin-bottom: svw(10);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(10px);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(10px);
+    }
+  }
+}

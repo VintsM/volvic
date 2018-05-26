@@ -1,0 +1,66 @@
+include ../b-prizes/b-prizes
+
+.modal.modal-prize-info
+  .modal__inner
+    .modal__close.js-modal-close
+    .modal__content.tabs.js-tabs
+      +title({
+        tag: 'h2',
+        mods: 'title_2 title_red modal__title',
+        text: 'Гарантированные призы!'
+      })
+      +b-prizes({
+        content: [
+          {
+            mods: 'js-tabs-name active',
+            selectable: false,
+            img: '/promo/img/prize/pandora.png',
+            imgAlt: 'Украшения PANDORA',
+            attrs: {
+              'data-tab': 1
+            }
+          },
+          {
+            mods: 'js-tabs-name',
+            selectable: false,
+            img: '/promo/img/prize/amediateka.png',
+            imgAlt: 'Amediateka',
+            attrs: {
+              'data-tab': 2
+            }
+          },
+          {
+            mods: 'js-tabs-name',
+            selectable: false,
+            img: '/promo/img/prize/erborian.svg',
+            imgAlt: 'Erborian',
+            attrs: {
+              'data-tab': 3
+            }
+          },
+          {
+            mods: 'js-tabs-name',
+            selectable: false,
+            img: '/promo/img/prize/philips.svg',
+            imgAlt: 'Philips',
+            attrs: {
+              'data-tab': 4
+            }
+          },
+          {
+            mods: 'js-tabs-name',
+            selectable: false,
+            img: '/promo/img/prize/litres.png',
+            imgAlt: 'ЛитРес',
+            attrs: {
+              'data-tab': 5
+            }
+          }
+        ]
+      })
+      .modal-prize-info__texts
+        .modal-prize-info__text.tabs__content.active.js-tabs-content(data-tab='1') 1 электронный купон со скидкой 500 руб. на покупку любого изделия в любом фирменном магазине PANDORA при покупке от 3000 рублей.
+        .modal-prize-info__text.tabs__content.js-tabs-content(data-tab='2') 1 электронный купон с уникальным промокодом на 10-дневную подписку.
+        .modal-prize-info__text.tabs__content.js-tabs-content(data-tab='3') 1 промокод на скидку 25%. Скидка не распространяется на аксессуары, мини-форматы и наборы продукции ERBORIAN.
+        .modal-prize-info__text.tabs__content.js-tabs-content(data-tab='4') 1 промокод, предоставляющий возможность получить скидку 30% на покупку товаров Philips.
+        .modal-prize-info__text.tabs__content.js-tabs-content(data-tab='5') 1 промокод на скачивание 1 электронной книги.

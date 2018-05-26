@@ -44,6 +44,35 @@
         margin-bottom: rem(15);
       }
     }
+    &_big-margin {
+      margin: svw(30) 0;
+      @include breakpoint(medium) {
+        margin: mvw(40) 0;
+      }
+      @include breakpoint(large) {
+        margin: rem(50) 0;
+      }
+    }
+  }
+  &__upload {
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+  &__upload-text {
+    margin-bottom: svw(10);
+    color: $white;
+    font-size: svw(18);
+    @include breakpoint(medium) {
+      margin-right: mvw(25);
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-right: rem(40);
+      font-size: rem(24);
+    }
   }
   &__controls {
     text-align: center;

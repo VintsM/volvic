@@ -1,0 +1,20 @@
+.modal.modal-find-code
+  .modal__inner
+    .modal__close.js-modal-close
+    .modal__content
+      +title({
+        tag: 'h2',
+        mods: 'title_2 modal__title',
+        text: 'Где код?'
+      })
+      +hr({
+        mods: 'hr_red modal__hr'
+      })
+      .modal-find-code__container
+        .modal-find-code__img
+          img(src='/promo/img/where-find-code.png' alt='Упаковка pro plan с кодом')
+        .modal-find-code__content
+          p.modal__text Код находится на внутренней стороне стикера за скретч-слоем и имеет вид:
+          .modal-find-code__badge A3XXX4P3AE
+          .modal-find-code__sticker
+            img(src='./img/promo/promo.png' alt='Pro Plan подарок 4 балла')

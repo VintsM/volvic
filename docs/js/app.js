@@ -10476,6 +10476,22 @@ return jQuery;
 
 (function ($) {
   $(document).ready(function () {
+    $('.js-faq-question').on('click', function () {
+      var question = $(this).text();
+      var answer = $(this).next().html();
+      var modal = $('.modal-faq').data('modal');
+
+      modal.setTitle(question);
+      modal.setText(answer);
+      modal.open();
+    });
+  });
+})(jQuery);
+},{}],4:[function(require,module,exports){
+'use strict';
+
+(function ($) {
+  $(document).ready(function () {
     $('.header').sticky({
       topSpacing: 0,
       responsiveWidth: true,
@@ -10494,7 +10510,159 @@ return jQuery;
     });
   });
 })(jQuery);
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+'use strict';
+
+(function ($) {
+
+	function Modal(elem, options) {
+		var modal = this;
+		var closeButton = elem.find('.js-modal-close');
+		var confirmButton = elem.find('.js-modal-confirm');
+		var rejectButton = elem.find('.js-modal-reject');
+		var modalWindow = elem.find('.modal__inner');
+
+		modal.title = null;
+		modal.text = null;
+		modal.clicked = null;
+		modal.onOpen = null;
+		modal.onClose = null;
+		modal.setTitle = function (title) {
+			elem.find('.modal__title').text(title);
+		};
+		modal.setText = function (text) {
+			elem.find('.modal__text').html(text);
+		};
+		modal.open = function (clicked) {
+			lockScreen();
+			elem.addClass('open');
+			if (clicked) modal.clicked = clicked;
+			if (modal.onOpen != null) modal.onOpen();
+			if (modal.title != null) modal.setTitle(modal.title);
+			if (modal.text != null) modal.setText(modal.text);
+			$('.header__burger').removeClass('active');
+			$('.header__mobile-nav').hide();
+		};
+		modal.close = function () {
+			unlockScreen();
+			elem.removeClass('open');
+			if (modal.onClose != null) modal.onClose();
+		};
+		modal.onConfirm = function () {
+			throw Error('onConfirm() not implemented');
+		};
+		modal.onReject = function () {};
+		closeButton.on('click', function (e) {
+			e.preventDefault();
+			modal.close();
+		});
+		confirmButton.on('click', function (e) {
+			e.preventDefault();
+			modal.onConfirm(modal.clicked);
+			modal.close();
+		});
+		rejectButton.on('click', function (e) {
+			e.preventDefault();
+			modal.onReject();
+			modal.close();
+		});
+		modalWindow.on('click', function (e) {
+			e.stopPropagation();
+		});
+		elem.on('click', modal.close);
+
+		if (options) {
+			for (var k in options) {
+				modal[k] = options[k];
+			}
+		}
+	}
+
+	$.fn.modal = function (options) {
+		this.each(function (index, elem) {
+			var instance = new Modal($(elem), options);
+			$(elem).data('modal', instance);
+		});
+	};
+
+	function getScrollbarWidth() {
+		if ($(document).height() <= $(window).height()) {
+			return 0;
+		}
+
+		var outer = document.createElement('div');
+		var inner = document.createElement('div');
+		var widthNoScroll;
+		var widthWithScroll;
+
+		outer.style.visibility = 'hidden';
+		outer.style.width = '100px';
+		document.body.appendChild(outer);
+
+		widthNoScroll = outer.offsetWidth;
+
+		// Force scrollbars
+		outer.style.overflow = 'scroll';
+
+		// Add inner div
+		inner.style.width = '100%';
+		outer.appendChild(inner);
+
+		widthWithScroll = inner.offsetWidth;
+
+		// Remove divs
+		outer.parentNode.removeChild(outer);
+
+		return widthNoScroll - widthWithScroll;
+	}
+
+	function lockScreen() {
+
+		var html = $('html');
+		var lockedClass = 'locked';
+		var paddingRight;
+		var body;
+
+		if (!html.hasClass(lockedClass)) {
+			body = $(document.body);
+
+			paddingRight = parseInt(body.css('padding-right'), 10) + getScrollbarWidth();
+
+			body.css('padding-right', paddingRight + 'px');
+			html.addClass(lockedClass);
+		}
+	}
+
+	function unlockScreen() {
+
+		var html = $('html');
+		var lockedClass = 'locked';
+		var paddingRight;
+		var body;
+
+		if (html.hasClass(lockedClass)) {
+			body = $(document.body);
+
+			paddingRight = parseInt(body.css('padding-right'), 10) - getScrollbarWidth();
+
+			body.css('padding-right', paddingRight + 'px');
+			html.removeClass(lockedClass);
+		}
+	}
+
+	$(document).ready(function () {
+
+		$('.modal').modal();
+
+		var modalOpener = $('[data-modal-window]');
+
+		modalOpener.on('click', function () {
+			var modalWindow = $(this).data('modal-window');
+			$(modalWindow).data('modal').open();
+		});
+	});
+})(jQuery);
+},{}],6:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -10531,7 +10699,7 @@ return jQuery;
     });
   });
 })(jQuery);
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -10585,7 +10753,113 @@ return jQuery;
     $('.select').vSelect();
   });
 })(jQuery);
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(function ($) {
+  var Upload = function () {
+    function Upload(elem) {
+      _classCallCheck(this, Upload);
+
+      var upload = this;
+      upload.button = elem.find('.js-upload-button');
+      upload.input = elem.find('.js-upload-input');
+      upload.modalMessage = $('.modal-message');
+      upload.modalMessageInstance = upload.modalMessage.data('modal');
+      upload.maxSize = upload.input.data('max-size') * 1000000;
+      upload.ext = upload.input.attr('accept');
+      upload.sendButton = $('.js-upload-button-send');
+      upload.file = undefined;
+
+      upload.button.on('click', function () {
+        upload.input.click();
+      });
+
+      upload.input.on('change', function () {
+        var reader = new FileReader();
+        upload.file = this.files[0];
+        reader.onloadend = function () {
+          upload.checkFile(upload.file);
+        };
+        reader.readAsDataURL(upload.file);
+        $(this).prop({ value: '' });
+      });
+
+      upload.sendButton.on('click', function (e) {
+        e.preventDefault();
+        upload.modalMessageInstance.close();
+        $(document).trigger('uploadStart');
+      });
+    }
+
+    _createClass(Upload, [{
+      key: 'formatFileSize',
+      value: function formatFileSize(bytes) {
+        if (bytes >= 1000000) {
+          bytes = (bytes / 1000000).toFixed(2) + ' MB';
+        } else if (bytes >= 1000) {
+          bytes = (bytes / 1000).toFixed(2) + ' KB';
+        } else if (bytes > 1) {
+          bytes = bytes + ' bytes';
+        } else if (bytes == 1) {
+          bytes = bytes + ' byte';
+        } else {
+          bytes = '0 byte';
+        }
+        return bytes;
+      }
+    }, {
+      key: 'getFileExtension',
+      value: function getFileExtension(filename) {
+        return (/[.]/.exec(filename) ? /[^.]+$/.exec(filename) : undefined
+        );
+      }
+    }, {
+      key: 'checkFile',
+      value: function checkFile(file) {
+        if (file.size > this.maxSize) {
+          this.modalMessage.removeClass('approve').addClass('error');
+          this.modalMessageInstance.setTitle('Ошибка!');
+          this.modalMessageInstance.setText('Превышен максимальный размер файла.');
+          this.modalMessageInstance.open();
+          this.input.val('');
+          return false;
+        }
+        if (!~this.ext.indexOf(this.getFileExtension(file.name))) {
+          this.modalMessage.removeClass('approve').addClass('error');
+          this.modalMessageInstance.setTitle('Ошибка!');
+          this.modalMessageInstance.setText('Недопустимый формат файла.');
+          this.modalMessageInstance.open();
+          this.input.val('');
+          return false;
+        }
+        this.modalMessage.removeClass('error').addClass('approve');
+        this.modalMessageInstance.setTitle('Отлично!');
+        this.modalMessageInstance.setText(file.name + ' ' + this.formatFileSize(file.size));
+        this.modalMessageInstance.open();
+        return true;
+      }
+    }]);
+
+    return Upload;
+  }();
+
+  $.fn.upload = function () {
+    this.each(function (index, elem) {
+      var instance = new Upload($(elem));
+      $(elem).data('upload', instance);
+    });
+  };
+
+  $(document).ready(function () {
+    $('.upload').upload();
+  });
+})(jQuery);
+},{}],9:[function(require,module,exports){
 'use strict';
 
 require('./jquery-global');
@@ -10602,6 +10876,12 @@ require('../blocks/select/select');
 
 require('../blocks/prizes/prizes');
 
+require('../blocks/modal/modal');
+
+require('../blocks/upload/upload');
+
+require('../blocks/faq/faq');
+
 var _svg4everybody = require('svg4everybody');
 
 var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
@@ -10609,7 +10889,7 @@ var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _svg4everybody2.default)();
-},{"../blocks/header/header":3,"../blocks/prizes/prizes":4,"../blocks/select/select":5,"./common":7,"./jquery-global":8,"./jquery.sticky":9,"./slick":10,"svg4everybody":2}],7:[function(require,module,exports){
+},{"../blocks/faq/faq":3,"../blocks/header/header":4,"../blocks/modal/modal":5,"../blocks/prizes/prizes":6,"../blocks/select/select":7,"../blocks/upload/upload":8,"./common":10,"./jquery-global":11,"./jquery.sticky":12,"./slick":13,"svg4everybody":2}],10:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -10636,13 +10916,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   $(document).ready(function () {
     $('body').pageStatus();
 
-    $(window).on('scroll', function () {
-      if (window.STATE === 'large') {
-        parallaxScroll();
-      } else {
-        $('.js-parallax').attr('style', '');
-      }
-    });
+    // $(window).on('scroll', function() {
+    //   if (window.STATE === 'large') {
+    //     parallaxScroll();
+    //   } else {
+    //     $('.js-parallax').attr('style', '');
+    //   }
+    // });
 
     function parallaxScroll() {
       var scrolled = $(window).scrollTop();
@@ -10663,7 +10943,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   });
 })(jQuery);
-},{}],8:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -10674,7 +10954,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.jQuery = _jquery2.default;
 window.$ = _jquery2.default;
-},{"jquery":1}],9:[function(require,module,exports){
+},{"jquery":1}],12:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -10948,7 +11228,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     setTimeout(scroller, 0);
   });
 });
-},{"jquery":1}],10:[function(require,module,exports){
+},{"jquery":1}],13:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -13706,4 +13986,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return _;
     };
 });
-},{"jquery":1}]},{},[6]);
+},{"jquery":1}]},{},[9]);

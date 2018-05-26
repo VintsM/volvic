@@ -1,3 +1,5 @@
+include ../upload/upload
+
 .check
   .l-page__container
     +title({
@@ -52,6 +54,7 @@
         .form__field
           +input({
             tag: 'input',
+            mods: 'input_lp',
             placeholder: 'Дата и номер покупки <span class="grey">(данные из чека)</span>',
             attrs: {
               type: 'text',
@@ -59,6 +62,14 @@
               required: ''
             }
           })
+      .form__row
+        .form__field
+          .form__upload
+            span.form__upload-text Загрузить фото чека
+            +upload({
+              accept: '.jpg, .png, .jpeg',
+              maxSize: '10'
+            })
       .form__row
         .form__field.form__field_small-margin
           +control({
@@ -90,9 +101,10 @@
             }
           })
       .form__controls
-        +code-reg({
+        +button({
           tag: 'button',
-          mods: 'code-reg_green',
+          mods: 'button_blot button_green',
+          text: 'Зарегистрировать код',
           attrs: {
             type: 'submit'
           }

@@ -1,4 +1,3 @@
-<!--include ../../blocks/button/button-->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -43,7 +42,7 @@
           <div class="l-page__container">
             <div class="top__content">
               <h1 class="title title_1 top__title">Пробуди в себе силу фаната</h1>
-              <div class="top__code-reg-container"><a class="top__code-reg code-reg" href="#check">Зарегистрировать чек</a></div><a class="top__link" href="#">Подробные условия участия в акции</a></div>
+              <div class="top__button-container"><a class="button button_blot top__button" href="#check"><span class="button__text">Зарегистрировать код</span></a></div><a class="top__link" href="#">Подробные условия участия в акции</a></div>
           </div>
         </div><a id="rules"></a>
         <div class="steps">
@@ -69,15 +68,18 @@
           <div class="l-page__container prizes__container">
             <h2 class="title title_1 prizes__title">Участвуй и выигрывай призы</h2>
             <div class="prizes__inner">
-              <div class="prizes__sticker">
-                <div class="prizes__sticker-inner"><span class="prizes__sticker-medium-text">Гарантированный приз<br>Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»</span><img class="prizes__sticker-img" src="./img/prizes/match.png" alt="МАТЧ!"></div>
-                <div class="prizes__sticker-small-text">Гарантированный приз: Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»</div>
+              <div class="prizes__item prizes__item_sticker">
+                <!--.prizes__sticker-inner//span.prizes__sticker-medium-text Гарантированный приз
+//  br
+//  | Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»-->
+                <div class="prizes__img-container"><img class="prizes__img" src="./img/prizes/match.png" alt="МАТЧ!"></div>
+                <div class="prizes__text">Гарантированный приз: Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»</div>
               </div>
-              <div class="prizes__item prizes__item_1 js-parallax js-parallax-2">
+              <div class="prizes__item prizes__item_ball">
                 <div class="prizes__img-container"><img class="prizes__img" src="./img/prizes/ball.png" alt="Hover ball"></div>
                 <div class="prizes__text">Hover ball для настоящих ценителей футбола</div>
               </div>
-              <div class="prizes__item prizes__item_2 js-parallax js-parallax-2">
+              <div class="prizes__item prizes__item_camera">
                 <div class="prizes__img-container"><img class="prizes__img" src="./img/prizes/camera.png"></div>
                 <div class="prizes__text">Главный приз- камера GoPro HERO5. Запечатли лучшие моменты вместе с Volvic</div>
               </div>
@@ -90,46 +92,78 @@
             <h2 class="title title_1 faq__title">FAQ</h2>
             <div class="faq__inner">
               <div class="faq__item">
-                <div class="faq__question">В какой период я могу разместить работу на сайте Акции?</div>
+                <div class="faq__question js-faq-question">В какой период я могу разместить работу на сайте Акции?</div>
+                <div class="faq__answer js-faq-answer">Вы можете разместить работу на сайте Акции с 05 июня 2018 года до 02 июля 2018 года включительно</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Какой-то очень-очень-очень длинный вопрос от пользователя</div>
+                <div class="faq__question js-faq-question">Когда я узнаю результаты еженедельного розыгрыша призов?</div>
+                <div class="faq__answer js-faq-answer">Nunc laoreet dolor ut fermentum pulvinar. Nullam consectetur, mauris placerat rhoncus molestie, diam sem dictum orci, a ultricies nisi lectus in velit.</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Как я могу принять участие в акции?</div>
+                <div class="faq__question js-faq-question">Как я могу принять участие в акции?</div>
+                <div class="faq__answer js-faq-answer">
+                  <p>Необходимо в составе одной покупки (по одному кассовому чеку) в магазине «Азбука Вкуса» купить не менее 12 (двенадцати) бутылок воды VOLVIC одинакового объема по 0,5 л. либо не менее 6 (шести) бутылок воды VOLVIC одинакового объема по
+                    1,5 л и сохранить соответствующий кассовый чек до окончания срока проведения Акции.</p>
+                  <p>Пройти процедуру регистрации на интернет сайте www.volvic-promo.ru в период с 00.00 час. 05 июня 2018 года до 23.59 час. 02 июля 2018 года включительно.</p>
+                  <p>Чеки, зарегистрированные на Сайте в соответствии с условиями настоящих Правил, необходимо сохранять в течение всего периода проведения Акции.</p>
+                  <p>Каждый Участник Акции может зарегистрировать неограниченное количество чеков за весь период Акции.</p>
+                </div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Сколько времени занимает модерация?</div>
+                <div class="faq__question js-faq-question">Сколько времени занимает модерация?</div>
+                <div class="faq__answer js-faq-answer">Модерация занимает до 2х (двух) рабочих дней с момента регистрации Чека. </div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Сколько чеков я могу загрузить?</div>
+                <div class="faq__question js-faq-question">Сколько чеков я могу загрузить?</div>
+                <div class="faq__answer js-faq-answer">Каждый Участник Акции может зарегистрировать неограниченное количество чеков за весь период Акции.</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Какой приз я могу выиграть?</div>
+                <div class="faq__question js-faq-question">Какой приз я могу выиграть?</div>
+                <div class="faq__answer js-faq-answer">У нас есть три вида приза<br/>
+                  <p>1. Гарантированный приз - подписка на 1 месяц на HD телеканалы пакета "Футбол" мобильного приложения "МАТЧ!КЛУБ".</p>
+                  <p>2. Еженедельный приз – аэро-футбольный мяч HOVER BALL.</p>
+                  <p>3. Главный приз - Экшн-камера GoPro HERO 5</p>
+                </div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">До какого числа необходимо загрузить работу на сайт?</div>
+                <div class="faq__question js-faq-question">До какого числа необходимо загрузить работу на сайт?</div>
+                <div class="faq__answer js-faq-answer">Согласно с правилами акции срок подачи работ для участия в Акции – до 02 июля 2018 года включительно</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Как я узнаю, что я выиграл приз?</div>
+                <div class="faq__question js-faq-question">Как я узнаю, что я выиграл приз?</div>
+                <div class="faq__answer js-faq-answer">Информация о обладателях соответствующих призов Акции, размещается Организатором Акции на Сайте в период с 19 июня 2018 года по 12 июля 2018 года включительно, а также доводится до сведения обладателя соответствующего приза Акции путем
+                  его уведомления по электронной почте, адрес которой он указал при прохождении им процедуры регистрации на Сайте.</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Необходимо ли мне оплачивать налог НДФЛ?</div>
+                <div class="faq__question js-faq-question">Необходимо ли мне оплачивать налог НДФЛ?</div>
+                <div class="faq__answer js-faq-answer">Организатор информирует Получателей призов о законодательно предусмотренной обязанности уплатить соответствующие налоги в связи с получением Призов/подарков от организаций, совокупная стоимость которых превышает 4 000 (четыре тысячи) рублей
+                  за отчетный период (календарный год). Принимая участие в Акции и соглашаясь с настоящими Правилами, Участники считаются надлежащим образом проинформированными о вышеуказанной обязанности.</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Могу ли я купить загрузить несколько чеков и выиграть несколько призов?</div>
+                <div class="faq__question js-faq-question">Могу ли я купить загрузить несколько чеков и выиграть несколько призов?</div>
+                <div class="faq__answer js-faq-answer">Один участник может получить не более 1 (Одного) приза соответствующей категории.</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Как я могу получить свой приз?</div>
+                <div class="faq__question js-faq-question">Как я могу получить свой приз?</div>
+                <div class="faq__answer js-faq-answer">
+                  <p>Гарантированный приз – в период с 14 июня 2018 года в течение 3 (трех) рабочих дней с даты прохождения участником Акции завершенной процедуры регистрации на Сайте и одобрения регистрации Модератором Акции путем направления участнику
+                    Акции по электронной почте письма, содержащего ссылку на пакет каналов и кодом для входа, предоставляемым Организатором Акции</p>
+                  <p>Еженедельный приз - в период с 20 июня 2018 года по 31 июля 2018 года -  направляется курьерской службой по адресу, указанному победителем при регистрации на Сайте Акции.</p>
+                  <p>Главный приз – в период с 13 июля 2018 года по 31 июля 2018 года, направляется курьерской службой по адресу, указанному победителем при регистрации на Сайте Акции</p>
+                </div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Мне пришло сообщение о том, что я выиграл Главный приз. Уточните пожалуйста, в течение какого времени мне нужно отправить необходимые данные?</div>
+                <div class="faq__question js-faq-question">Мне пришло сообщение о том, что я выиграл Главный приз. Уточните пожалуйста, в течение какого времени мне нужно отправить необходимые данные?</div>
+                <div class="faq__answer js-faq-answer">Главный призер Акции для получения Приза в течение 7 (семи) календарных дней обязуется заполнить/загрузить данные через специальную анкетную форму на Сайте, ссылку на которую Организатор отправляет Главному призеру на электронную почту,
+                  указанную при регистрации на сайте Акции</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">Вы можете мне гарантировать сохранность персональных данных?</div>
+                <div class="faq__question js-faq-question">Вы можете мне гарантировать сохранность персональных данных?</div>
+                <div class="faq__answer js-faq-answer">Организатор обеспечивает конфиденциальность персональных данных в установленном законом порядке.</div>
               </div>
               <div class="faq__item">
-                <div class="faq__question">На каком сайте я могу пройти регистрацию, чтобы участвовать в акции?</div>
+                <div class="faq__question js-faq-question">На каком сайте я могу пройти регистрацию, чтобы участвовать в акции?</div>
+                <div class="faq__answer js-faq-answer">Вам необходимо пройти регистрацию на сайте акции www.volvic-promo.ru.</div>
               </div>
             </div>
             <div class="faq__bottom"><a class="faq__link" href="#">Задать свой вопрос</a><a class="faq__link" href="#">Магазины-участники</a></div>
@@ -165,32 +199,94 @@
               </div>
               <div class="form__row">
                 <div class="form__field">
-                  <div class="input"><input class="input__field" type="text" name="data" required="" /><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span>
+                  <div class="input input_lp"><input class="input__field" type="text" name="data" required="" /><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span>
                   </div>
                 </div>
               </div>
               <div class="form__row">
-                <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agree"/><span class="control__check"></span><span class="control__text">Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a></span></label></div>
+                <div class="form__field">
+                  <div class="form__upload"><span class="form__upload-text">Загрузить фото чека</span>
+                    <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" accept=".jpg, .png, .jpeg" data-max-size="10"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button>
+                      <div
+                        class="upload__info">*.jpg, *.png, *.jpeg</div>
+                  </div>
                 </div>
               </div>
-              <div class="form__row">
-                <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agreePers"/><span class="control__check"></span><span class="control__text">Согласен на обработку своих персональных данных </span></label></div>
-                </div>
-              </div>
-              <div class="form__row">
-                <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agreeMatch"/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
-                </div>
-              </div>
-              <div class="form__controls"><button class="code-reg_green code-reg" type="submit">Зарегистрировать чек</button></div>
-            </form>
           </div>
-        </div><a id="winners"></a></div>
+          <div class="form__row">
+            <div class="form__field form__field_small-margin">
+              <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agree"/><span class="control__check"></span><span class="control__text">Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a></span></label></div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field form__field_small-margin">
+              <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agreePers"/><span class="control__check"></span><span class="control__text">Согласен на обработку своих персональных данных </span></label></div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field form__field_small-margin">
+              <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agreeMatch"/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
+            </div>
+          </div>
+          <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Зарегистрировать код</span></button></div>
+          </form>
+        </div>
+      </div><a id="winners"></a></div>
+  </div>
+  </div>
+  <!--include ../recovery/recovery-->
+  <div class="modal modal-login" data-state="login">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content modal__content_login">
+        <h2 class="title title_2 modal__title">Вход</h2>
+        <!--include ../login/login-->
+        <div class="modal-login__bottom">
+          <div class="modal-login__row">
+            <div class="modal-login__bottom-text">Нет аккаунта?</div><a class="modal-login__link js-login-state-toggle" href="#" data-state="registration">Зарегистрировать</a></div>
+          <div class="modal-login__row">
+            <div class="modal-login__bottom-text">Не можете найти письмо?</div><a class="modal-login__link js-login-state-toggle" href="#" data-state="repeat">Отправить письмо с подтверждением регистрации еще раз.</a></div>
+        </div>
+      </div>
+      <div class="modal__content modal__content_registration">
+        <h2 class="title title_2 modal__title">Регистрация</h2>
+        <!--include ../registration/registration-->
+        <div class="modal-login__bottom modal-login__bottom_big"><span class="modal-login__bottom-text">Есть аккаунт?</span> <a class="modal-login__link js-login-state-toggle" href="#" data-state="login">Войти</a></div>
+      </div>
+      <div class="modal__content modal__content_recovery">
+        <!--+recovery({-->
+        <!--  title: 'Восстановление пароля',-->
+        <!--  text:'Для восстановления пароля введите адрес электронной почты, указанный при регистрации. <br>Не пришло письмо? <a href="#" class="recovery__link js-login-state-toggle" data-state="repeat">Отправить повторно.</a>',-->
+        <!--  formId: 'password-recovery-form'-->
+        <!--})-->
+      </div>
+      <div class="modal__content modal__content_repeat">
+        <!--+recovery({-->
+        <!--  title: 'Повторная отправка письма с подтверждением',-->
+        <!--  text: 'Для повторной отправки письма с подтверждением, введите адрес электронной почты, указанный при регистрации.',-->
+        <!--  formId: 'password-repeat-form'-->
+        <!--})-->
+      </div>
     </div>
   </div>
-  <!--include ../../blocks/modal/modal-message-->
+  <div class="modal modal-message">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_2 modal__title"></h2>
+      </div>
+      <div class="modal__text"></div>
+    </div>
+  </div>
+  <div class="modal modal-faq">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_2 modal__title"></h2>
+      </div>
+      <div class="modal__text"></div>
+    </div>
+  </div>
   <script src="./js/app.js"></script>
 </body>
 

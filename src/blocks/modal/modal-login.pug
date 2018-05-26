@@ -1,0 +1,43 @@
+//include ../recovery/recovery
+
+.modal.modal-login(data-state='login')
+  .modal__inner
+    .modal__close.js-modal-close
+    .modal__content.modal__content_login
+      +title({
+        tag: 'h2',
+        mods: 'title_2 modal__title',
+        text: 'Вход'
+      })
+      //include ../login/login
+      .modal-login__bottom
+        .modal-login__row
+          .modal-login__bottom-text Нет аккаунта?
+          a(href='#' data-state='registration').modal-login__link.js-login-state-toggle Зарегистрировать
+        .modal-login__row
+          .modal-login__bottom-text Не можете найти письмо?
+          a(href='#' data-state='repeat').modal-login__link.js-login-state-toggle Отправить письмо с подтверждением регистрации еще раз.
+    .modal__content.modal__content_registration
+      +title({
+        tag: 'h2',
+        mods: 'title_2 modal__title',
+        text: 'Регистрация'
+      })
+      //include ../registration/registration
+      .modal-login__bottom.modal-login__bottom_big
+        span.modal-login__bottom-text Есть аккаунт?
+        = ' '
+        a(href='#' data-state='login').modal-login__link.js-login-state-toggle Войти
+    .modal__content.modal__content_recovery
+      //+recovery({
+      //  title: 'Восстановление пароля',
+      //  text:'Для восстановления пароля введите адрес электронной почты, указанный при регистрации. <br>Не пришло письмо? <a href="#" class="recovery__link js-login-state-toggle" data-state="repeat">Отправить повторно.</a>',
+      //  formId: 'password-recovery-form'
+      //})
+    .modal__content.modal__content_repeat
+      //+recovery({
+      //  title: 'Повторная отправка письма с подтверждением',
+      //  text: 'Для повторной отправки письма с подтверждением, введите адрес электронной почты, указанный при регистрации.',
+      //  formId: 'password-repeat-form'
+      //})
+

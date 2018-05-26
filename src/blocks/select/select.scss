@@ -1,10 +1,10 @@
 .select {
   position: relative;
   &__placeholder {
-    font-size: svw(18);
+    font-size: svw(24);
     color: $white;
     @include breakpoint(medium) {
-      font-size: mvw(20);
+      font-size: mvw(24);
     }
     @include breakpoint(large) {
       font-size: rem(24);
@@ -68,7 +68,6 @@
     width: 100%;
     background-color: $white;
     border-right-width: svw(4);
-    border-bottom-width: svw(4);
     border-left-width: svw(4);
     border-bottom-style: solid;
     border-bottom-color: $white;
@@ -79,12 +78,10 @@
     overflow: hidden;
     @include breakpoint(medium) {
       border-right-width: mvw(4);
-      border-bottom-width: mvw(4);
       border-left-width: mvw(4);
     }
     @include breakpoint(large) {
       border-right-width: rem(4);
-      border-bottom-width: rem(4);
       border-left-width: rem(4);
     }
   }
@@ -92,18 +89,24 @@
     display: block;
     width: calc(100% + 1px);
     margin-left: -1px;
-    padding: svw(11) svw(20);
+    padding: svw(12) svw(15);
     position: relative;
     @include breakpoint(medium) {
-      padding: mvw(11) mvw(20);
+      padding: mvw(12) mvw(15);
     }
     @include breakpoint(large) {
-      padding: rem(11) rem(20);
+      padding: rem(12) rem(15);
     }
     &:hover {
-      background-color: grey;
-      .select__item-text {
-        font-weight: 700;
+      background-color: $frostee;
+    }
+    &:not(:last-child) {
+      border-bottom: svw(1) solid $alto;
+      @include breakpoint(medium) {
+        border-bottom: mvw(1) solid $alto;
+      }
+      @include breakpoint(large) {
+        border-bottom: rem(1) solid $alto;
       }
     }
   }

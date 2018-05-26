@@ -44,6 +44,17 @@ textarea.input__field {
 
 .input {
   position: relative;
+  &.input_lp {
+    .input__field {
+      height: svw(70);
+      @include breakpoint(medium) {
+        height: mvw(48);
+      }
+      @include breakpoint(large) {
+        height: rem(48);
+      }
+    }
+  }
   &__textarea {
     overflow: hidden;
     border-bottom-width: svw(4);

@@ -6,6 +6,7 @@
   @include breakpoint(medium) {
     text-align: left;
     background: url(../img/top/top.jpg) center no-repeat;
+    background-size: cover;
     padding: mvw(80) 0 mvw(420);
   }
   @include breakpoint(large) {
@@ -29,7 +30,7 @@
       margin-bottom: rem(50);
     }
   }
-  &__code-reg-container {
+  &__button-container {
     margin-bottom: svw(10);
     @include breakpoint(medium) {
       margin-bottom: mvw(15);
@@ -42,7 +43,10 @@
     color: $white;
     font-weight: 700;
     text-decoration: underline;
-    font-size: svw(12);
+    font-size: svw(14);
+    @include breakpoint(medium) {
+      font-size: mvw(14);
+    }
     @include breakpoint(large) {
       font-size: rem(16);
     }

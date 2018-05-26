@@ -1,0 +1,16 @@
+include ../button/button
+//-
+  +upload({
+    accept: '.jpg, .png',
+    maxSize: '10' // МБ
+  })
+
+mixin upload(data)
+  .upload
+    input(id='upload-input' type='file' accept=data.accept data-max-size=data.maxSize).upload__input.js-upload-input
+    +button({
+      tag: 'button',
+      mods: 'upload__button js-upload-button',
+      text: 'Выбрать файл'
+    })
+    .upload__info *.jpg, *.png, *.jpeg

@@ -35,10 +35,10 @@
         background-color: $pattens-blue;
         &:before {
           border-bottom-color: $pattens-blue;
-          left: svw(-5);
+          left: svw(-3);
           transform: rotate(-45deg);
           @include breakpoint(medium) {
-            left: mvw(-7);
+            left: mvw(-4);
           }
           @include breakpoint(large) {
             left: rem(-12);
@@ -52,10 +52,10 @@
         background-color: $frostee;
         &:before {
           border-bottom-color: $frostee;
-          right: rem(-5);
+          right: rem(-3);
           transform: rotate(45deg);
           @include breakpoint(medium) {
-            right: mvw(-7);
+            right: mvw(-4);
           }
           @include breakpoint(large) {
             right: rem(-12);
@@ -69,9 +69,11 @@
   }
   &__question {
     text-align: left;
-    padding: svw(10) svw(20);
+    padding: svw(15) svw(20);
     border-radius: svw(40);
     position: relative;
+    font-size: svw(16);
+    cursor: pointer;
     &:before {
       content: '';
       display: block;
@@ -80,19 +82,20 @@
       border-left: svw(10) solid transparent;
       border-right: svw(10) solid transparent;
       position: absolute;
-      top: svw(-5);
+      top: svw(-4);
     }
     @include breakpoint(medium) {
       display: inline-block;
       border-radius: mvw(40);
       padding: mvw(25) mvw(50);
+      font-size: mvw(20);
       &:before {
         content: '';
         display: block;
         border-bottom-width: mvw(20);
         border-left: mvw(10) solid transparent;
         border-right: mvw(10) solid transparent;
-        top: mvw(-5);
+        top: mvw(-3);
       }
     }
     @include breakpoint(large) {
@@ -107,6 +110,9 @@
         top: rem(-8);
       }
     }
+  }
+  &__answer {
+    display: none;
   }
   &__bottom {
     display: flex;

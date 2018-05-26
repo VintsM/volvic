@@ -1,0 +1,63 @@
+include ../b-prizes/b-prizes
+
+.modal.modal-win
+  .modal__inner
+    .modal__close.js-modal-close
+    .modal__content
+      +title({
+        tag: 'h2',
+        mods: 'title_2 title_red',
+        text: 'Поздравляем!'
+      })
+      +title({
+        tag: 'h3',
+        mods: 'title_5 modal__title',
+        text: 'Вы выиграли гарантированный приз!'
+      })
+      +hr({
+        mods: 'hr_red modal__hr'
+      })
+      .modal-win__text Подтвердите выбор:
+      form(action='/')#win-form.modal-win-form
+        +b-prizes({
+          content: [
+            {
+              id: 'prize1',
+              img: '/promo/img/prize/pandora.png',
+              imgAlt: 'Украшения PANDORA',
+              text: 'Электронный купон'
+            },
+            {
+              id: 'prize2',
+              img: '/promo/img/prize/amediateka.png',
+              imgAlt: 'Amediateka',
+              text: 'Электронный купон'
+            },
+            {
+              id: 'prize3',
+              img: '/promo/img/prize/erborian.svg',
+              imgAlt: 'Erborian',
+              text: 'Промокод на скидку'
+            },
+            {
+              id: 'prize4',
+              img: '/promo/img/prize/philips.svg',
+              imgAlt: 'Philips',
+              text: 'Промокод на скидку'
+            },
+            {
+              id: 'prize5',
+              img: '/promo/img/prize/litres.png',
+              imgAlt: 'ЛитРес',
+              text: 'Промокод на скидку'
+            }
+          ]
+        })
+        +button({
+          tag: 'button',
+          text: 'Выбрать',
+          mods: 'button_w100',
+          attrs: {
+            type: 'submit'
+          }
+        })

@@ -7,7 +7,7 @@
       a: 'Вы можете разместить работу на сайте Акции с 05 июня 2018 года до 02 июля 2018 года включительно'
     },
     {
-      q: 'Какой-то очень-очень-очень длинный вопрос от пользователя',
+      q: 'Когда я узнаю результаты еженедельного розыгрыша призов?',
       a: 'Nunc laoreet dolor ut fermentum pulvinar. Nullam consectetur, mauris placerat rhoncus molestie, diam sem dictum orci, a ultricies nisi lectus in velit.'
     },
     {
@@ -70,7 +70,8 @@
     .faq__inner
       each item in qa
         .faq__item
-          .faq__question= item.q
+          .faq__question.js-faq-question= item.q
+          .faq__answer.js-faq-answer!= item.a
     .faq__bottom
       a(href='#').faq__link Задать свой вопрос
       a(href='#').faq__link Магазины-участники
