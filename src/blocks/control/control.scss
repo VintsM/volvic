@@ -1,6 +1,11 @@
 .control {
   position: relative;
   color: $white;
+  &.error {
+    .control__check {
+      border-color: $red;
+    }
+  }
   &__label {
     display: flex;
     align-items: flex-start;
@@ -14,7 +19,7 @@
     &:checked {
       & + .control__check {
         background-color: $primary;
-        background-image: url(/img/control/ok.svg);
+        background-image: url(../img/control/ok.svg);
       }
     }
   }
@@ -61,19 +66,6 @@
       &:hover {
         text-decoration: none;
       }
-    }
-  }
-  &_required {
-    .control__text {
-      &:after {
-        content: '*';
-        color: $primary;
-      }
-    }
-  }
-  &.error {
-    .control__check {
-      border-color: $primary;
     }
   }
 }

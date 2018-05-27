@@ -175,38 +175,38 @@
             <form class="form check__form" id="check-form" action="/api/check-form" novalidate="novalidate" autocomplete="off">
               <div class="form__row">
                 <div class="form__field">
-                  <div class="form-field  form-field_required">
+                  <div class="form-field">
                     <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[name]" required=""><span class="input__placeholder">Имя</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
                 <div class="form__field">
-                  <div class="form-field  form-field_required">
+                  <div class="form-field">
                     <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[email]" required=""><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field">
-                  <div class="form-field  form-field_required">
+                  <div class="form-field">
                     <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[tel]" required=""><span class="input__placeholder">Телефон</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
                 <div class="form__field">
-                  <div class="form-field  form-field_required">
+                  <div class="form-field">
                     <div class="select  form-field__input">
                       <div class="select__main js-select-main">
                         <div class="select__placeholder js-select-placeholder">Магазин покупки</div><span class="select__main-text js-select-main-text"></span><svg class="icon icon-arrow select__icon"><use xlink:href="/img/icons.svg#icon-arrow"></use></svg></div>
                       <ul class="select__list js-select-list">
-                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 1</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 1" required=""></li>
-                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 2</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 2" required=""></li>
-                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 3</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 3" required=""></li>
+                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 1</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 1" required="required"></li>
+                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 2</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 2"></li>
+                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 3</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 3"></li>
                       </ul><span class="form-field__error"></span></div>
                   </div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field">
-                  <div class="form-field  form-field_required">
+                  <div class="form-field">
                     <div class="input input_lp form-field__input"><input class="input__field" type="text" name="CheckForm[data]" required=""><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span><span class="form-field__error"></span></div>
                   </div>
                 </div>
@@ -214,23 +214,23 @@
               <div class="form__row">
                 <div class="form__field">
                   <div class="form__upload"><span class="form__upload-text">Загрузить фото чека<br><span class="form__upload-small">*.jpg, *.png, *.jpeg</span></span>
-                    <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" accept=".jpg, .png, .jpeg" data-max-size="10"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
+                    <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" data-accept=".jpg, .png, .jpeg" data-max-size="10"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
                   </div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agree]"/><span class="control__check"></span><span class="control__text">Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a></span></label></div>
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agree]" required=""/><span class="control__check"></span><span class="control__text">Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a></span></label></div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreePers]"/><span class="control__check"></span><span class="control__text">Согласен на обработку своих персональных данных</span></label></div>
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreePers]" required=""/><span class="control__check"></span><span class="control__text">Согласен на обработку своих персональных данных</span></label></div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreeMatch]"/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreeMatch]" required=""/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
                 </div>
               </div>
               <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Зарегистрировать код</span></button></div>
@@ -249,14 +249,14 @@
             <div class="form__row form__common-error"></div>
             <div class="form__row">
               <div class="form__field">
-                <div class="form-field  form-field_required">
+                <div class="form-field">
                   <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="LoginForm[email]"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
                 </div>
               </div>
             </div>
             <div class="form__row">
               <div class="form__field">
-                <div class="form-field  form-field_required">
+                <div class="form-field">
                   <div class="input input_green form-field__input"><input class="input__field" required="" type="password" name="LoginForm[password]"><span class="input__placeholder">Пароль</span><span class="form-field__error"></span></div>
                 </div>
               </div>
@@ -278,7 +278,7 @@
           <form class="form recovery__form" action="/" id="password-recovery-form" novalidate="novalidate">
             <div class="form__row">
               <div class="form__field">
-                <div class="form-field  form-field_required">
+                <div class="form-field">
                   <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="email"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
                 </div>
               </div>
@@ -295,7 +295,7 @@
           <form class="form recovery__form" action="/" id="password-repeat-form" novalidate="novalidate">
             <div class="form__row">
               <div class="form__field">
-                <div class="form-field  form-field_required">
+                <div class="form-field">
                   <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="email"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
                 </div>
               </div>
@@ -320,9 +320,23 @@
     <div class="modal__inner">
       <div class="modal__close js-modal-close"></div>
       <div class="modal__content">
-        <h2 class="title title_2 modal__title"></h2>
+        <h2 class="title title_3 modal__title"></h2>
       </div>
       <div class="modal__text"></div>
+    </div>
+  </div>
+  <div class="modal modal-win">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_2">Поздравляем!</h2>
+        <div class="modal-win__text">Вы выиграли гарантированный приз!</div>
+        <div class="modal-win__sticker">
+          <div class="sticker">
+            <div class="sticker__text">Подписка 30 дней на ПАКЕТ «ФУТБОЛ»</div><img src="./img/sticker/match-football.png" alt="Подписка 30 дней на ПАКЕТ «ФУТБОЛ»"></div>
+        </div>
+        <div class="modal-win__button"><button class="button button_blot button_green" type="submit"><span class="button__text">Получить приз</span></button></div>
+      </div>
     </div>
   </div>
   <script src="./js/app.js"></script>

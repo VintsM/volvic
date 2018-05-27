@@ -1,0 +1,32 @@
+.sticker {
+  display: inline-block;
+  width: svw(250);
+  height: svw(250);
+  padding: svw(45) svw(20);
+  background: url(../img/prizes/sticker.png) center no-repeat;
+  background-size: contain;
+  text-align: center;
+  @include breakpoint(medium) {
+    width: mvw(290);
+    height: mvw(290);
+    padding: mvw(70) mvw(20);
+  }
+  @include breakpoint(large) {
+    width: rem(290);
+    height: rem(290);
+    padding: rem(70) rem(20);
+  }
+  &__text {
+    color: $white;
+    font-size: svw(20);
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+      margin-bottom: mvw(20);
+    }
+    @include breakpoint(large) {
+      font-size: rem(20);
+      margin-bottom: rem(20);
+    }
+  }
+}

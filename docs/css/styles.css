@@ -384,6 +384,13 @@ a:hover {
   color: #fff;
 }
 
+.control.error .control__check,
+.form-field.error .form-field__input .input__textarea,
+.form-field.error .form-field__input .select__main,
+.form-field.error .form-field__input input {
+  border-color: #e73635;
+}
+
 .control__label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -403,7 +410,7 @@ a:hover {
 
 .control__input:checked+.control__check {
   background-color: #00a634;
-  background-image: url(/img/control/ok.svg);
+  background-image: url(../img/control/ok.svg);
 }
 
 .control__check {
@@ -433,15 +440,6 @@ a:hover {
 .control__text a {
   text-decoration: underline;
   color: #fff;
-}
-
-.control_required .control__text:after {
-  content: '*';
-  color: #00a634;
-}
-
-.control.error .control__check {
-  border-color: #00a634;
 }
 
 .faq {
@@ -603,12 +601,6 @@ a:hover {
 .form-field_required .form-field__name-text:after {
   content: '*';
   color: #e73635;
-}
-
-.form-field.error .form-field__input .input__textarea,
-.form-field.error .form-field__input .select__main,
-.form-field.error .form-field__input input {
-  border-color: #e73635;
 }
 
 .header {
@@ -1134,10 +1126,22 @@ textarea.input__field {
   display: block;
 }
 
+.modal-win .modal__content {
+  text-align: center;
+}
+
 .modal-win__text {
-  font-size: 1rem;
-  line-height: 1.07;
-  margin-bottom: 20px;
+  font-size: 6.25vw;
+  margin-top: 6.25vw;
+  margin-bottom: 9.375vw;
+}
+
+.modal-win__sticker {
+  margin: 0 auto 6.25vw;
+}
+
+.modal-win__button {
+  text-align: center;
 }
 
 .modal-find-code__img {
@@ -1191,9 +1195,8 @@ textarea.input__field {
 }
 
 .modal-faq .modal__title {
-  font-size: 8.125vw;
   margin-bottom: 6.25vw;
-  color: #00a634;
+  text-align: left;
 }
 
 .modal-faq .modal__text p {
@@ -1533,6 +1536,22 @@ textarea.input__field {
   vertical-align: baseline;
 }
 
+.sticker {
+  display: inline-block;
+  width: 78.125vw;
+  height: 78.125vw;
+  padding: 14.0625vw 6.25vw;
+  text-align: center;
+  background: url(../img/prizes/sticker.png) center no-repeat;
+  background-size: contain;
+}
+
+.sticker__text {
+  font-size: 6.25vw;
+  margin-bottom: 6.25vw;
+  color: #fff;
+}
+
 .title_1 {
   font-family: 'Feast',Arial,Helvetica,sans-serif;
   font-size: 12.5vw;
@@ -1544,6 +1563,11 @@ textarea.input__field {
   font-family: 'Feast',Arial,Helvetica,sans-serif;
   font-size: 12.5vw;
   line-height: 1.1;
+  color: #00a634;
+}
+
+.title_3 {
+  font-size: 8.125vw;
   color: #00a634;
 }
 
@@ -1890,9 +1914,13 @@ textarea.input__field {
   }
 
   .modal-win__text {
-    font-size: 1.25rem;
-    line-height: 1.2;
-    margin-bottom: 30px;
+    font-size: 2.60417vw;
+    margin-top: 2.60417vw;
+    margin-bottom: 3.90625vw;
+  }
+
+  .modal-win__sticker {
+    margin-bottom: 3.90625vw;
   }
 
   .modal-find-code__container {
@@ -1916,7 +1944,6 @@ textarea.input__field {
   }
 
   .modal-faq .modal__title {
-    font-size: 3.90625vw;
     margin-bottom: 2.60417vw;
   }
 
@@ -2165,12 +2192,27 @@ textarea.input__field {
     flex: 1 1 auto;
   }
 
+  .sticker {
+    width: 37.76042vw;
+    height: 37.76042vw;
+    padding: 9.11458vw 2.60417vw;
+  }
+
+  .sticker__text {
+    font-size: 2.60417vw;
+    margin-bottom: 2.60417vw;
+  }
+
   .title_1 {
     font-size: 11.19792vw;
   }
 
   .title_2 {
     font-size: 7.8125vw;
+  }
+
+  .title_3 {
+    font-size: 3.90625vw;
   }
 
   .top {
@@ -2477,7 +2519,7 @@ textarea.input__field {
   }
 
   .modal__text {
-    margin-bottom: 3.75rem;
+    font-size: 1.25rem;
   }
 
   .modal-message .modal__title {
@@ -2513,8 +2555,17 @@ textarea.input__field {
     max-width: 34.375rem;
   }
 
+  .modal-win__text {
+    font-size: 1.875rem;
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .modal-win__sticker {
+    margin-bottom: 2.5rem;
+  }
+
   .modal-faq .modal__title {
-    font-size: 2.125rem;
     margin-bottom: 1.5625rem;
   }
 
@@ -2680,12 +2731,27 @@ textarea.input__field {
     margin: 0 auto 2.8125rem;
   }
 
+  .sticker {
+    width: 18.125rem;
+    height: 18.125rem;
+    padding: 4.375rem 1.25rem;
+  }
+
+  .sticker__text {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
   .title_1 {
     font-size: 6.25rem;
   }
 
   .title_2 {
     font-size: 5rem;
+  }
+
+  .title_3 {
+    font-size: 2.125rem;
   }
 
   .top {

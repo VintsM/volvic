@@ -8,7 +8,7 @@
           upload.modalMessage = $('.modal-message');
           upload.modalMessageInstance = upload.modalMessage.data('modal');
           upload.maxSize = upload.input.data('max-size') * 1000000;
-          upload.ext = upload.input.attr('accept');
+          upload.ext = upload.input.data('accept');
           upload.sendButton = $('.js-upload-button-send');
           upload.file = undefined;
 
@@ -23,7 +23,7 @@
           upload.checkFile(upload.file);
         };
         reader.readAsDataURL(upload.file);
-        $(this).prop({value: ''});
+        //$(this).prop({value: ''});
       });
 
       upload.sendButton.on('click', function (e) {

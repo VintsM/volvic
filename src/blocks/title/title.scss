@@ -23,4 +23,14 @@
       font-size: rem(80);
     }
   }
+  &_3 {
+    color: $primary;
+    font-size: svw(26);
+    @include breakpoint(medium) {
+      font-size: mvw(30);
+    }
+    @include breakpoint(large) {
+      font-size: rem(34);
+    }
+  }
 }

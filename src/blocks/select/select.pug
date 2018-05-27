@@ -22,5 +22,5 @@ mixin select(data)
       each el, index in data.list
         li.select__item.js-select-item
           span.select__item-text.js-select-text= el
-          input.select__item-input.js-select-input(type='radio' name=data.name value=el)&attributes(data.attrs)
+          input.select__item-input.js-select-input(type='radio' name=data.name value=el required=(data.required && index == 0 ? 'required' : false))&attributes(data.attrs)
     block

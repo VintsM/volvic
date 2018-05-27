@@ -17,10 +17,6 @@ mixin form-field(data)
     var type;
     (data.input != undefined) ? type = 'input' : '';
     (data.select != undefined) ? type = 'select' : '';
-    if (data[type] != undefined && (data[type].attrs.required == '' || data[type].attrs.required == 'true')) {
-      data.mods = data.mods || ''
-      data.mods += ' form-field_required'
-    }
   .form-field(class=data.mods)
     if data.input != undefined
       - data.input.mods = data.input.mods || ''

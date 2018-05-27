@@ -129,7 +129,7 @@
       font-size: mvw(20);
     }
     @include breakpoint(large) {
-      margin-bottom: rem(60);
+      font-size: rem(20);
     }
   }
 }
@@ -261,15 +261,37 @@
 }
 
 .modal-win {
-  &__text {
-    font-size: rem(16);
-    line-height: 1.07;
-    margin-bottom: 20px;
-    @include breakpoint(medium) {
-      font-size: rem(20);
-      line-height: 1.2;
-      margin-bottom: 30px;
+  .modal {
+    &__content {
+      text-align: center;
     }
+  }
+  &__text {
+    font-size: svw(20);
+    margin-top: svw(20);
+    margin-bottom: svw(30);
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+      margin-top: mvw(20);
+      margin-bottom: mvw(30);
+    }
+    @include breakpoint(large) {
+      font-size: rem(30);
+      margin-top: rem(20);
+      margin-bottom: rem(40);
+    }
+  }
+  &__sticker {
+    margin: 0 auto svw(20);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(30);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(40);
+    }
+  }
+  &__button {
+    text-align: center;
   }
 }
 
@@ -352,15 +374,12 @@
 .modal-faq {
   .modal {
     &__title {
-      color: $primary;
-      font-size: svw(26);
+      text-align: left;
       margin-bottom: svw(20);
       @include breakpoint(medium) {
-        font-size: mvw(30);
         margin-bottom: mvw(20);
       }
       @include breakpoint(large) {
-        font-size: rem(34);
         margin-bottom: rem(25);
       }
     }

@@ -9,17 +9,18 @@ import 'jquery-validation/dist/additional-methods.js';
         'CheckForm[email]': {
           email: true,
           required: true
-        }
+        },
+
       },
       submitHandler: function submitHandler(form) {
+        console.log(1);
         $.ajax({
           url: $(form).attr('action'),
           method: 'POST',
           data: $('#check-form').serialize(),
           success: function (resp) {
             if (!$.isEmptyObject(resp)) {
-
-
+              // TODO
             } else {
               window.location.reload();
             }

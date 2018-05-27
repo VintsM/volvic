@@ -13248,14 +13248,18 @@ require('jquery-validation/dist/additional-methods.js');
           email: true,
           required: true
         }
+
       },
       submitHandler: function submitHandler(form) {
+        console.log(1);
         $.ajax({
           url: $(form).attr('action'),
           method: 'POST',
           data: $('#check-form').serialize(),
           success: function success(resp) {
-            if (!$.isEmptyObject(resp)) {} else {
+            if (!$.isEmptyObject(resp)) {
+              // TODO
+            } else {
               window.location.reload();
             }
           }
@@ -13683,7 +13687,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       upload.modalMessage = $('.modal-message');
       upload.modalMessageInstance = upload.modalMessage.data('modal');
       upload.maxSize = upload.input.data('max-size') * 1000000;
-      upload.ext = upload.input.attr('accept');
+      upload.ext = upload.input.data('accept');
       upload.sendButton = $('.js-upload-button-send');
       upload.file = undefined;
 
@@ -13698,7 +13702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           upload.checkFile(upload.file);
         };
         reader.readAsDataURL(upload.file);
-        $(this).prop({ value: '' });
+        //$(this).prop({value: ''});
       });
 
       upload.sendButton.on('click', function (e) {

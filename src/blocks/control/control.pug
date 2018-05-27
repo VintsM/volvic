@@ -9,11 +9,6 @@
   })
 
 mixin control(data)
-  -
-    if (data.attrs.required == '' || data.attrs.required == 'true') {
-      data.mods = data.mods || ''
-      data.mods += ' control_required'
-    }
   .control(class=data.mods)
     label.control__label
       input(type='checkbox')&attributes(data.attrs).control__input
