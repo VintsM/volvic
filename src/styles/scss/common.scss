@@ -18,3 +18,11 @@ html.locked {
 .grey {
   color: $grey;
 }
+
+a {
+  color: $primary;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}

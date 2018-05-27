@@ -22,12 +22,17 @@
     display: block;
   }
   p {
-    font-size: rem(20);
+    font-size: svw(20);
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      font-size: rem(20);
+    }
   }
   &__inner {
     position: relative;
     width: 100%;
-    max-width: rem(1060);
     box-sizing: border-box;
     padding: svw(50) svw(15) svw(30);
     display: inline-block;
@@ -36,11 +41,12 @@
     background-color: $white;
     text-align: left;
     @include breakpoint(medium) {
-      padding: mvw(50) mvw(50) mvw(40);
+      padding: mvw(50) mvw(30);
       font-size: mvw(18);
     }
     @include breakpoint(large) {
-      padding: rem(60) rem(70);
+      max-width: rem(1060);
+      padding: rem(60) rem(40);
       font-size: rem(18);
     }
   }
@@ -104,20 +110,26 @@
     }
   }
   &__title {
-    margin-bottom: 20px;
-  }
-  &__hr {
-    margin-bottom: 20px;
+    margin-bottom: svw(30);
+    text-align: center;
+    @include breakpoint(medium) {
+      margin-bottom: mvw(50);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(60);
+    }
   }
   &__content {
 
   }
   &__text {
-    font-size: rem(15);
-    line-height: 1.07;
+    font-size: svw(16);
+    line-height: 1.2;
     @include breakpoint(medium) {
-      font-size: rem(20);
-      line-height: 1.2;
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(60);
     }
   }
 }
@@ -128,6 +140,22 @@
       max-width: 400px;
       text-align: center;
     }
+    &__title {
+      color: $primary;
+      font-size: svw(26);
+      margin-bottom: svw(20);
+      @include breakpoint(medium) {
+        font-size: mvw(30);
+        margin-bottom: mvw(20);
+      }
+      @include breakpoint(large) {
+        font-size: rem(34);
+        margin-bottom: rem(25);
+      }
+    }
+    &__text {
+      word-break: break-all;
+    }
   }
 }
 
@@ -137,39 +165,44 @@
       display: none;
     }
   }
-  &__social {
-    margin-bottom: 20px;
-    &_big {
-      margin-bottom: 35px;
-    }
-  }
-  &__link {
-
-  }
-  &__hr {
-    margin-bottom: 20px;
-  }
   &__row {
-    margin-bottom: 20px;
-  }
-  &__bottom {
-    border-top: 2px dashed $black;
-    margin-top: 30px;
-    padding-top: 30px;
-    &_big {
-      margin-top: 30px;
-      padding-top: 30px;
+    text-align: center;
+    font-size: svw(16);
+    @include breakpoint(medium) {
+      font-size: mvw(16);
+    }
+    @include breakpoint(large) {
+      font-size: rem(16);
+    }
+    &:not(:last-child) {
+      margin-bottom: svw(20);
       @include breakpoint(medium) {
-        margin-top: 40px;
-        padding-top: 40px;
-        padding-bottom: 20px;
+        margin-bottom: mvw(20);
+      }
+      @include breakpoint(large) {
+        margin-bottom: rem(20);
       }
     }
   }
-  &__bottom-text {
-    font-size: rem-calc(20);
-    font-weight: 400;
-    line-height: 1.2;
+  &__text {
+    text-align: center;
+    font-size: svw(16);
+    line-height: 1.5;
+    @include breakpoint(medium) {
+      font-size: mvw(18);
+    }
+    @include breakpoint(large) {
+      font-size: rem(20);
+    }
+  }
+  &__bottom {
+    margin-top: svw(20);
+    @include breakpoint(medium) {
+      margin-top: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-top: rem(20);
+    }
   }
   &.error {
     .modal__hr {
@@ -179,7 +212,12 @@
   &[data-state='login'] {
     .modal {
       &__inner {
-        max-width: 375px;
+        @include breakpoint(medium) {
+          max-width: mvw(480);
+        }
+        @include breakpoint(large) {
+          max-width: rem(480);
+        }
       }
       &__content {
         &_login {
@@ -188,23 +226,25 @@
       }
     }
   }
-  &[data-state='registration'] {
-    .modal {
-      &__inner {
-        max-width: 760px;
-      }
-      &__content {
-        &_registration {
-          display: block;
-        }
-      }
-    }
-  }
   &[data-state='recovery'] {
     .modal {
+      &__inner {
+        @include breakpoint(medium) {
+          max-width: mvw(840);
+        }
+        @include breakpoint(large) {
+          max-width: rem(840);
+        }
+      }
       &__content {
         &_recovery {
           display: block;
+          max-width: mvw(550);
+          text-align: center;
+          margin: 0 auto;
+          @include breakpoint(large) {
+            max-width: rem(550);
+          }
         }
       }
     }
@@ -222,7 +262,7 @@
 
 .modal-win {
   &__text {
-    font-size: rem(15);
+    font-size: rem(16);
     line-height: 1.07;
     margin-bottom: 20px;
     @include breakpoint(medium) {

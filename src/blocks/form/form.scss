@@ -66,6 +66,7 @@
     color: $white;
     font-size: svw(18);
     @include breakpoint(medium) {
+      margin-bottom: 0;
       margin-right: mvw(25);
       font-size: mvw(20);
     }
@@ -74,14 +75,23 @@
       font-size: rem(24);
     }
   }
-  &__controls {
-    text-align: center;
-    margin-top: svw(20);
+  &__upload-small {
+    font-size: svw(14);
     @include breakpoint(medium) {
-      margin-top: mvw(20);
+      font-size: mvw(16);
     }
     @include breakpoint(large) {
-      margin-top: rem(20);
+      font-size: rem(18);
+    }
+  }
+  &__controls {
+    text-align: center;
+    margin-top: svw(30);
+    @include breakpoint(medium) {
+      margin-top: mvw(30);
+    }
+    @include breakpoint(large) {
+      margin-top: rem(30);
     }
   }
 }

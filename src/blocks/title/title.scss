@@ -2,13 +2,25 @@
   &_1 {
     font-family: $alt-font;
     color: $white;
-    font-size: rem(40);
+    font-size: svw(40);
     line-height: 1.1;
     @include breakpoint(medium) {
-      font-size: rem(86);
+      font-size: mvw(86);
     }
     @include breakpoint(large) {
       font-size: rem(100);
+    }
+  }
+  &_2 {
+    font-family: $alt-font;
+    color: $primary;
+    font-size: svw(40);
+    line-height: 1.1;
+    @include breakpoint(medium) {
+      font-size: mvw(60);
+    }
+    @include breakpoint(large) {
+      font-size: rem(80);
     }
   }
 }

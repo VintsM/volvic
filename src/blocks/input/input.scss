@@ -55,6 +55,17 @@ textarea.input__field {
       }
     }
   }
+  &_green {
+    .input {
+      &__placeholder {
+        color: $primary;
+      }
+      &__field {
+        color: $black;
+        border-color: $primary;
+      }
+    }
+  }
   &__textarea {
     overflow: hidden;
     border-bottom-width: svw(4);
@@ -95,9 +106,10 @@ textarea.input__field {
     &:focus {
       outline: 0;
     }
+    &[aria-invalid='true'] ~ .input__placeholder,
     &:focus ~ .input__placeholder,
     &:valid ~ .input__placeholder {
-      top: svw(-20);
+      top: svw(-15);
       font-size: rem(16);
       @include breakpoint(medium) {
         top: mvw(-20);

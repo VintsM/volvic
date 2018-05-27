@@ -1,4 +1,5 @@
 include ../upload/upload
+include ../form-field/form-field
 
 .check
   .l-page__container
@@ -7,65 +8,77 @@ include ../upload/upload
       text: 'Регистрация чека',
       mods: 'title_1 check__title'
     })
-    form#check.form.check__form
+    form#check-form.form.check__form(action='/api/check-form' novalidate='novalidate' autocomplete='off')
       .form__row
         .form__field
-          +input({
-            tag: 'input',
-            placeholder: 'Имя',
-            attrs: {
-              type: 'text',
-              name: 'name',
-              required: ''
+          +form-field({
+            input: {
+              tag: 'input',
+              placeholder: 'Имя',
+              attrs: {
+                type: 'text',
+                name: 'CheckForm[name]',
+                required: ''
+              }
             }
           })
         .form__field
-          +input({
-            tag: 'input',
-            placeholder: 'Email',
-            attrs: {
-              type: 'text',
-              name: 'email',
-              required: ''
-            }
-          })
-      .form__row
-        .form__field
-          +input({
-            tag: 'input',
-            placeholder: 'Телефон',
-            attrs: {
-              type: 'text',
-              name: 'tel',
-              required: ''
-            }
-          })
-        .form__field
-          +select({
-            mods: '',
-            name: 'shop',
-            placeholder: 'Магазин покупки',
-            list: ['Магазин 1', 'Магазин 2', 'Магазин 3'],
-            attrs: {
-              required: ''
+          +form-field({
+            input: {
+              tag: 'input',
+              placeholder: 'Email',
+              attrs: {
+                type: 'text',
+                name: 'CheckForm[email]',
+                required: ''
+              }
             }
           })
       .form__row
         .form__field
-          +input({
-            tag: 'input',
-            mods: 'input_lp',
-            placeholder: 'Дата и номер покупки <span class="grey">(данные из чека)</span>',
-            attrs: {
-              type: 'text',
-              name: 'data',
-              required: ''
+          +form-field({
+            input: {
+              tag: 'input',
+              placeholder: 'Телефон',
+              attrs: {
+                type: 'text',
+                name: 'CheckForm[tel]',
+                required: ''
+              }
+            }
+          })
+        .form__field
+          +form-field({
+            select: {
+              mods: '',
+              name: 'CheckForm[shop]',
+              placeholder: 'Магазин покупки',
+              list: ['Магазин 1', 'Магазин 2', 'Магазин 3'],
+              attrs: {
+                required: ''
+              }
+            }
+          })
+      .form__row
+        .form__field
+          +form-field({
+            input: {
+              tag: 'input',
+              mods: 'input_lp',
+              placeholder: 'Дата и номер покупки <span class="grey">(данные из чека)</span>',
+              attrs: {
+                type: 'text',
+                name: 'CheckForm[data]',
+                required: ''
+              }
             }
           })
       .form__row
         .form__field
           .form__upload
             span.form__upload-text Загрузить фото чека
+              br
+              span.form__upload-small *.jpg, *.png, *.jpeg
             +upload({
               accept: '.jpg, .png, .jpeg',
               maxSize: '10'
@@ -77,17 +90,17 @@ include ../upload/upload
             mods: '',
             attrs: {
               type: 'checkbox',
-              name: 'agree'
+              name: 'CheckForm[agree]'
             }
           })
       .form__row
         .form__field.form__field_small-margin
           +control({
-            text: 'Согласен на обработку своих персональных данных ',
+            text: 'Согласен на обработку своих персональных данных',
             mods: '',
             attrs: {
               type: 'checkbox',
-              name: 'agreePers'
+              name: 'CheckForm[agreePers]'
             }
           })
       .form__row
@@ -97,7 +110,7 @@ include ../upload/upload
             mods: '',
             attrs: {
               type: 'checkbox',
-              name: 'agreeMatch'
+              name: 'CheckForm[agreeMatch]'
             }
           })
       .form__controls

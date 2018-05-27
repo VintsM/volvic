@@ -18,7 +18,7 @@
             <div class="header__burger">
               <div class="header__burger-body"><span></span><span></span><span></span></div>
               <div class="header__mobile-close"></div>
-            </div><a class="header__logo" href="/"><img src="./img/logo.png" alt="logo"></a>
+            </div><a class="header__logo" href="/"><img class="header__logo-img" src="./img/logo.png" alt="Volvic logo"></a>
             <nav class="header__nav"><a class="header__nav-item" href="#rules">Правила</a><a class="header__nav-item" href="/">О бренде</a><a class="header__nav-item" href="#prizes">Призы</a><a class="header__nav-item" href="#faq">FAQ</a><a class="header__nav-item" href="#check">Регистрация чека</a>
               <a
                 class="header__nav-item" href="#winners">Победители</a>
@@ -172,100 +172,138 @@
         <div class="check">
           <div class="l-page__container">
             <h2 class="title title_1 check__title">Регистрация чека</h2>
-            <form class="form check__form" id="check">
+            <form class="form check__form" id="check-form" action="/api/check-form" novalidate="novalidate" autocomplete="off">
               <div class="form__row">
                 <div class="form__field">
-                  <div class="input"><input class="input__field" type="text" name="name" required="" /><span class="input__placeholder">Имя</span></div>
+                  <div class="form-field  form-field_required">
+                    <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[name]" required=""><span class="input__placeholder">Имя</span><span class="form-field__error"></span></div>
+                  </div>
                 </div>
                 <div class="form__field">
-                  <div class="input"><input class="input__field" type="text" name="email" required="" /><span class="input__placeholder">Email</span></div>
-                </div>
-              </div>
-              <div class="form__row">
-                <div class="form__field">
-                  <div class="input"><input class="input__field" type="text" name="tel" required="" /><span class="input__placeholder">Телефон</span></div>
-                </div>
-                <div class="form__field">
-                  <div class="select">
-                    <div class="select__main js-select-main">
-                      <div class="select__placeholder js-select-placeholder">Магазин покупки</div><span class="select__main-text js-select-main-text"></span><svg class="icon icon-arrow select__icon"><use xlink:href="/img/icons.svg#icon-arrow"></use></svg></div>
-                    <ul class="select__list js-select-list">
-                      <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 1</span><input class="select__item-input js-select-input" type="radio" name="shop" value="Магазин 1" required="" /></li>
-                      <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 2</span><input class="select__item-input js-select-input" type="radio" name="shop" value="Магазин 2" required="" /></li>
-                      <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 3</span><input class="select__item-input js-select-input" type="radio" name="shop" value="Магазин 3" required="" /></li>
-                    </ul>
+                  <div class="form-field  form-field_required">
+                    <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[email]" required=""><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field">
-                  <div class="input input_lp"><input class="input__field" type="text" name="data" required="" /><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span>
+                  <div class="form-field  form-field_required">
+                    <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[tel]" required=""><span class="input__placeholder">Телефон</span><span class="form-field__error"></span></div>
+                  </div>
+                </div>
+                <div class="form__field">
+                  <div class="form-field  form-field_required">
+                    <div class="select  form-field__input">
+                      <div class="select__main js-select-main">
+                        <div class="select__placeholder js-select-placeholder">Магазин покупки</div><span class="select__main-text js-select-main-text"></span><svg class="icon icon-arrow select__icon"><use xlink:href="/img/icons.svg#icon-arrow"></use></svg></div>
+                      <ul class="select__list js-select-list">
+                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 1</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 1" required=""></li>
+                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 2</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 2" required=""></li>
+                        <li class="select__item js-select-item"><span class="select__item-text js-select-text">Магазин 3</span><input class="select__item-input js-select-input" type="radio" name="CheckForm[shop]" value="Магазин 3" required=""></li>
+                      </ul><span class="form-field__error"></span></div>
                   </div>
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__field">
-                  <div class="form__upload"><span class="form__upload-text">Загрузить фото чека</span>
-                    <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" accept=".jpg, .png, .jpeg" data-max-size="10"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button>
-                      <div
-                        class="upload__info">*.jpg, *.png, *.jpeg</div>
+                  <div class="form-field  form-field_required">
+                    <div class="input input_lp form-field__input"><input class="input__field" type="text" name="CheckForm[data]" required=""><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span><span class="form-field__error"></span></div>
                   </div>
                 </div>
               </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <div class="form__upload"><span class="form__upload-text">Загрузить фото чека<br><span class="form__upload-small">*.jpg, *.png, *.jpeg</span></span>
+                    <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" accept=".jpg, .png, .jpeg" data-max-size="10"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field form__field_small-margin">
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agree]"/><span class="control__check"></span><span class="control__text">Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a></span></label></div>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field form__field_small-margin">
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreePers]"/><span class="control__check"></span><span class="control__text">Согласен на обработку своих персональных данных</span></label></div>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field form__field_small-margin">
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreeMatch]"/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
+                </div>
+              </div>
+              <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Зарегистрировать код</span></button></div>
+            </form>
           </div>
-          <div class="form__row">
-            <div class="form__field form__field_small-margin">
-              <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agree"/><span class="control__check"></span><span class="control__text">Я подтверждаю, что ознакомлен и согласен с <a href="#" target="_blank">Правилами Акции</a></span></label></div>
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field form__field_small-margin">
-              <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agreePers"/><span class="control__check"></span><span class="control__text">Согласен на обработку своих персональных данных </span></label></div>
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field form__field_small-margin">
-              <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="agreeMatch"/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
-            </div>
-          </div>
-          <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Зарегистрировать код</span></button></div>
-          </form>
-        </div>
-      </div><a id="winners"></a></div>
+        </div><a id="winners"></a></div>
+    </div>
   </div>
-  </div>
-  <!--include ../recovery/recovery-->
   <div class="modal modal-login" data-state="login">
     <div class="modal__inner">
       <div class="modal__close js-modal-close"></div>
       <div class="modal__content modal__content_login">
         <h2 class="title title_2 modal__title">Вход</h2>
-        <!--include ../login/login-->
+        <div class="login">
+          <form class="form login__form" action="/" id="login-form">
+            <div class="form__row form__common-error"></div>
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field  form-field_required">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="LoginForm[email]"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field  form-field_required">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="password" name="LoginForm[password]"><span class="input__placeholder">Пароль</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-login__text login__text">Для входа в личный кабинет необходимо <a class="js-modal-close" href="#check">зарегистрировать чек</a></div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Войти</span></button></div>
+          </form>
+        </div>
         <div class="modal-login__bottom">
+          <div class="modal-login__row"><a class="js-login-state-toggle" href="#" data-state="recovery">Забыл пароль</a></div>
           <div class="modal-login__row">
-            <div class="modal-login__bottom-text">Нет аккаунта?</div><a class="modal-login__link js-login-state-toggle" href="#" data-state="registration">Зарегистрировать</a></div>
-          <div class="modal-login__row">
-            <div class="modal-login__bottom-text">Не можете найти письмо?</div><a class="modal-login__link js-login-state-toggle" href="#" data-state="repeat">Отправить письмо с подтверждением регистрации еще раз.</a></div>
+            <div class="modal-login__bottom-text">Не можете найти письмо?</div><a class="js-login-state-toggle" href="#" data-state="repeat">Отправить письмо с подтверждением регистрации еще раз.</a></div>
         </div>
       </div>
-      <div class="modal__content modal__content_registration">
-        <h2 class="title title_2 modal__title">Регистрация</h2>
-        <!--include ../registration/registration-->
-        <div class="modal-login__bottom modal-login__bottom_big"><span class="modal-login__bottom-text">Есть аккаунт?</span> <a class="modal-login__link js-login-state-toggle" href="#" data-state="login">Войти</a></div>
-      </div>
       <div class="modal__content modal__content_recovery">
-        <!--+recovery({-->
-        <!--  title: 'Восстановление пароля',-->
-        <!--  text:'Для восстановления пароля введите адрес электронной почты, указанный при регистрации. <br>Не пришло письмо? <a href="#" class="recovery__link js-login-state-toggle" data-state="repeat">Отправить повторно.</a>',-->
-        <!--  formId: 'password-recovery-form'-->
-        <!--})-->
+        <div class="recovery">
+          <h2 class="title title_2 modal__title">Восстановление пароля</h2>
+          <div class="modal-login__text recovery__text">Для восстановления пароля введите адрес электронной почты, указанный при регистрации.</div>
+          <form class="form recovery__form" action="/" id="password-recovery-form" novalidate="novalidate">
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field  form-field_required">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="email"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-login__row recovery__bottom-text"><a class="recovery__link js-login-state-toggle" href="#" data-state="repeat">Отправить повторно</a></div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Войти</span></button></div>
+          </form>
+        </div>
       </div>
       <div class="modal__content modal__content_repeat">
-        <!--+recovery({-->
-        <!--  title: 'Повторная отправка письма с подтверждением',-->
-        <!--  text: 'Для повторной отправки письма с подтверждением, введите адрес электронной почты, указанный при регистрации.',-->
-        <!--  formId: 'password-repeat-form'-->
-        <!--})-->
+        <div class="recovery">
+          <h2 class="title title_2 modal__title">Повторная отправка письма с подтверждением</h2>
+          <div class="modal-login__text recovery__text">Для повторной отправки письма с подтверждением, введите адрес электронной почты, указанный при регистрации.</div>
+          <form class="form recovery__form" action="/" id="password-repeat-form" novalidate="novalidate">
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field  form-field_required">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="email"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-login__row recovery__bottom-text"><a class="recovery__link js-login-state-toggle" href="#" data-state="repeat">Отправить повторно</a></div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Войти</span></button></div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

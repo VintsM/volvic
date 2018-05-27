@@ -1,0 +1,24 @@
+.recovery {
+  &__form,
+  &__text {
+    margin-left: auto;
+    margin-right: auto;
+    @include breakpoint(medium) {
+      max-width: mvw(400);
+    }
+    @include breakpoint(large) {
+      max-width: rem(400);
+    }
+  }
+  &__text {
+    margin-bottom: svw(30);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(40);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(50);
+    }
+  }
+  &__bottom-text {
+  }
+}

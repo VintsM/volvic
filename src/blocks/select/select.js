@@ -25,7 +25,7 @@
     listItem.on('click', function (e) {
       e.stopPropagation();
       var text = $(this).find('.js-select-text').text();
-      placeholder.hide();
+      placeholder.addClass('select__placeholder_top');
       mainText.text(text);
       select.close();
       list.find('.js-select-input').attr('checked', false);

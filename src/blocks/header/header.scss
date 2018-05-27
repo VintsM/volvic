@@ -28,19 +28,24 @@
       height: rem(30);
       margin-right: rem(35);
     }
-    img {
-      max-height: 100%;
-      width: svw(60);
-      @include breakpoint(medium) {
-        width: mvw(90);
-      }
-      @include breakpoint(large) {
-        max-height: none;
-        position: absolute;
-        width: rem(185);
-        height: rem(134);
-        top: 0;
-        left: 0;
+  }
+  &__logo-img {
+    max-height: 100%;
+    width: svw(60);
+    @include breakpoint(medium) {
+      width: mvw(90);
+    }
+    @include breakpoint(large) {
+      max-height: none;
+      position: absolute;
+      width: rem(185);
+      height: rem(134);
+      top: rem(-15);
+      left: 0;
+      transition: .3s ease;
+      .is-sticky & {
+        width: rem(100);
+        height: rem(73);
       }
     }
   }
@@ -59,6 +64,7 @@
     line-height: 1.1;
     padding: rem(5);
     color: $white;
+    text-decoration: none;
     &:not(:last-child) {
       margin-right: rem(45);
     }
@@ -66,6 +72,7 @@
     &:hover,
     &:focus {
       color: $primary;
+      text-decoration: none;
     }
   }
   &__login {
@@ -77,6 +84,7 @@
     line-height: 1.1;
     padding: svw($small-container-padding);
     color: $white;
+    text-decoration: none;
     @include breakpoint(medium) {
       font-size: mvw(20);
       padding: mvw($medium-container-padding);
@@ -111,7 +119,7 @@
       font-size: mvw(16);
     }
     @include breakpoint(large) {
-      font-size: rem(16);
+      font-size: rem(20);
     }
   }
   &__burger {

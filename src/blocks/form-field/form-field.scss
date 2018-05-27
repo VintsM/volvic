@@ -1,0 +1,51 @@
+.form-field {
+  position: relative;
+  text-align: left;
+  &__error {
+    display: block;
+    color: $red;
+    font-size: svw(14);
+    @include breakpoint(medium) {
+      font-size: mvw(16);
+    }
+    @include breakpoint(large) {
+      font-size: rem(16);
+    }
+    .error {
+      display: block;
+      color: $red;
+      margin-top: svw(15);
+      @include breakpoint(medium) {
+        margin-top: mvw(15);
+      }
+      @include breakpoint(large) {
+        margin-top: rem(15);
+      }
+      &:before {
+        content: '* ';
+      }
+    }
+  }
+  &__input {
+    position: relative;
+  }
+  &_required {
+    .form-field__name-text {
+      &:after {
+        content: '*';
+        color: $red;
+      }
+    }
+  }
+  &.error {
+    .form-field {
+      &__input {
+        input,
+        .input__textarea,
+        .select__main {
+          border-color: $red;
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,42 @@
 .select {
   position: relative;
+  &.active {
+    .select {
+      &__main {
+        z-index: 20;
+      }
+      &__icon {
+        transform: rotate(180deg);
+      }
+      &__list {
+        z-index: 10;
+      }
+    }
+  }
+  &.active .select__placeholder,
+  &__placeholder.select__placeholder_top {
+    top: svw(-15);
+    font-size: rem(16);
+    @include breakpoint(medium) {
+      top: mvw(-20);
+    }
+    @include breakpoint(large) {
+      top: rem(-20);
+    }
+  }
   &__placeholder {
+    position: absolute;
     font-size: svw(24);
     color: $white;
+    top: svw(10);
+    transition: .3s ease;
     @include breakpoint(medium) {
       font-size: mvw(24);
+      top: mvw(10);
     }
     @include breakpoint(large) {
       font-size: rem(24);
+      top: rem(10);
     }
   }
   &__main {
@@ -124,19 +153,5 @@
     width: 1px;
     height: 1px;
     opacity: 0;
-  }
-  &.active {
-    .select {
-      &__main {
-        border-bottom: 0;
-        z-index: 20;
-      }
-      &__icon {
-        transform: rotate(180deg);
-      }
-      &__list {
-        z-index: 10;
-      }
-    }
   }
 }

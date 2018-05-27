@@ -133,8 +133,10 @@
     display: inline-block;
     color: $white;
     border-bottom: svw(1px) dashed $white;
+    text-decoration: none;
     &:hover {
       border-bottom-color: transparent;
+      text-decoration: none;
     }
     &:not(:last-child) {
       margin-bottom: svw(15);

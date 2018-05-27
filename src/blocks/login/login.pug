@@ -1,0 +1,43 @@
+.login
+  form(action='/')#login-form.form.login__form
+    .form__row.form__common-error
+    .form__row
+      .form__field
+        +form-field({
+          input: {
+            tag: 'input',
+            mods: 'input_green',
+            placeholder: 'Email',
+            attrs: {
+              required: '',
+              type: 'email',
+              name: 'LoginForm[email]'
+            }
+          }
+        })
+    .form__row
+      .form__field
+        +form-field({
+          input: {
+            tag: 'input',
+            mods: 'input_green',
+            placeholder: 'Пароль',
+            attrs: {
+              required: '',
+              type: 'password',
+              name: 'LoginForm[password]'
+            }
+          }
+        })
+    .modal-login__text.login__text Для входа в личный кабинет необходимо
+      =' '
+      a(href='#check').js-modal-close зарегистрировать чек
+    .form__controls
+      +button({
+        tag: 'button',
+        mods: 'button_blot button_green',
+        text: 'Войти',
+        attrs: {
+          type: 'submit'
+        }
+      })

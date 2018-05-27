@@ -1,0 +1,34 @@
+mixin recovery(data)
+  .recovery
+    +title({
+      tag: 'h2',
+      mods: 'title_2 modal__title',
+      text: data.title
+    })
+    .modal-login__text.recovery__text!= data.text
+    form(action='/' id=data.formId novalidate='novalidate').form.recovery__form
+      .form__row
+        .form__field
+          +form-field({
+            input: {
+              tag: 'input',
+              placeholder: 'Email',
+              mods: 'input_green',
+              attrs: {
+                required: '',
+                type: 'email',
+                name: 'email'
+              }
+            }
+          })
+      .modal-login__row.recovery__bottom-text
+        a(href='#' class='recovery__link js-login-state-toggle' data-state='repeat') Отправить повторно
+      .form__controls
+        +button({
+          tag: 'button',
+          mods: 'button_blot button_green',
+          text: 'Войти',
+          attrs: {
+            type: 'submit'
+          }
+        })

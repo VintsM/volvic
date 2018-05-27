@@ -1,0 +1,23 @@
+.login {
+  &__form {
+    &.error {
+      .form__error {
+        display: block;
+      }
+    }
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__text {
+    margin-top: svw(20);
+    @include breakpoint(medium) {
+      margin-top: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-top: rem(20);
+    }
+  }
+}
