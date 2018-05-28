@@ -88,19 +88,19 @@ textarea.input__field {
     border-bottom-style: solid;
     border-bottom-color: $white;
     background-color: transparent;
-    padding: svw(12) svw(20);
+    padding: svw(12) svw(20) svw(12) 0;
     transition: $transition;
     font-size: svw(18);
     -webkit-appearance: none;
     color: $white;
     @include breakpoint(medium) {
       border-width: mvw(4);
-      padding: mvw(12) mvw(20);
+      padding: mvw(12) mvw(20) mvw(12) 0;
       font-size: mvw(20);
     }
     @include breakpoint(large) {
       border-width: rem(4);
-      padding: rem(12px) rem(20);
+      padding: rem(12) rem(20) rem(12) 0;
       font-size: rem(20);
     }
     &:focus {

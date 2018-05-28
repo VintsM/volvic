@@ -31,6 +31,7 @@
       list.find('.js-select-input').attr('checked', false);
       $(this).find('.js-select-input').attr('checked', true);
       elem.trigger('select:select');
+      list.find('.js-select-input').valid();
     });
     $(document).on('click', function (e) {
       if ($(e.target).closest(main).length == 0) select.close();

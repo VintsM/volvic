@@ -23,7 +23,7 @@
           upload.checkFile(upload.file);
         };
         reader.readAsDataURL(upload.file);
-        //$(this).prop({value: ''});
+        $(this).valid();
       });
 
       upload.sendButton.on('click', function (e) {

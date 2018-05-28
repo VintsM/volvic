@@ -188,7 +188,7 @@
               <div class="form__row">
                 <div class="form__field">
                   <div class="form-field">
-                    <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[tel]" required=""><span class="input__placeholder">Телефон</span><span class="form-field__error"></span></div>
+                    <div class="input  form-field__input"><input class="input__field" data-tel="true" type="text" name="CheckForm[tel]" required=""><span class="input__placeholder">Телефон</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
                 <div class="form__field">
@@ -213,8 +213,10 @@
               </div>
               <div class="form__row">
                 <div class="form__field">
-                  <div class="form__upload"><span class="form__upload-text">Загрузить фото чека<br><span class="form__upload-small">*.jpg, *.png, *.jpeg</span></span>
-                    <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" data-accept=".jpg, .png, .jpeg" data-max-size="10"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
+                  <div class="form-field">
+                    <div class="form-field__upload"><span class="form-field__upload-text">Загрузить фото чека<br><span class="form-field__upload-small">*.jpg, *.png, *.jpeg</span></span>
+                      <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" data-accept=".jpg, .png, .jpeg" data-max-size="10" name="CheckForm[file]"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
+                    </div>
                   </div>
                 </div>
               </div>

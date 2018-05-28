@@ -41,6 +41,7 @@ include ../form-field/form-field
               tag: 'input',
               placeholder: 'Телефон',
               attrs: {
+                'data-tel': 'true',
                 type: 'text',
                 name: 'CheckForm[tel]',
                 required: ''
@@ -73,14 +74,13 @@ include ../form-field/form-field
           })
       .form__row
         .form__field
-          .form__upload
-            span.form__upload-text Загрузить фото чека
-              br
-              span.form__upload-small *.jpg, *.png, *.jpeg
-            +upload({
+          +form-field({
+            upload: {
+              name: 'CheckForm[file]',
               accept: '.jpg, .png, .jpeg',
               maxSize: '10'
-            })
+            }
+          })
       .form__row
         .form__field.form__field_small-margin
           +control({

@@ -54,36 +54,6 @@
       }
     }
   }
-  &__upload {
-    @include breakpoint(medium) {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-  }
-  &__upload-text {
-    margin-bottom: svw(10);
-    color: $white;
-    font-size: svw(18);
-    @include breakpoint(medium) {
-      margin-bottom: 0;
-      margin-right: mvw(25);
-      font-size: mvw(20);
-    }
-    @include breakpoint(large) {
-      margin-right: rem(40);
-      font-size: rem(24);
-    }
-  }
-  &__upload-small {
-    font-size: svw(14);
-    @include breakpoint(medium) {
-      font-size: mvw(16);
-    }
-    @include breakpoint(large) {
-      font-size: rem(18);
-    }
-  }
   &__controls {
     text-align: center;
     margin-top: svw(30);

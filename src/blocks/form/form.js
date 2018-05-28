@@ -1,4 +1,9 @@
 import 'jquery-validation/dist/jquery.validate.js';
+import 'inputmask/dist/inputmask/inputmask.js';
+import 'inputmask/dist/inputmask/inputmask.extensions.js';
+import 'inputmask/dist/inputmask/inputmask.phone.extensions.js';
+import 'inputmask/dist/inputmask/inputmask.date.extensions.js';
+import 'inputmask/dist/inputmask/jquery.inputmask.js';
 
 (function ($) {
   $.extend($.validator.messages, {
@@ -6,6 +11,11 @@ import 'jquery-validation/dist/jquery.validate.js';
     email: 'Email должень быть вида name@name.ru',
     pattern: 'Ошибка'
   });
+
+  $.validator.addMethod('cyrilliconly', function (value, element) {
+    return this.optional(element) || /^[а-яёА-ЯЁ\s]+$/.test(value);
+  }, 'Только кириллица');
+
   $.validator.setDefaults({
     errorPlacement: function (error, element) {
       $(element).parents('.form-field');
@@ -20,4 +30,7 @@ import 'jquery-validation/dist/jquery.validate.js';
       $(element).parents('.control').removeClass(errorClass);
     }
   });
+
+  // Маска на телефонные номера
+  $('[data-tel="true"]').inputmask('+7 (999) 999-99-99');
 })(jQuery);

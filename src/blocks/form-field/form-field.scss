@@ -1,6 +1,22 @@
 .form-field {
   position: relative;
   text-align: left;
+  &.error {
+    .form-field {
+      &__input {
+        input,
+        .input__textarea,
+        .select__main {
+          border-color: $red;
+        }
+      }
+      &__upload {
+        .button {
+          border-color: $red;
+        }
+      }
+    }
+  }
   &__error {
     display: block;
     color: $red;
@@ -29,23 +45,34 @@
   &__input {
     position: relative;
   }
-  &_required {
-    .form-field__name-text {
-      &:after {
-        content: '*';
-        color: $red;
-      }
+  &__upload {
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
     }
   }
-  &.error {
-    .form-field {
-      &__input {
-        input,
-        .input__textarea,
-        .select__main {
-          border-color: $red;
-        }
-      }
+  &__upload-text {
+    margin-bottom: svw(10);
+    color: $white;
+    font-size: svw(18);
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      margin-right: mvw(25);
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-right: rem(40);
+      font-size: rem(24);
+    }
+  }
+  &__upload-small {
+    font-size: svw(14);
+    @include breakpoint(medium) {
+      font-size: mvw(16);
+    }
+    @include breakpoint(large) {
+      font-size: rem(18);
     }
   }
 }

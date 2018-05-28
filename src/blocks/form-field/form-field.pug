@@ -1,5 +1,6 @@
 include ../input/input
 include ../select/select
+include ../upload/upload
 //-
   +form-field({
     name: 'Email',
@@ -28,3 +29,9 @@ mixin form-field(data)
       - data.select.mods += ' form-field__input'
       +select(data.select)
         span.form-field__error
+    if data.upload != undefined
+      .form-field__upload
+        span.form-field__upload-text Загрузить фото чека
+          br
+          span.form-field__upload-small *.jpg, *.png, *.jpeg
+        +upload(data.upload)

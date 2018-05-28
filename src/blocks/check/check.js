@@ -6,18 +6,28 @@ import 'jquery-validation/dist/additional-methods.js';
     $('#check-form').validate({
       ignore: '',
       rules: {
+        'CheckForm[name]': {
+          cyrilliconly: true
+        },
         'CheckForm[email]': {
           email: true,
           required: true
         },
-
+        'CheckForm[file]': {
+          required: true
+        }
       },
       submitHandler: function submitHandler(form) {
-        console.log(1);
+        let formData = new FormData(form);
+        formData.append('file', $(form).find('[name="CheckForm[file]"]').prop('files')[0]);
+
         $.ajax({
           url: $(form).attr('action'),
           method: 'POST',
-          data: $('#check-form').serialize(),
+          enctype: 'multipart/form-data',
+          processData: false,
+          contentType: false,
+          data: formData,
           success: function (resp) {
             if (!$.isEmptyObject(resp)) {
               // TODO
