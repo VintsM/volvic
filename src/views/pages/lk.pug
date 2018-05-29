@@ -1,0 +1,9 @@
+extend ../layouts/master
+
+block prepend header
+  - var headerType = 'header_small-logo';
+
+block content
+  include ../../blocks/lk-top/lk-top
+  .l-page__container
+    include ../../blocks/lk-form/lk-form

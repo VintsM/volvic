@@ -44,7 +44,6 @@
       if (target.length) {
         event.preventDefault();
         var targetOffsetTop = target.offset().top - $('.header').outerHeight();
-        console.log(target.offset().top, $('.header').height());
         $('html, body').animate({
           scrollTop: targetOffsetTop
         }, 800);

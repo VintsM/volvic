@@ -1,0 +1,18 @@
+.lk-top
+  .l-page__container
+    .lk-top__inner
+      +title({
+        tag: 'h1',
+        mods: 'tit;e title_4 lk-top__title',
+        text: 'Константин Александров'
+      })
+      .lk-top__controls
+        +button({
+          tag: 'a',
+          mods: 'button_blot lk-top__button',
+          text: 'Зарегистрировать чек',
+          attrs: {
+            href: '/#check'
+          }
+        })
+        a(href='#').lk-top__link Выйти

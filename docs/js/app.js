@@ -15798,13 +15798,17 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
 (function ($) {
   $.extend($.validator.messages, {
     required: 'Поле не заполнено',
-    email: 'Email должень быть вида name@name.ru',
-    pattern: 'Ошибка'
+    email: 'Email должен быть вида name@name.ru',
+    digits: 'Только цифры'
   });
 
   $.validator.addMethod('cyrilliconly', function (value, element) {
     return this.optional(element) || /^[а-яёА-ЯЁ\s]+$/.test(value);
   }, 'Только кириллица');
+
+  $.validator.addMethod('lettersDigits', function (value, element) {
+    return this.optional(element) || /^[а-яёА-ЯЁ0-9\s]+$/.test(value);
+  }, 'Только цифры и кириллица');
 
   $.validator.setDefaults({
     errorPlacement: function errorPlacement(error, element) {
@@ -15848,6 +15852,103 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
   });
 })(jQuery);
 },{}],17:[function(require,module,exports){
+'use strict';
+
+(function ($) {
+  $(document).ready(function () {
+    document.addEventListener('change', function (event) {
+      var element = event.target;
+      if (element && element.matches('.input__field')) {
+        element.classList[element.value ? 'add' : 'remove']('has-value');
+      }
+    });
+  });
+})(jQuery);
+},{}],18:[function(require,module,exports){
+'use strict';
+
+require('jquery-validation/dist/jquery.validate.js');
+
+require('jquery-validation/dist/additional-methods.js');
+
+(function ($) {
+  $(document).ready(function () {
+
+    var modal = $('.modal-message').data('modal');
+
+    $('#lk-form').validate({
+      ignore: '',
+      rules: {
+        'LKForm[name]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'LKForm[email]': {
+          email: true,
+          required: true
+        },
+        'LKForm[file]': {
+          required: true
+        },
+        'LKForm[region]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'LKForm[city]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'LKForm[street]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'LKForm[house]': {
+          digits: true,
+          required: true
+        },
+        'LKForm[building]': {
+          lettersDigits: true
+        },
+        'LKForm[construction]': {
+          lettersDigits: true
+        },
+        'LKForm[apartment]': {
+          lettersDigits: true
+        },
+        'LKForm[postcode]': {
+          digits: true,
+          required: true
+        }
+      },
+      submitHandler: function submitHandler(form) {
+        var formData = new FormData(form);
+        var fileInput = $(form).find('[name="LKForm[file]"]');
+        if (fileInput.length !== 0) {
+          formData.append('file', fileInput.prop('files')[0]);
+        }
+
+        $.ajax({
+          url: $(form).attr('action'),
+          method: 'POST',
+          enctype: 'multipart/form-data',
+          processData: false,
+          contentType: false,
+          data: formData,
+          success: function success(resp) {
+            if (!$.isEmptyObject(resp)) {
+              // TODO
+            } else {
+              modal.setTitle('Отлично!');
+              modal.setText('Данные сохранены.');
+              modal.open();
+            }
+          }
+        });
+      }
+    });
+  });
+})(jQuery);
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],19:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -15903,7 +16004,7 @@ require('jquery-validation/dist/additional-methods.js');
     }
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],18:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],20:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16055,7 +16156,7 @@ require('jquery-validation/dist/additional-methods.js');
 		});
 	});
 })(jQuery);
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16092,7 +16193,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{}],20:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -16129,7 +16230,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],21:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],23:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16184,7 +16285,7 @@ require('jquery-validation/dist/additional-methods.js');
     $('.select').vSelect();
   });
 })(jQuery);
-},{}],22:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -16290,7 +16391,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     $('.upload').upload();
   });
 })(jQuery);
-},{}],23:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 require('./jquery-global');
@@ -16311,6 +16412,8 @@ require('../blocks/modal/modal');
 
 require('../blocks/form/form');
 
+require('../blocks/input/input');
+
 require('../blocks/upload/upload');
 
 require('../blocks/faq/faq');
@@ -16321,6 +16424,8 @@ require('../blocks/login/login');
 
 require('../blocks/recovery/recovery');
 
+require('../blocks/lk-form/lk-form');
+
 var _svg4everybody = require('svg4everybody');
 
 var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
@@ -16328,7 +16433,7 @@ var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _svg4everybody2.default)();
-},{"../blocks/check/check":13,"../blocks/faq/faq":14,"../blocks/form/form":15,"../blocks/header/header":16,"../blocks/login/login":17,"../blocks/modal/modal":18,"../blocks/prizes/prizes":19,"../blocks/recovery/recovery":20,"../blocks/select/select":21,"../blocks/upload/upload":22,"./common":24,"./jquery-global":25,"./jquery.sticky":26,"./slick":27,"svg4everybody":12}],24:[function(require,module,exports){
+},{"../blocks/check/check":13,"../blocks/faq/faq":14,"../blocks/form/form":15,"../blocks/header/header":16,"../blocks/input/input":17,"../blocks/lk-form/lk-form":18,"../blocks/login/login":19,"../blocks/modal/modal":20,"../blocks/prizes/prizes":21,"../blocks/recovery/recovery":22,"../blocks/select/select":23,"../blocks/upload/upload":24,"./common":26,"./jquery-global":27,"./jquery.sticky":28,"./slick":29,"svg4everybody":12}],26:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16374,7 +16479,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       if (target.length) {
         event.preventDefault();
         var targetOffsetTop = target.offset().top - $('.header').outerHeight();
-        console.log(target.offset().top, $('.header').height());
         $('html, body').animate({
           scrollTop: targetOffsetTop
         }, 800);
@@ -16382,7 +16486,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   });
 })(jQuery);
-},{}],25:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -16393,7 +16497,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.jQuery = _jquery2.default;
 window.$ = _jquery2.default;
-},{"jquery":11}],26:[function(require,module,exports){
+},{"jquery":11}],28:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -16667,7 +16771,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     setTimeout(scroller, 0);
   });
 });
-},{"jquery":11}],27:[function(require,module,exports){
+},{"jquery":11}],29:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -19425,4 +19529,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return _;
     };
 });
-},{"jquery":11}]},{},[23]);
+},{"jquery":11}]},{},[25]);

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Volvic</title>
+  <meta http-equiv="X-UA-Compatible" content="text/html" charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./favicon.ico" rel="shortcut icon">
+</head>
+
+<body>
+  <div class="l-page">
+    <div class="l-page__inner">
+      <div class="l-page__header">
+        <header class="header header_small-logo">
+          <div class="header__inner">
+            <div class="header__burger">
+              <div class="header__burger-body"><span></span><span></span><span></span></div>
+              <div class="header__mobile-close"></div>
+            </div><a class="header__logo" href="/"><img class="header__logo-img" src="./img/logo.png" alt="Volvic logo"/></a>
+            <nav class="header__nav"><a class="header__nav-item" href="#rules">Правила</a><a class="header__nav-item" href="/">О бренде</a><a class="header__nav-item" href="#prizes">Призы</a><a class="header__nav-item" href="#faq">FAQ</a><a class="header__nav-item" href="#check">Регистрация чека</a>
+              <a
+                class="header__nav-item" href="#winners">Победители</a>
+            </nav><a class="header__login js-login-link" href="/"><svg class="icon icon-profile header__login-icon"><use xlink:href="/img/icons.svg#icon-profile"></use></svg><span class="header__login-text">Вход</span></a></div>
+          <nav class="header__mobile-nav">
+            <div class="header__mobile-inner">
+              <ul class="header__mobile-list">
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#rules">Правила</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="/">О бренде</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#prizes">Призы</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#faq">FAQ</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#check">Регистрация чека</a></li>
+                <li class="header__mobile-el"><a class="header__mobile-link" href="#winners">Победители</a></li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+      </div>
+      <div class="l-page__content">
+        <div class="lk-top">
+          <div class="l-page__container">
+            <div class="lk-top__inner">
+              <h1 class="title tit;e title_4 lk-top__title">Константин Александров</h1>
+              <div class="lk-top__controls"><a class="button button_blot lk-top__button" href="/#check"><span class="button__text">Зарегистрировать чек</span></a><a class="lk-top__link" href="#">Выйти</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="l-page__container">
+          <form class="lk-form" action="/" novalidate="novalidate" autocomplete="off" id="lk-form">
+            <div class="form__row">
+              <div class="form__title">Персональные данные</div>
+            </div>
+            <div class="form__row">
+              <div class="form__field form__field_m-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[name]" required=""><span class="input__placeholder">Имя</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_m-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[email]" required=""><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_m-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" data-tel="true" type="text" name="LKForm[tel]" required=""><span class="input__placeholder">Телефон</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__title">Адрес доставки</div>
+            </div>
+            <div class="form__row">
+              <div class="form__field form__field_m-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[region]" required=""><span class="input__placeholder">Регион</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_m-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[city]" required=""><span class="input__placeholder">Город</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_m-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[street]" required=""><span class="input__placeholder">Улица</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_s-33 form__field_m-25 form__field_l-11">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[house]" required=""><span class="input__placeholder">Дом</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_s-33 form__field_m-25 form__field_l-11">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[building]"><span class="input__placeholder">Корп.</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_s-33 form__field_m-25 form__field_l-11">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[construction]"><span class="input__placeholder">Стр.</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_s-33 form__field_m-25 form__field_l-11">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[apartment]"><span class="input__placeholder">Кв.</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_s-66 form__field_m-50 form__field_l-22">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[postcode]" required=""><span class="input__placeholder">Индекс</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+              <div class="form__field form__field_m-50 form__field_l-33">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" type="text" name="LKForm[date]"><span class="input__placeholder">Дата и время доставки</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Сохранить</span></button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal-login" data-state="login">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content modal__content_login">
+        <h2 class="title title_2 modal__title">Вход</h2>
+        <div class="login">
+          <form class="form login__form" action="/" id="login-form">
+            <div class="form__row form__common-error"></div>
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="LoginForm[email]"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="password" name="LoginForm[password]"><span class="input__placeholder">Пароль</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-login__text login__text">Для входа в личный кабинет необходимо <a class="js-modal-close" href="#check">зарегистрировать чек</a></div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Войти</span></button></div>
+          </form>
+        </div>
+        <div class="modal-login__bottom">
+          <div class="modal-login__row"><a class="js-login-state-toggle" href="#" data-state="recovery">Забыл пароль</a></div>
+          <div class="modal-login__row">
+            <div class="modal-login__bottom-text">Не можете найти письмо?</div><a class="js-login-state-toggle" href="#" data-state="repeat">Отправить письмо с подтверждением регистрации еще раз.</a></div>
+        </div>
+      </div>
+      <div class="modal__content modal__content_recovery">
+        <div class="recovery">
+          <h2 class="title title_2 modal__title">Восстановление пароля</h2>
+          <div class="modal-login__text recovery__text">Для восстановления пароля введите адрес электронной почты, указанный при регистрации.</div>
+          <form class="form recovery__form" action="/" id="password-recovery-form" novalidate="novalidate">
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="email"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-login__row recovery__bottom-text"><a class="recovery__link js-login-state-toggle" href="#" data-state="repeat">Отправить повторно</a></div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Войти</span></button></div>
+          </form>
+        </div>
+      </div>
+      <div class="modal__content modal__content_repeat">
+        <div class="recovery">
+          <h2 class="title title_2 modal__title">Повторная отправка письма с подтверждением</h2>
+          <div class="modal-login__text recovery__text">Для повторной отправки письма с подтверждением, введите адрес электронной почты, указанный при регистрации.</div>
+          <form class="form recovery__form" action="/" id="password-repeat-form" novalidate="novalidate">
+            <div class="form__row">
+              <div class="form__field">
+                <div class="form-field">
+                  <div class="input input_green form-field__input"><input class="input__field" required="" type="email" name="email"><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-login__row recovery__bottom-text"><a class="recovery__link js-login-state-toggle" href="#" data-state="repeat">Отправить повторно</a></div>
+            <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Войти</span></button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal-message">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_2 modal__title"></h2>
+      </div>
+      <div class="modal__text"></div>
+    </div>
+  </div>
+  <div class="modal modal-faq">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_3 modal__title"></h2>
+      </div>
+      <div class="modal__text"></div>
+    </div>
+  </div>
+  <div class="modal modal-win">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_2">Поздравляем!</h2>
+        <div class="modal-win__text">Вы выиграли гарантированный приз!</div>
+        <div class="modal-win__sticker">
+          <div class="sticker">
+            <div class="sticker__text">Подписка 30 дней на ПАКЕТ «ФУТБОЛ»</div><img src="./img/sticker/match-football.png" alt="Подписка 30 дней на ПАКЕТ «ФУТБОЛ»"></div>
+        </div>
+        <div class="modal-win__button"><button class="button button_blot button_green" type="submit"><span class="button__text">Получить приз</span></button></div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

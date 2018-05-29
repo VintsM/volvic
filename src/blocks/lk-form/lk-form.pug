@@ -1,0 +1,172 @@
+include ../upload/upload
+include ../form-field/form-field
+
+form(action='/' novalidate='novalidate' autocomplete='off')#lk-form.lk-form
+  .form__row
+    .form__title Персональные данные
+  .form__row
+    .form__field.form__field_m-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Имя',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[name]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_m-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Email',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[email]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_m-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Телефон',
+          attrs: {
+            'data-tel': 'true',
+            type: 'text',
+            name: 'LKForm[tel]',
+            required: ''
+          }
+        }
+      })
+  .form__row
+    .form__title Адрес доставки
+  .form__row
+    .form__field.form__field_m-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Регион',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[region]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_m-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Город',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[city]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_m-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Улица',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[street]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_s-33.form__field_m-25.form__field_l-11
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Дом',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[house]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_s-33.form__field_m-25.form__field_l-11
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Корп.',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[building]'
+          }
+        }
+      })
+    .form__field.form__field_s-33.form__field_m-25.form__field_l-11
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Стр.',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[construction]'
+          }
+        }
+      })
+    .form__field.form__field_s-33.form__field_m-25.form__field_l-11
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Кв.',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[apartment]'
+          }
+        }
+      })
+    .form__field.form__field_s-66.form__field_m-50.form__field_l-22
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Индекс',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[postcode]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_m-50.form__field_l-33
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Дата и время доставки',
+          attrs: {
+            type: 'text',
+            name: 'LKForm[date]'
+          }
+        }
+      })
+  .form__controls
+    +button({
+      tag: 'button',
+      mods: 'button_blot button_green',
+      text: 'Сохранить',
+      attrs: {
+        type: 'submit'
+      }
+    })

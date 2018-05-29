@@ -1,0 +1,57 @@
+.lk-top {
+  &__inner {
+    padding: svw(30) 0;
+    @include breakpoint(medium) {
+      padding: mvw(40) 0;
+    }
+    @include breakpoint(large) {
+      padding: rem(60) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__title {
+    margin-bottom: svw(30);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(30);
+    }
+    @include breakpoint(large) {
+      margin-bottom: 0;
+    }
+  }
+  &__controls {
+    text-align: center;
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+    @include breakpoint(large) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  &__button {
+    margin-bottom: svw(10);
+    @include breakpoint(medium) {
+      margin-right: mvw(20);
+    }
+    @include breakpoint(large) {
+      margin-bottom: 0;
+      margin-right: rem(35);
+    }
+  }
+  &__link {
+    color: $primary;
+    text-decoration: underline;
+    font-size: svw(14);
+    &:hover {
+      text-decoration: none;
+    }
+    @include breakpoint(medium) {
+      font-size: mvw(18);
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+    }
+  }
+}

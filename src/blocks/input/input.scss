@@ -106,9 +106,9 @@ textarea.input__field {
     &:focus {
       outline: 0;
     }
+    &.has-value ~ .input__placeholder,
     &[aria-invalid='true'] ~ .input__placeholder,
-    &:focus ~ .input__placeholder,
-    &:valid ~ .input__placeholder {
+    &:focus ~ .input__placeholder {
       top: svw(-15);
       font-size: rem(16);
       @include breakpoint(medium) {

@@ -43,7 +43,8 @@
       top: rem(-15);
       left: 0;
       transition: .3s ease;
-      .is-sticky & {
+      .is-sticky &,
+      .header_small-logo & {
         width: rem(100);
         height: rem(73);
       }

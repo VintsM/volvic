@@ -33,4 +33,16 @@
       font-size: rem(34);
     }
   }
+  &_4 {
+    color: $primary;
+    font-size: svw(20);
+    line-height: 1.1;
+    @include breakpoint(medium) {
+      font-family: $alt-font;
+      font-size: mvw(60);
+    }
+    @include breakpoint(large) {
+      font-size: rem(80);
+    }
+  }
 }

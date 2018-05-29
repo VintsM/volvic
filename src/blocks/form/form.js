@@ -8,13 +8,17 @@ import 'inputmask/dist/inputmask/jquery.inputmask.js';
 (function ($) {
   $.extend($.validator.messages, {
     required: 'Поле не заполнено',
-    email: 'Email должень быть вида name@name.ru',
-    pattern: 'Ошибка'
+    email: 'Email должен быть вида name@name.ru',
+    digits: 'Только цифры'
   });
 
   $.validator.addMethod('cyrilliconly', function (value, element) {
     return this.optional(element) || /^[а-яёА-ЯЁ\s]+$/.test(value);
   }, 'Только кириллица');
+
+  $.validator.addMethod('lettersDigits', function (value, element) {
+    return this.optional(element) || /^[а-яёА-ЯЁ0-9\s]+$/.test(value);
+  }, 'Только цифры и кириллица');
 
   $.validator.setDefaults({
     errorPlacement: function (error, element) {

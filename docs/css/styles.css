@@ -547,8 +547,28 @@ a:hover {
   margin-bottom: 4.6875vw;
 }
 
-.form__field {
+.form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -3.125vw;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.form__title {
+  font-size: 5vw;
   margin-bottom: 6.25vw;
+  padding: 0 3.125vw;
+}
+
+.form__field {
+  width: 100%;
+  margin-bottom: 6.25vw;
+  padding: 0 3.125vw;
 }
 
 .form__field_small-margin {
@@ -557,6 +577,14 @@ a:hover {
 
 .form__field_big-margin {
   margin: 9.375vw 0;
+}
+
+.form__field_s-33 {
+  width: 33.33%;
+}
+
+.form__field_s-66 {
+  width: 66.66%;
 }
 
 .form__controls {
@@ -597,11 +625,6 @@ a:hover {
 
 .form-field__upload-small {
   font-size: 4.375vw;
-}
-
-.icon {
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .header {
@@ -824,6 +847,11 @@ a:hover {
   color: #fff;
 }
 
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 input.input__field,
 select.input__field {
   height: 15vw;
@@ -902,8 +930,8 @@ textarea.input__field {
   outline: 0;
 }
 
+.input__field.has-value~.input__placeholder,
 .input__field:focus~.input__placeholder,
-.input__field:valid~.input__placeholder,
 .input__field[aria-invalid=true]~.input__placeholder {
   font-size: 1rem;
   top: -4.6875vw;
@@ -952,6 +980,32 @@ textarea.input__field {
   line-height: .96;
   margin-top: 10px;
   color: #00a634;
+}
+
+.lk-top__inner {
+  padding: 9.375vw 0;
+}
+
+.lk-top__title {
+  margin-bottom: 9.375vw;
+}
+
+.lk-top__controls {
+  text-align: center;
+}
+
+.lk-top__button {
+  margin-bottom: 3.125vw;
+}
+
+.lk-top__link {
+  font-size: 4.375vw;
+  text-decoration: underline;
+  color: #00a634;
+}
+
+.lk-top__link:hover {
+  text-decoration: none;
 }
 
 .login__form.error .form__error,
@@ -1568,6 +1622,12 @@ textarea.input__field {
   color: #00a634;
 }
 
+.title_4 {
+  font-size: 6.25vw;
+  line-height: 1.1;
+  color: #00a634;
+}
+
 .top {
   padding: 6.25vw 0 93.75vw;
   text-align: center;
@@ -1695,27 +1755,22 @@ textarea.input__field {
   }
 
   .form__row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin: 0 -1.95313vw;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 
   .form__row.form__row_medium-up-mb0 {
     margin-bottom: 0;
   }
 
+  .form__title {
+    font-size: 2.60417vw;
+    margin-bottom: 2.60417vw;
+    padding: 0 1.95313vw;
+  }
+
   .form__field {
     margin-bottom: 3.90625vw;
     padding: 0 1.95313vw;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-preferred-size: 0;
-    flex-basis: 0;
   }
 
   .form__field_small-margin {
@@ -1724,6 +1779,22 @@ textarea.input__field {
 
   .form__field_big-margin {
     margin: 5.20833vw 0;
+  }
+
+  .form__field_m-25 {
+    width: 25%;
+  }
+
+  .form__field_m-33 {
+    width: 33.33%;
+  }
+
+  .form__field_m-50 {
+    width: 50%;
+  }
+
+  .form__field_m-66 {
+    width: 66.66%;
   }
 
   .form__controls {
@@ -1821,8 +1892,8 @@ textarea.input__field {
     border-width: .52083vw;
   }
 
+  .input__field.has-value~.input__placeholder,
   .input__field:focus~.input__placeholder,
-  .input__field:valid~.input__placeholder,
   .input__field[aria-invalid=true]~.input__placeholder {
     top: -2.60417vw;
   }
@@ -1843,6 +1914,26 @@ textarea.input__field {
 
   .l-page__section-header {
     margin-bottom: 45px;
+  }
+
+  .lk-top__inner {
+    padding: 5.20833vw 0;
+  }
+
+  .lk-top__title {
+    margin-bottom: 3.90625vw;
+  }
+
+  .lk-top__controls {
+    text-align: left;
+  }
+
+  .lk-top__button {
+    margin-right: 2.60417vw;
+  }
+
+  .lk-top__link {
+    font-size: 2.34375vw;
   }
 
   .login__text {
@@ -2212,6 +2303,11 @@ textarea.input__field {
     font-size: 3.90625vw;
   }
 
+  .title_4 {
+    font-family: 'Feast',Arial,Helvetica,sans-serif;
+    font-size: 7.8125vw;
+  }
+
   .top {
     padding: 10.41667vw 0 54.6875vw;
     text-align: left;
@@ -2329,27 +2425,22 @@ textarea.input__field {
   }
 
   .form__row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin: 0 -1.25rem;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 
   .form__row.form__row_large-up-mb0 {
     margin-bottom: 0;
   }
 
+  .form__title {
+    font-size: 1.875rem;
+    margin-bottom: 1.875rem;
+    padding: 0 1.25rem;
+  }
+
   .form__field {
     margin-bottom: 3.125rem;
     padding: 0 1.25rem;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-preferred-size: 0;
-    flex-basis: 0;
   }
 
   .form__field_small-margin {
@@ -2358,6 +2449,22 @@ textarea.input__field {
 
   .form__field_big-margin {
     margin: 3.125rem 0;
+  }
+
+  .form__field_l-11 {
+    width: 11.11%;
+  }
+
+  .form__field_l-22 {
+    width: 22.22%;
+  }
+
+  .form__field_l-33 {
+    width: 33.33%;
+  }
+
+  .form__field_l-66 {
+    width: 66.66%;
   }
 
   .form__controls {
@@ -2410,6 +2517,7 @@ textarea.input__field {
     transition: .3s ease;
   }
 
+  .header_small-logo .header__logo-img,
   .is-sticky .header__logo-img {
     width: 6.25rem;
     height: 4.5625rem;
@@ -2465,8 +2573,8 @@ textarea.input__field {
     border-width: .25rem;
   }
 
+  .input__field.has-value~.input__placeholder,
   .input__field:focus~.input__placeholder,
-  .input__field:valid~.input__placeholder,
   .input__field[aria-invalid=true]~.input__placeholder {
     top: -1.25rem;
   }
@@ -2480,6 +2588,41 @@ textarea.input__field {
     max-width: 1280px;
     margin: 0 auto;
     padding: 1.25rem;
+  }
+
+  .lk-top__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3.75rem 0;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .lk-top__title {
+    margin-bottom: 0;
+  }
+
+  .lk-top__controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .lk-top__button {
+    margin-right: 2.1875rem;
+    margin-bottom: 0;
+  }
+
+  .lk-top__link {
+    font-size: 1.5rem;
   }
 
   .login__text {
@@ -2749,6 +2892,10 @@ textarea.input__field {
 
   .title_3 {
     font-size: 2.125rem;
+  }
+
+  .title_4 {
+    font-size: 5rem;
   }
 
   .top {

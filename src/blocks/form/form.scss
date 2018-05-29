@@ -1,13 +1,13 @@
 .form {
   &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 svw(-$small-container-padding);
     @include breakpoint(medium) {
-      display: flex;
-      justify-content: space-between;
       margin: 0 mvw(-$medium-container-padding);
     }
     @include breakpoint(large) {
-      display: flex;
-      justify-content: space-between;
       margin: 0 rem(-$large-container-padding);
     }
     &.form__row_medium-up-mb0 {
@@ -21,17 +21,30 @@
       }
     }
   }
-  &__field {
+  &__title {
+    padding: 0 svw($small-container-padding);
     margin-bottom: svw(20);
+    font-size: svw(16);
     @include breakpoint(medium) {
-      flex-grow: 1;
-      flex-basis: 0;
+      padding: 0 mvw($medium-container-padding);
+      margin-bottom: mvw(20);
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      padding: 0 rem($large-container-padding);
+      margin-bottom: rem(30);
+      font-size: rem(30);
+    }
+  }
+  &__field {
+    width: 100%;
+    margin-bottom: svw(20);
+    padding: 0 svw($small-container-padding);
+    @include breakpoint(medium) {
       padding: 0 mvw($medium-container-padding);
       margin-bottom: mvw(30);
     }
     @include breakpoint(large) {
-      flex-grow: 1;
-      flex-basis: 0;
       padding: 0 rem($large-container-padding);
       margin-bottom: rem(50);
     }
@@ -51,6 +64,52 @@
       }
       @include breakpoint(large) {
         margin: rem(50) 0;
+      }
+    }
+    &_s-33 {
+      width: 33.33%;
+    }
+    &_s-66 {
+      width: 66.66%;
+    }
+    &_m-25 {
+      @include breakpoint(medium) {
+        width: 25%;
+      }
+    }
+    &_m-33 {
+      @include breakpoint(medium) {
+        width: 33.33%;
+      }
+    }
+    &_m-50 {
+      @include breakpoint(medium) {
+        width: 50%;
+      }
+    }
+    &_m-66 {
+      @include breakpoint(medium) {
+        width: 66.66%;
+      }
+    }
+    &_l-11 {
+      @include breakpoint(large) {
+        width: 11.11%;
+      }
+    }
+    &_l-22 {
+      @include breakpoint(large) {
+        width: 22.22%;
+      }
+    }
+    &_l-33 {
+      @include breakpoint(large) {
+        width: 33.33%;
+      }
+    }
+    &_l-66 {
+      @include breakpoint(large) {
+        width: 66.66%;
       }
     }
   }

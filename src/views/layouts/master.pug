@@ -4,6 +4,7 @@ include ../../blocks/input/input
 include ../../blocks/select/select
 include ../../blocks/button/button
 include ../../blocks/control/control
+include ../../blocks/header/header
 
 doctype html
 html(lang='ru')
@@ -17,7 +18,8 @@ html(lang='ru')
     .l-page
       .l-page__inner
         .l-page__header
-          include ../../blocks/header/header
+          block header
+            +header(headerType)
         .l-page__content
           block content
 
