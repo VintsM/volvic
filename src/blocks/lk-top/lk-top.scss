@@ -1,11 +1,11 @@
 .lk-top {
   &__inner {
-    padding: svw(30) 0;
+    padding: svw(30) 0 0;
     @include breakpoint(medium) {
-      padding: mvw(40) 0;
+      padding: mvw(40) 0 0;
     }
     @include breakpoint(large) {
-      padding: rem(60) 0;
+      padding: rem(60) 0 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -33,10 +33,10 @@
   &__button {
     margin-bottom: svw(10);
     @include breakpoint(medium) {
+      margin-bottom: 0;
       margin-right: mvw(20);
     }
     @include breakpoint(large) {
-      margin-bottom: 0;
       margin-right: rem(35);
     }
   }

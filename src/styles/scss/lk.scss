@@ -1,0 +1,11 @@
+.lk {
+  &__section {
+    margin-bottom: svw(40);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(50);
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(80);
+    }
+  }
+}

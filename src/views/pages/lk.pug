@@ -4,6 +4,24 @@ block prepend header
   - var headerType = 'header_small-logo';
 
 block content
-  include ../../blocks/lk-top/lk-top
-  .l-page__container
-    include ../../blocks/lk-form/lk-form
+  .lk
+    .lk__section
+      include ../../blocks/lk-top/lk-top
+    .l-page__container
+      -
+        var prizes = [
+          {code: '678933', status: 'На рассмотрении', result: '<span class="grey">Дождитесь подтверждения</span>'},
+          {code: '123456', status: '<span class="primary">Одобрено</span>', result: '<a href="#">Получить приз</a>'},
+          {code: '679963', status: '<span class="primary">Одобрено</span>', result: '<span class="primary">5АРП789</span>'},
+          {code: '809874', status: '<span class="red">Отклонено</span>', result: '—'},
+          {code: '456781', status: '<span class="red">Отклонено</span>', result: '—'}
+        ]
+      .lk__section
+        table.table
+          each prize in prizes
+            tr
+              td= prize.code
+              td!= prize.status
+              td!= prize.result
+      .lk__section
+        include ../../blocks/lk-form/lk-form

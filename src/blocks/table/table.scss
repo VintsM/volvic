@@ -1,0 +1,32 @@
+.table {
+  width: 100%;
+  margin: 0 svw(-$small-container-padding);
+  font-size: svw(12);
+  @include breakpoint(medium) {
+    margin: 0 mvw(-$medium-container-padding);
+    font-size: mvw(20);
+  }
+  @include breakpoint(large) {
+    margin: 0 rem(-$large-container-padding);
+    font-size: rem(24);
+  }
+  tr {
+    border-bottom: svw(3) solid $alto;
+    @include breakpoint(medium) {
+      border-bottom-width: mvw(3);
+    }
+    @include breakpoint(large) {
+      border-bottom-width: rem(3);
+    }
+  }
+  td {
+    width: 33.33%;
+    padding: svw(15) svw($small-container-padding);
+    @include breakpoint(medium) {
+      padding: mvw(30) mvw($medium-container-padding) mvw(20);
+    }
+    @include breakpoint(large) {
+      padding: rem(40) rem($large-container-padding) rem(15);
+    }
+  }
+}

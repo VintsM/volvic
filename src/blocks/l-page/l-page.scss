@@ -6,7 +6,7 @@
       padding: 0 mvw($medium-container-padding);
     }
     @include breakpoint(large) {
-      padding: rem($large-container-padding);
+      padding: 0 rem($large-container-padding);
       margin: 0 auto;
       max-width: $global-width;
     }
