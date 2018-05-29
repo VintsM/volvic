@@ -30,8 +30,8 @@ mixin form-field(data)
       +select(data.select)
         span.form-field__error
     if data.upload != undefined
-      .form-field__upload
-        span.form-field__upload-text Загрузить фото чека
+      .form-field__upload(class=data.uploadMods || false)
+        span.form-field__upload-text!= data.text
           br
-          span.form-field__upload-small *.jpg, *.png, *.jpeg
+          span.form-field__upload-small!= data.upload.accept
         +upload(data.upload)

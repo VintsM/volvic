@@ -31,14 +31,14 @@ input:-ms-input-placeholder {
 textarea.input__field {
   box-sizing: border-box;
   width: calc(100% + 20px);
-  height: svw(167);
+  height: svw(180);
   padding-right: 40px;
   resize: none;
   @include breakpoint(medium) {
-    height: mvw(167);
+    height: mvw(180);
   }
   @include breakpoint(large) {
-    height: rem(167);
+    height: rem(180);
   }
 }
 
@@ -68,9 +68,9 @@ textarea.input__field {
   }
   &__textarea {
     overflow: hidden;
-    border-bottom-width: svw(4);
-    border-bottom-style: solid;
-    border-bottom-color: $white;
+    border-width: svw(4);
+    border-style: solid;
+    border-color: $primary;
     @include breakpoint(medium) {
       border-width: mvw(4);
     }
@@ -79,6 +79,13 @@ textarea.input__field {
     }
     .input__field {
       border: none;
+      padding-left: svw(15);
+      @include breakpoint(medium) {
+        padding-left: mvw(20);
+      }
+      @include breakpoint(large) {
+        padding-left: rem(20);
+      }
     }
   }
   &__field {

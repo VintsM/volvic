@@ -51,6 +51,33 @@
       align-items: center;
       justify-content: flex-start;
     }
+    &_pass {
+      flex-direction: row-reverse;
+      .button {
+        border-color: $primary;
+        color: $primary;
+        &:hover,
+        &:focus {
+          border-color: $primary;
+          color: $white;
+          background-color: $primary;
+        }
+      }
+      .form-field__upload-text {
+        color: $grey;
+        font-size: svw(16);
+        @include breakpoint(medium) {
+          margin-right: 0;
+          margin-left: mvw(20);
+          font-size: mvw(16);
+        }
+        @include breakpoint(large) {
+          margin-right: 0;
+          margin-left: rem(20);
+          font-size: rem(18);
+        }
+      }
+    }
   }
   &__upload-text {
     margin-bottom: svw(10);

@@ -9,7 +9,15 @@ import 'jquery-validation/dist/additional-methods.js';
     $('#lk-form').validate({
       ignore: '',
       rules: {
+        'LKForm[lastname]': {
+          cyrilliconly: true,
+          required: true
+        },
         'LKForm[name]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'LKForm[patronymic]': {
           cyrilliconly: true,
           required: true
         },
@@ -48,14 +56,17 @@ import 'jquery-validation/dist/additional-methods.js';
         'LKForm[postcode]': {
           digits: true,
           required: true
+        },
+        'LKForm[inn]': {
+          digits: true,
+          required: true
+        },
+        'LKForm[passport]': {
+          required: true
         }
       },
       submitHandler: function submitHandler(form) {
         let formData = new FormData(form);
-        let fileInput = $(form).find('[name="LKForm[file]"]');
-        if (fileInput.length !== 0) {
-          formData.append('file', fileInput.prop('files')[0]);
-        }
 
         $.ajax({
           url: $(form).attr('action'),

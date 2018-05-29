@@ -10,7 +10,7 @@ include ../form-field/form-field
     })
     form#check-form.form.check__form(action='/api/check-form' novalidate='novalidate' autocomplete='off')
       .form__row
-        .form__field
+        .form__field.form__field_m-50
           +form-field({
             input: {
               tag: 'input',
@@ -22,7 +22,7 @@ include ../form-field/form-field
               }
             }
           })
-        .form__field
+        .form__field.form__field_m-50
           +form-field({
             input: {
               tag: 'input',
@@ -34,8 +34,7 @@ include ../form-field/form-field
               }
             }
           })
-      .form__row
-        .form__field
+        .form__field.form__field_m-50
           +form-field({
             input: {
               tag: 'input',
@@ -48,7 +47,7 @@ include ../form-field/form-field
               }
             }
           })
-        .form__field
+        .form__field.form__field_m-50
           +form-field({
             select: {
               mods: '',
@@ -58,7 +57,6 @@ include ../form-field/form-field
               required: true
             }
           })
-      .form__row
         .form__field
           +form-field({
             input: {
@@ -72,9 +70,9 @@ include ../form-field/form-field
               }
             }
           })
-      .form__row
         .form__field
           +form-field({
+            text: 'Загрузить фото чека',
             upload: {
               name: 'CheckForm[file]',
               accept: '.jpg, .png, .jpeg',

@@ -36,5 +36,8 @@ import 'inputmask/dist/inputmask/jquery.inputmask.js';
   });
 
   // Маска на телефонные номера
-  $('[data-tel="true"]').inputmask('+7 (999) 999-99-99');
+  $('[data-tel="true"]').inputmask('+7 (999) 999-99-99', {showMaskOnHover: false});
+
+  // Маска на паспорт
+  $('[data-passport="true"]').inputmask('9999 999999', {showMaskOnHover: false});
 })(jQuery);

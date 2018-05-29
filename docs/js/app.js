@@ -15743,7 +15743,6 @@ require('jquery-validation/dist/additional-methods.js');
       },
       submitHandler: function submitHandler(form) {
         var formData = new FormData(form);
-        formData.append('file', $(form).find('[name="CheckForm[file]"]').prop('files')[0]);
 
         $.ajax({
           url: $(form).attr('action'),
@@ -15781,6 +15780,52 @@ require('jquery-validation/dist/additional-methods.js');
   });
 })(jQuery);
 },{}],15:[function(require,module,exports){
+'use strict';
+
+require('jquery-validation/dist/jquery.validate.js');
+
+require('jquery-validation/dist/additional-methods.js');
+
+(function ($) {
+  $(document).ready(function () {
+
+    var modal = $('.modal-message').data('modal');
+
+    $('#feedback-form').validate({
+      ignore: '',
+      rules: {
+        'FeedbackForm[name]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'FeedbackForm[email]': {
+          email: true,
+          required: true
+        },
+        'FeedbackForm[message]': {
+          required: true
+        }
+      },
+      submitHandler: function submitHandler(form) {
+        $.ajax({
+          url: $(form).attr('action'),
+          method: 'POST',
+          data: $(form).serialize(),
+          success: function success(resp) {
+            if (!$.isEmptyObject(resp)) {
+              // TODO
+            } else {
+              modal.setTitle('Отлично!');
+              modal.setText('Вопрос отпрвлен.');
+              modal.open();
+            }
+          }
+        });
+      }
+    });
+  });
+})(jQuery);
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],16:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -15826,9 +15871,12 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
   });
 
   // Маска на телефонные номера
-  $('[data-tel="true"]').inputmask('+7 (999) 999-99-99');
+  $('[data-tel="true"]').inputmask('+7 (999) 999-99-99', { showMaskOnHover: false });
+
+  // Маска на паспорт
+  $('[data-passport="true"]').inputmask('9999 999999', { showMaskOnHover: false });
 })(jQuery);
-},{"inputmask/dist/inputmask/inputmask.date.extensions.js":4,"inputmask/dist/inputmask/inputmask.extensions.js":5,"inputmask/dist/inputmask/inputmask.js":6,"inputmask/dist/inputmask/inputmask.phone.extensions.js":7,"inputmask/dist/inputmask/jquery.inputmask.js":8,"jquery-validation/dist/jquery.validate.js":10}],16:[function(require,module,exports){
+},{"inputmask/dist/inputmask/inputmask.date.extensions.js":4,"inputmask/dist/inputmask/inputmask.extensions.js":5,"inputmask/dist/inputmask/inputmask.js":6,"inputmask/dist/inputmask/inputmask.phone.extensions.js":7,"inputmask/dist/inputmask/jquery.inputmask.js":8,"jquery-validation/dist/jquery.validate.js":10}],17:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -15851,7 +15899,7 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
     });
   });
 })(jQuery);
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -15864,7 +15912,7 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
     });
   });
 })(jQuery);
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -15879,7 +15927,15 @@ require('jquery-validation/dist/additional-methods.js');
     $('#lk-form').validate({
       ignore: '',
       rules: {
+        'LKForm[lastname]': {
+          cyrilliconly: true,
+          required: true
+        },
         'LKForm[name]': {
+          cyrilliconly: true,
+          required: true
+        },
+        'LKForm[patronymic]': {
           cyrilliconly: true,
           required: true
         },
@@ -15918,14 +15974,17 @@ require('jquery-validation/dist/additional-methods.js');
         'LKForm[postcode]': {
           digits: true,
           required: true
+        },
+        'LKForm[inn]': {
+          digits: true,
+          required: true
+        },
+        'LKForm[passport]': {
+          required: true
         }
       },
       submitHandler: function submitHandler(form) {
         var formData = new FormData(form);
-        var fileInput = $(form).find('[name="LKForm[file]"]');
-        if (fileInput.length !== 0) {
-          formData.append('file', fileInput.prop('files')[0]);
-        }
 
         $.ajax({
           url: $(form).attr('action'),
@@ -15948,7 +16007,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],19:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],20:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -16004,7 +16063,7 @@ require('jquery-validation/dist/additional-methods.js');
     }
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],20:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],21:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16156,7 +16215,7 @@ require('jquery-validation/dist/additional-methods.js');
 		});
 	});
 })(jQuery);
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16193,7 +16252,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -16230,7 +16289,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],23:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],24:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16285,7 +16344,7 @@ require('jquery-validation/dist/additional-methods.js');
     $('.select').vSelect();
   });
 })(jQuery);
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -16305,19 +16364,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       upload.maxSize = upload.input.data('max-size') * 1000000;
       upload.ext = upload.input.data('accept');
       upload.sendButton = $('.js-upload-button-send');
-      upload.file = undefined;
+      upload.files = undefined;
 
       upload.button.on('click', function () {
         upload.input.click();
       });
 
       upload.input.on('change', function () {
-        var reader = new FileReader();
-        upload.file = this.files[0];
-        reader.onloadend = function () {
-          upload.checkFile(upload.file);
+        upload.files = this.files;
+
+        var _loop = function _loop(i) {
+          var reader = new FileReader();
+          reader.readAsDataURL(upload.files[i]);
+          reader.onloadend = function () {
+            upload.checkFile(upload.files[i]);
+          };
         };
-        reader.readAsDataURL(upload.file);
+
+        for (var i = 0; i < upload.files.length; i++) {
+          _loop(i);
+        }
         $(this).valid();
       });
 
@@ -16391,7 +16457,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     $('.upload').upload();
   });
 })(jQuery);
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 require('./jquery-global');
@@ -16426,6 +16492,8 @@ require('../blocks/recovery/recovery');
 
 require('../blocks/lk-form/lk-form');
 
+require('../blocks/feedback-form/feedback-form');
+
 var _svg4everybody = require('svg4everybody');
 
 var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
@@ -16433,7 +16501,7 @@ var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _svg4everybody2.default)();
-},{"../blocks/check/check":13,"../blocks/faq/faq":14,"../blocks/form/form":15,"../blocks/header/header":16,"../blocks/input/input":17,"../blocks/lk-form/lk-form":18,"../blocks/login/login":19,"../blocks/modal/modal":20,"../blocks/prizes/prizes":21,"../blocks/recovery/recovery":22,"../blocks/select/select":23,"../blocks/upload/upload":24,"./common":26,"./jquery-global":27,"./jquery.sticky":28,"./slick":29,"svg4everybody":12}],26:[function(require,module,exports){
+},{"../blocks/check/check":13,"../blocks/faq/faq":14,"../blocks/feedback-form/feedback-form":15,"../blocks/form/form":16,"../blocks/header/header":17,"../blocks/input/input":18,"../blocks/lk-form/lk-form":19,"../blocks/login/login":20,"../blocks/modal/modal":21,"../blocks/prizes/prizes":22,"../blocks/recovery/recovery":23,"../blocks/select/select":24,"../blocks/upload/upload":25,"./common":27,"./jquery-global":28,"./jquery.sticky":29,"./slick":30,"svg4everybody":12}],27:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16486,7 +16554,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   });
 })(jQuery);
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -16497,7 +16565,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.jQuery = _jquery2.default;
 window.$ = _jquery2.default;
-},{"jquery":11}],28:[function(require,module,exports){
+},{"jquery":11}],29:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -16771,7 +16839,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     setTimeout(scroller, 0);
   });
 });
-},{"jquery":11}],29:[function(require,module,exports){
+},{"jquery":11}],30:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -19529,4 +19597,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return _;
     };
 });
-},{"jquery":11}]},{},[25]);
+},{"jquery":11}]},{},[26]);

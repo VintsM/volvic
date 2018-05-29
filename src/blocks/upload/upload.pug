@@ -7,9 +7,9 @@ include ../button/button
 
 mixin upload(data)
   .upload
-    input(id='upload-input' type='file' required='true' data-accept=data.accept data-max-size=data.maxSize name=data.name).upload__input.js-upload-input
+    input(id='upload-input' type='file' required='true' data-accept=data.accept data-max-size=data.maxSize name=data.name multiple=data.multiple || false).upload__input.js-upload-input
     +button({
       tag: 'button',
-      mods: 'upload__button js-upload-button',
+      mods: 'js-upload-button',
       text: 'Выбрать файл'
     })

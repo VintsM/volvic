@@ -1,7 +1,7 @@
 .form {
   &__row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0 svw(-$small-container-padding);
     @include breakpoint(medium) {
@@ -27,12 +27,12 @@
     font-size: svw(16);
     @include breakpoint(medium) {
       padding: 0 mvw($medium-container-padding);
-      margin-bottom: mvw(20);
+      margin-bottom: mvw(30);
       font-size: mvw(20);
     }
     @include breakpoint(large) {
       padding: 0 rem($large-container-padding);
-      margin-bottom: rem(30);
+      margin-bottom: rem(50);
       font-size: rem(30);
     }
   }

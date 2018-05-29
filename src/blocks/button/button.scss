@@ -30,6 +30,16 @@
     font-size: rem(24);
     padding: rem(15) rem(20);
   }
+  &.button_green {
+    border-color: $primary;
+    color: $primary;
+    &:hover,
+    &:focus {
+      border-color: $primary;
+      color: $white;
+      background-color: $primary;
+    }
+  }
   &.button_blot {
     color: $white;
     background: url(../img/button/bg-red.png) center no-repeat;

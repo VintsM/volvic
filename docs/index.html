@@ -166,7 +166,7 @@
                 <div class="faq__answer js-faq-answer">Вам необходимо пройти регистрацию на сайте акции www.volvic-promo.ru.</div>
               </div>
             </div>
-            <div class="faq__bottom"><a class="faq__link" href="#">Задать свой вопрос</a><a class="faq__link" href="https://av.ru/shops/" target="_blank" rel="nofollow noopener noreferrer">Магазины-участники</a></div>
+            <div class="faq__bottom"><a class="faq__link" href="#" data-modal-window=".modal-feedback">Задать свой вопрос</a><a class="faq__link" href="https://av.ru/shops/" target="_blank" rel="nofollow noopener noreferrer">Магазины-участники</a></div>
           </div>
         </div><a id="check"></a>
         <div class="check">
@@ -174,24 +174,22 @@
             <h2 class="title title_1 check__title">Регистрация чека</h2>
             <form class="form check__form" id="check-form" action="/api/check-form" novalidate="novalidate" autocomplete="off">
               <div class="form__row">
-                <div class="form__field">
+                <div class="form__field form__field_m-50">
                   <div class="form-field">
                     <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[name]" required=""><span class="input__placeholder">Имя</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
-                <div class="form__field">
+                <div class="form__field form__field_m-50">
                   <div class="form-field">
                     <div class="input  form-field__input"><input class="input__field" type="text" name="CheckForm[email]" required=""><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
-              </div>
-              <div class="form__row">
-                <div class="form__field">
+                <div class="form__field form__field_m-50">
                   <div class="form-field">
                     <div class="input  form-field__input"><input class="input__field" data-tel="true" type="text" name="CheckForm[tel]" required=""><span class="input__placeholder">Телефон</span><span class="form-field__error"></span></div>
                   </div>
                 </div>
-                <div class="form__field">
+                <div class="form__field form__field_m-50">
                   <div class="form-field">
                     <div class="select  form-field__input">
                       <div class="select__main js-select-main">
@@ -203,19 +201,15 @@
                       </ul><span class="form-field__error"></span></div>
                   </div>
                 </div>
-              </div>
-              <div class="form__row">
                 <div class="form__field">
                   <div class="form-field">
                     <div class="input input_lp form-field__input"><input class="input__field" type="text" name="CheckForm[data]" required=""><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span><span class="form-field__error"></span></div>
                   </div>
                 </div>
-              </div>
-              <div class="form__row">
                 <div class="form__field">
                   <div class="form-field">
-                    <div class="form-field__upload"><span class="form-field__upload-text">Загрузить фото чека<br><span class="form-field__upload-small">*.jpg, *.png, *.jpeg</span></span>
-                      <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" data-accept=".jpg, .png, .jpeg" data-max-size="10" name="CheckForm[file]"><button class="button upload__button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
+                    <div class="form-field__upload"><span class="form-field__upload-text">Загрузить фото чека<br><span class="form-field__upload-small">.jpg, .png, .jpeg</span></span>
+                      <div class="upload"><input class="upload__input js-upload-input" id="upload-input" type="file" required="true" data-accept=".jpg, .png, .jpeg" data-max-size="10" name="CheckForm[file]"><button class="button js-upload-button"><span class="button__text">Выбрать файл</span></button></div>
                     </div>
                   </div>
                 </div>
@@ -338,6 +332,35 @@
             <div class="sticker__text">Подписка 30 дней на ПАКЕТ «ФУТБОЛ»</div><img src="./img/sticker/match-football.png" alt="Подписка 30 дней на ПАКЕТ «ФУТБОЛ»"></div>
         </div>
         <div class="modal-win__button"><button class="button button_blot button_green" type="submit"><span class="button__text">Получить приз</span></button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal-feedback">
+    <div class="modal__inner">
+      <div class="modal__close js-modal-close"></div>
+      <div class="modal__content">
+        <h2 class="title title_2 modal__title">Обратная связь</h2>
+        <form class="feedback-form form" id="feedback-form" novalidate="novalidate" autocomplete="off">
+          <div class="form__row">
+            <div class="form__field form__field_m-50">
+              <div class="form-field">
+                <div class="input input_green form-field__input"><input class="input__field" type="text" name="FeedbackForm[name]" required=""><span class="input__placeholder">Имя</span><span class="form-field__error"></span></div>
+              </div>
+            </div>
+            <div class="form__field form__field_m-50">
+              <div class="form-field">
+                <div class="input input_green form-field__input"><input class="input__field" type="text" name="FeedbackForm[email]" required=""><span class="input__placeholder">Email</span><span class="form-field__error"></span></div>
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="form-field">
+                <div class="input input_green form-field__input">
+                  <div class="input__textarea"><textarea class="input__field" placeholder="Введите Ваше сообщение..." name="FeedbackForm[message]" required=""></textarea></div><span class="form-field__error"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Отправить</span></button></div>
+        </form>
       </div>
     </div>
   </div>

@@ -3,35 +3,36 @@ import 'jquery-validation/dist/additional-methods.js';
 
 (function ($) {
   $(document).ready(function () {
-    $('#check-form').validate({
+
+    let modal = $('.modal-message').data('modal');
+
+    $('#feedback-form').validate({
       ignore: '',
       rules: {
-        'CheckForm[name]': {
-          cyrilliconly: true
+        'FeedbackForm[name]': {
+          cyrilliconly: true,
+          required: true
         },
-        'CheckForm[email]': {
+        'FeedbackForm[email]': {
           email: true,
           required: true
         },
-        'CheckForm[file]': {
+        'FeedbackForm[message]': {
           required: true
         }
       },
       submitHandler: function submitHandler(form) {
-        let formData = new FormData(form);
-
         $.ajax({
           url: $(form).attr('action'),
           method: 'POST',
-          enctype: 'multipart/form-data',
-          processData: false,
-          contentType: false,
-          data: formData,
+          data: $(form).serialize(),
           success: function (resp) {
             if (!$.isEmptyObject(resp)) {
               // TODO
             } else {
-              window.location.reload();
+              modal.setTitle('Отлично!');
+              modal.setText('Вопрос отпрвлен.');
+              modal.open();
             }
           }
         });

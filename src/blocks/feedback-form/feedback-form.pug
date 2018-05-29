@@ -1,0 +1,49 @@
+form#feedback-form.feedback-form.form(novalidate='novalidate' autocomplete='off')
+  .form__row
+    .form__field.form__field_m-50
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Имя',
+          attrs: {
+            type: 'text',
+            name: 'FeedbackForm[name]',
+            required: ''
+          }
+        }
+      })
+    .form__field.form__field_m-50
+      +form-field({
+        input: {
+          tag: 'input',
+          mods: 'input_green',
+          placeholder: 'Email',
+          attrs: {
+            type: 'text',
+            name: 'FeedbackForm[email]',
+            required: ''
+          }
+        }
+      })
+    .form__field
+      +form-field({
+        input: {
+          tag: 'textarea',
+          mods: 'input_green',
+          attrs: {
+            placeholder: 'Введите Ваше сообщение...',
+            name: 'FeedbackForm[message]',
+            required: ''
+          }
+        }
+      })
+  .form__controls
+    +button({
+      tag: 'button',
+      mods: 'button_blot button_green',
+      text: 'Отправить',
+      attrs: {
+        type: 'submit'
+      }
+    })

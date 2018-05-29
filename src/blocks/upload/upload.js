@@ -10,19 +10,21 @@
           upload.maxSize = upload.input.data('max-size') * 1000000;
           upload.ext = upload.input.data('accept');
           upload.sendButton = $('.js-upload-button-send');
-          upload.file = undefined;
+          upload.files = undefined;
 
       upload.button.on('click', function () {
         upload.input.click();
       });
 
       upload.input.on('change', function () {
-        let reader = new FileReader();
-        upload.file = this.files[0];
-        reader.onloadend = function () {
-          upload.checkFile(upload.file);
-        };
-        reader.readAsDataURL(upload.file);
+        upload.files = this.files;
+        for (let i = 0; i < upload.files.length; i++) {
+          let reader = new FileReader();
+          reader.readAsDataURL(upload.files[i]);
+          reader.onloadend = function () {
+            upload.checkFile(upload.files[i]);
+          };
+        }
         $(this).valid();
       });
 
