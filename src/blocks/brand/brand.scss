@@ -1,0 +1,198 @@
+.brand {
+  padding-top: svw(30);
+  background: url(../img/brand/brand-small-bg.jpg) center top no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  @include breakpoint(medium) {
+    padding-top: mvw(60);
+  }
+  @include breakpoint(large) {
+    background: url(../img/brand/bg-large.jpg) center top no-repeat;
+    background-size: cover;
+    min-height: calc(100vh - 102px);
+    position: relative;
+    padding-top: 0;
+  }
+  &__bottle {
+    margin-bottom: svw(100);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(250);
+    }
+    @include breakpoint(large) {
+      padding-top: rem(90);
+      margin-bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+  &__img {
+    display: block;
+    margin: 0 auto;
+    height: svw(215);
+    @include breakpoint(medium) {
+      height: mvw(500);
+    }
+    @include breakpoint(large) {
+      height: auto;
+    }
+  }
+  &__round {
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+      width: rem(485);
+      height: rem(485);
+      border: rem(2) solid $white;
+      border-radius: 50%;
+      position: absolute;
+      top: rem(90);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__drop {
+    width: 100%;
+    height: 100%;
+    background: url(../img/brand/drop.svg) top rem(60) left rem(30) no-repeat;
+    position: relative;
+    z-index: 1;
+    transform: rotate(0);
+    transition: .2s ease;
+    will-change: transform;
+  }
+  &__point {
+    @include breakpoint(large) {
+      width: rem(25);
+      height: rem(25);
+      border: rem(3) solid $jungle-green;
+      border-radius: 50%;
+      background-color: $white;
+      position: absolute;
+    }
+    &:nth-child(1) {
+      top: rem(80);
+      left: rem(40);
+    }
+    &:nth-child(2) {
+      top: rem(80);
+      right: rem(40);
+    }
+    &:nth-child(3) {
+      top: rem(330);
+      right: rem(10);
+    }
+    &:nth-child(4) {
+      bottom: rem(-12);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:nth-child(5) {
+      top: rem(330);
+      left: rem(10);
+    }
+  }
+  &__advantages {
+    padding: 0 svw($small-container-padding) svw($small-container-padding);
+    @include breakpoint(medium) {
+      padding: 0 mvw($medium-container-padding) mvw($medium-container-padding);
+    }
+    @include breakpoint(large) {
+      padding: 0 mvw($large-container-padding) mvw($large-container-padding);
+      position: relative;
+      max-width: $global-width;
+      height: calc(100vh - 102px);
+      margin: 0 auto;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include breakpoint(medium) {
+      align-items: center;
+    }
+    @include breakpoint(large) {
+      background: url(../img/brand/blot.svg) center no-repeat;
+      background-size: contain;
+      position: absolute;
+      transform: scale(0.9);
+      opacity: .7;
+      will-change: opacity;
+      &:nth-child(1) {
+        top: rem(30);
+        left: rem(-30);
+        width: rem(580);
+        padding: rem(35) rem(30) rem(25) rem(100);
+      }
+      &:nth-child(2) {
+        top: rem(30);
+        right: rem(-30);
+        width: rem(600);
+        padding: rem(40) rem(30) rem(20) rem(90);
+      }
+      &:nth-child(3) {
+        top: 40%;
+        right: rem(-30);
+        width: rem(480);
+        padding: rem(30) rem(30) rem(30) rem(80);
+      }
+      &:nth-child(4) {
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: rem(550);
+        padding: rem(30) rem(30) rem(30) rem(80);
+      }
+      &:nth-child(5) {
+        top: 55%;
+        left: rem(-30);
+        width: rem(550);
+        padding: rem(40) rem(30) rem(40) rem(80);
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: svw(20);
+      @include breakpoint(medium) {
+        margin-bottom: mvw(40);
+      }
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__num {
+    flex: 0 0 auto;
+    width: svw(45);
+    height: svw(45);
+    padding: svw(5);
+    text-align: center;
+    font-family: $alt-font;
+    font-size: svw(34);
+    line-height: 1;
+    color: $white;
+    background-color: $jungle-green;
+    border-radius: 50%;
+    margin-right: svw(10);
+    @include breakpoint(medium) {
+      width: mvw(65);
+      height: mvw(65);
+      padding: mvw(15);
+      font-size: mvw(40);
+      margin-right: mvw(20);
+    }
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+  &__text {
+    font-size: svw(14);
+    @include breakpoint(medium) {
+      font-size: mvw(18);
+    }
+    @include breakpoint(large) {
+      height: auto;
+      font-size: rem(18);
+      color: $white;
+    }
+  }
+}

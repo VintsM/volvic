@@ -14,6 +14,7 @@
     align-items: center;
     @include breakpoint(large) {
       justify-content: flex-start;
+      padding: 0 rem($large-container-padding);
       max-width: $global-width;
       margin: 0 auto;
     }

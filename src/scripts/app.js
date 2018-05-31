@@ -15,6 +15,7 @@ import '../blocks/login/login';
 import '../blocks/recovery/recovery';
 import '../blocks/lk-form/lk-form';
 import '../blocks/feedback-form/feedback-form';
+import '../blocks/brand/brand';
 
 import svg4everybody from 'svg4everybody';
 

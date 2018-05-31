@@ -15721,6 +15721,28 @@ return jQuery;
 },{}],13:[function(require,module,exports){
 'use strict';
 
+(function ($) {
+  $(document).ready(function () {
+    var accum = 0;
+    $(window).on('mousewheel', function (e) {
+      if (window.STATE === 'large') {
+        dropRotate(e);
+      } else {
+        $('.js-drop').attr('style', '');
+      }
+    });
+
+    function dropRotate(e) {
+
+      e = e.originalEvent;
+      accum += e.deltaY;
+      $('.js-drop').css({ transform: 'rotate(' + accum / 100 * 5 + 'deg)' });
+    }
+  });
+})(jQuery);
+},{}],14:[function(require,module,exports){
+'use strict';
+
 require('jquery-validation/dist/jquery.validate.js');
 
 require('jquery-validation/dist/additional-methods.js');
@@ -15763,7 +15785,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],14:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],15:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -15779,7 +15801,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -15825,7 +15847,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],16:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],17:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -15876,7 +15898,7 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
   // Маска на паспорт
   $('[data-passport="true"]').inputmask('9999 999999', { showMaskOnHover: false });
 })(jQuery);
-},{"inputmask/dist/inputmask/inputmask.date.extensions.js":4,"inputmask/dist/inputmask/inputmask.extensions.js":5,"inputmask/dist/inputmask/inputmask.js":6,"inputmask/dist/inputmask/inputmask.phone.extensions.js":7,"inputmask/dist/inputmask/jquery.inputmask.js":8,"jquery-validation/dist/jquery.validate.js":10}],17:[function(require,module,exports){
+},{"inputmask/dist/inputmask/inputmask.date.extensions.js":4,"inputmask/dist/inputmask/inputmask.extensions.js":5,"inputmask/dist/inputmask/inputmask.js":6,"inputmask/dist/inputmask/inputmask.phone.extensions.js":7,"inputmask/dist/inputmask/jquery.inputmask.js":8,"jquery-validation/dist/jquery.validate.js":10}],18:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -15899,7 +15921,7 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
     });
   });
 })(jQuery);
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -15912,7 +15934,7 @@ require('inputmask/dist/inputmask/jquery.inputmask.js');
     });
   });
 })(jQuery);
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -16007,7 +16029,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],20:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],21:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -16063,7 +16085,7 @@ require('jquery-validation/dist/additional-methods.js');
     }
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],21:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],22:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16215,7 +16237,7 @@ require('jquery-validation/dist/additional-methods.js');
 		});
 	});
 })(jQuery);
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16252,7 +16274,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 require('jquery-validation/dist/jquery.validate.js');
@@ -16289,7 +16311,7 @@ require('jquery-validation/dist/additional-methods.js');
     });
   });
 })(jQuery);
-},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],24:[function(require,module,exports){
+},{"jquery-validation/dist/additional-methods.js":9,"jquery-validation/dist/jquery.validate.js":10}],25:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16344,7 +16366,7 @@ require('jquery-validation/dist/additional-methods.js');
     $('.select').vSelect();
   });
 })(jQuery);
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -16457,7 +16479,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     $('.upload').upload();
   });
 })(jQuery);
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 require('./jquery-global');
@@ -16494,6 +16516,8 @@ require('../blocks/lk-form/lk-form');
 
 require('../blocks/feedback-form/feedback-form');
 
+require('../blocks/brand/brand');
+
 var _svg4everybody = require('svg4everybody');
 
 var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
@@ -16501,7 +16525,7 @@ var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _svg4everybody2.default)();
-},{"../blocks/check/check":13,"../blocks/faq/faq":14,"../blocks/feedback-form/feedback-form":15,"../blocks/form/form":16,"../blocks/header/header":17,"../blocks/input/input":18,"../blocks/lk-form/lk-form":19,"../blocks/login/login":20,"../blocks/modal/modal":21,"../blocks/prizes/prizes":22,"../blocks/recovery/recovery":23,"../blocks/select/select":24,"../blocks/upload/upload":25,"./common":27,"./jquery-global":28,"./jquery.sticky":29,"./slick":30,"svg4everybody":12}],27:[function(require,module,exports){
+},{"../blocks/brand/brand":13,"../blocks/check/check":14,"../blocks/faq/faq":15,"../blocks/feedback-form/feedback-form":16,"../blocks/form/form":17,"../blocks/header/header":18,"../blocks/input/input":19,"../blocks/lk-form/lk-form":20,"../blocks/login/login":21,"../blocks/modal/modal":22,"../blocks/prizes/prizes":23,"../blocks/recovery/recovery":24,"../blocks/select/select":25,"../blocks/upload/upload":26,"./common":28,"./jquery-global":29,"./jquery.sticky":30,"./slick":31,"svg4everybody":12}],28:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -16535,12 +16559,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     //     $('.js-parallax').attr('style', '');
     //   }
     // });
-
-    function parallaxScroll() {
-      var scrolled = $(window).scrollTop();
-      $('.js-parallax-1').css({ transform: 'translateY(' + (0 - scrolled * .2) + 'px)' });
-      $('.js-parallax-2').css({ transform: 'translateY(' + (0 - scrolled * .35) + 'px)' });
-    }
+    //
+    // function parallaxScroll(){
+    //   var scrolled = $(window).scrollTop();
+    //   $('.js-parallax-1').css({transform: `rotate(${(scrolled*.2)}deg)`});
+    // }
 
     $('a[href^="#"]').on('click', function (event) {
       var target = $("[id='" + this.getAttribute('href').replace('#', '') + "']");
@@ -16554,7 +16577,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   });
 })(jQuery);
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -16565,7 +16588,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.jQuery = _jquery2.default;
 window.$ = _jquery2.default;
-},{"jquery":11}],29:[function(require,module,exports){
+},{"jquery":11}],30:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -16839,7 +16862,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     setTimeout(scroller, 0);
   });
 });
-},{"jquery":11}],30:[function(require,module,exports){
+},{"jquery":11}],31:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -19597,4 +19620,4 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return _;
     };
 });
-},{"jquery":11}]},{},[26]);
+},{"jquery":11}]},{},[27]);
