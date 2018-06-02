@@ -3,6 +3,7 @@
   background: url(../img/brand/brand-small-bg.jpg) center top no-repeat;
   background-size: 100% auto;
   overflow: hidden;
+  position: relative;
   @include breakpoint(medium) {
     padding-top: mvw(60);
   }
@@ -115,39 +116,42 @@
       background: url(../img/brand/blot.svg) center no-repeat;
       background-size: contain;
       position: absolute;
-      transform: scale(0.9);
       opacity: .7;
       will-change: opacity;
+      transition: .3s ease;
+      &.on {
+        opacity: 1;
+      }
       &:nth-child(1) {
         top: rem(30);
         left: rem(-30);
-        width: rem(580);
-        padding: rem(35) rem(30) rem(25) rem(100);
+        width: rem(522);
+        padding: rem(32) rem(27) rem(23) rem(90);
       }
       &:nth-child(2) {
         top: rem(30);
         right: rem(-30);
-        width: rem(600);
-        padding: rem(40) rem(30) rem(20) rem(90);
+        width: rem(540);
+        padding: rem(36) rem(27) rem(18) rem(81);
       }
       &:nth-child(3) {
-        top: 40%;
-        right: rem(-30);
-        width: rem(480);
-        padding: rem(30) rem(30) rem(30) rem(80);
+        top: 35%;
+        right: 0;
+        width: rem(432);
+        padding: rem(27) rem(27) rem(27) rem(72);
       }
       &:nth-child(4) {
         top: 75%;
         left: 50%;
         transform: translateX(-50%);
-        width: rem(550);
-        padding: rem(30) rem(30) rem(30) rem(80);
+        width: rem(495);
+        padding: rem(27) rem(27) rem(27) rem(72);
       }
       &:nth-child(5) {
         top: 55%;
         left: rem(-30);
-        width: rem(550);
-        padding: rem(40) rem(30) rem(40) rem(80);
+        width: rem(495);
+        padding: rem(36) rem(27) rem(36) rem(72);
       }
     }
     &:not(:last-child) {
@@ -191,8 +195,19 @@
     }
     @include breakpoint(large) {
       height: auto;
-      font-size: rem(18);
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.2;
       color: $white;
+    }
+  }
+  &__scroll {
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+      position: absolute;
+      right: 100px;
+      bottom: 100px;
     }
   }
 }

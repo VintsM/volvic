@@ -1,0 +1,48 @@
+.scroll {
+  text-align: center;
+  display: none;
+  @include breakpoint(medium) {
+    display: block;
+  }
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    fill: $white;
+    width: rem(23);
+    height: rem(56px);
+  }
+  &__button {
+    display: inline-block;
+    width: rem(76);
+    height: rem(76);
+    background-color: rgba(34, 34, 34, .8);
+    border-radius: 50%;
+    padding: rem(10);
+    animation-name: lightning;
+    animation-delay: 0s;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes lightning {
+  0% {
+    box-shadow: 0 0 0 0 rgba($black, .25), 0 0 0 0 rgba($black, .25);
+  }
+  20% {
+    box-shadow: 0 0 0 9px rgba($black, .25), 0 0 0 0 rgba($black, .25);
+  }
+  40% {
+    box-shadow: 0 0 0 17px rgba($black, .25), 0 0 0 9px rgba($black, .25);
+  }
+  60% {
+    box-shadow: 0 0 0 9px rgba($black, .25), 0 0 0 17px rgba($black, .25);
+  }
+  80% {
+    box-shadow: 0 0 0 0 rgba($black, .25), 0 0 0 9px rgba($black, .25);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($black, .25), 0 0 0 0 rgba($black, .25);
+  }
+}

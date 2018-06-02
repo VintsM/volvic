@@ -1,0 +1,12 @@
+//-
+  +scroll({
+    mods: 'brand__scroll'
+  })
+
+mixin scroll(data)
+  .scroll(class=data.mods)
+    .scroll__button
+      +icon({
+        name: 'scroll',
+        mods: 'scroll__icon'
+      })

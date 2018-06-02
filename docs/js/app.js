@@ -15724,6 +15724,13 @@ return jQuery;
 (function ($) {
   $(document).ready(function () {
     var accum = 0;
+    var data = {
+      0: '#brand-item-0',
+      100: '#brand-item-1',
+      165: '#brand-item-2',
+      230: '#brand-item-3',
+      295: '#brand-item-4'
+    };
     $(window).on('mousewheel', function (e) {
       if (window.STATE === 'large') {
         dropRotate(e);
@@ -15732,11 +15739,24 @@ return jQuery;
       }
     });
 
-    function dropRotate(e) {
+    function isBetween(start, end, mid) {
+      var end_ = (end - start + 360) % 360;
+      var mid_ = (mid - start + 360) % 360;
+      return mid_ < end_;
+    }
 
+    function dropRotate(e) {
       e = e.originalEvent;
       accum += e.deltaY;
-      $('.js-drop').css({ transform: 'rotate(' + accum / 100 * 5 + 'deg)' });
+      var angle = accum / 100 * 5;
+      var universalAngle = (angle % 360 + 360) % 360;
+
+      var delta = 20;
+      $('.js-drop').css({ transform: 'rotate(' + angle + 'deg)' });
+      for (var i in data) {
+        i = parseInt(i);
+        if (isBetween(i - delta, i + delta, universalAngle)) $(data[i]).addClass('on');else $(data[i]).removeClass('on');
+      }
     }
   });
 })(jQuery);
@@ -16109,7 +16129,7 @@ require('jquery-validation/dist/additional-methods.js');
 			elem.find('.modal__text').html(text);
 		};
 		modal.open = function (clicked) {
-			lockScreen();
+			// lockScreen();
 			elem.addClass('open');
 			if (clicked) modal.clicked = clicked;
 			if (modal.onOpen != null) modal.onOpen();
@@ -16119,7 +16139,7 @@ require('jquery-validation/dist/additional-methods.js');
 			$('.header__mobile-nav').hide();
 		};
 		modal.close = function () {
-			unlockScreen();
+			// unlockScreen();
 			elem.removeClass('open');
 			if (modal.onClose != null) modal.onClose();
 		};

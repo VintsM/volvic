@@ -19,7 +19,7 @@
       elem.find('.modal__text').html(text);
     };
 		modal.open = function (clicked) {
-			lockScreen();
+			// lockScreen();
 			elem.addClass('open');
 			if (clicked) modal.clicked = clicked;
 			if (modal.onOpen != null) modal.onOpen();
@@ -29,7 +29,7 @@
       $('.header__mobile-nav').hide();
 		};
 		modal.close = function () {
-			unlockScreen();
+			// unlockScreen();
 			elem.removeClass('open');
       if (modal.onClose != null) modal.onClose();
 		};

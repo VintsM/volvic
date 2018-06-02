@@ -17,6 +17,8 @@
     }
   ]
 
+include ../scroll/scroll
+
 .brand
   .brand__bottle
     img(src='./img/brand/bottle.png' alt='Volvic').brand__img
@@ -29,6 +31,9 @@
     .brand__drop.js-drop
   .brand__advantages
     each item, index in advantages
-      .brand__item
+      .brand__item(id=`brand-item-${index}` class=(index == 0 ? 'on' : ''))
         .brand__num= index + 1
         .brand__text= item.text
+  +scroll({
+    mods: 'brand__scroll'
+  })
