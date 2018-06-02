@@ -1,13 +1,14 @@
 (function ($) {
   $(document).ready(function () {
-    $('.header').sticky({
-      topSpacing: 0,
-      responsiveWidth: true,
-      zIndex: 20
+    $(window).on('scroll', function() {
+      if ($(window).scrollTop() > 0) {
+        $('.header').addClass('active');
+      } else {
+        $('.header').removeClass('active');
+      }
     });
 
     $('.header__burger').on('click', function () {
-      $('html').toggleClass('locked');
       $(this).toggleClass('active');
       $('.header__mobile-nav').toggle();
     });

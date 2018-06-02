@@ -2,7 +2,7 @@
 
   $.fn.pageStatus = function() {
     var page = {
-      pageState: '',// small (< 768) || medium (>= 768,  < 1200) || large (>= 1280)
+      pageState: '',// small (< 768) || medium (>= 768,  < 1280) || large (>= 1280)
       changeState: function(init) {
         var oldPageState = this.pageState;
         if (window.innerWidth < 768) this.pageState = 'small';
@@ -24,22 +24,6 @@
 
   $(document).ready(function () {
     $('body').pageStatus();
-
-    let s;
-
-    if (window.STATE === 'large') {
-      s = skrollr.init();
-    } else {
-      if (s != undefined) skrollr.destroy();
-    }
-
-    $(document).on('changeState', function () {
-      if (window.STATE === 'large') {
-        s = skrollr.init();
-      } else {
-        if (s != undefined) skrollr.destroy();
-      }
-    });
 
     $('a[href^="#"]').on('click', function (event) {
       var target = $("[id='" + this.getAttribute('href').replace('#', '') + "']");

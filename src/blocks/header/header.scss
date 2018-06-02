@@ -2,6 +2,11 @@
   background-color: $mine-shaft;
   color: $white;
   padding: svw(5) 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
   @include breakpoint(medium) {
     padding: mvw(15) 0;
   }
@@ -44,7 +49,7 @@
       top: rem(-15);
       left: 0;
       transition: .3s ease;
-      .is-sticky &,
+      .active &,
       .header_small-logo & {
         width: rem(100);
         height: rem(73);

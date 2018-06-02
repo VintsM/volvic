@@ -1,16 +1,16 @@
 .top {
   background: url(../img/top/top-mobile-bg.jpg) center no-repeat;
   background-size: cover;
-  padding: svw(20) 0 svw(300);
+  padding: svw(75) 0 svw(300);
   text-align: center;
   @include breakpoint(medium) {
     text-align: left;
     background: url(../img/top/top.jpg) center no-repeat;
     background-size: cover;
-    padding: mvw(80) 0 mvw(420);
+    padding: mvw(178) 0 mvw(420);
   }
   @include breakpoint(large) {
-    padding: rem(80) 0 rem(420);
+    padding: rem(161) 0 rem(420);
   }
   &__content {
     @include breakpoint(medium) {

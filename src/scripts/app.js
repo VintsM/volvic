@@ -1,7 +1,5 @@
 import './jquery-global';
-import './jquery.sticky';
 import './slick';
-import skrollr from './skrollr.min';
 import './common';
 import '../blocks/header/header';
 import '../blocks/select/select';
@@ -22,5 +20,4 @@ import '../blocks/winners/winners';
 
 import svg4everybody from 'svg4everybody';
 
-window.skrollr = skrollr;
 svg4everybody();
