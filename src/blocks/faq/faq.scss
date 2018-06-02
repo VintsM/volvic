@@ -157,3 +157,30 @@
     }
   }
 }
+
+.faq-table {
+  border: svw(2) solid $black;
+  border-collapse: collapse;
+  font-size: svw(14);
+  @include breakpoint(medium) {
+    border-width: mvw(2);
+    font-size: mvw(16);
+  }
+  @include breakpoint(large) {
+    border-width: rem(2);
+    font-size: rem(16);
+  }
+  th,
+  td {
+    border: svw(2) solid $black;
+    padding: svw(3);
+    @include breakpoint(medium) {
+      border-width: mvw(2);
+      padding: mvw(10);
+    }
+    @include breakpoint(large) {
+      border-width: rem(2);
+      padding: rem(10);
+    }
+  }
+}

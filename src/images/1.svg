@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="110px" height="110px" viewBox="0 0 110 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="55" cy="55" r="55"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main-v3" transform="translate(-185.000000, -1184.000000)">
+            <g id="Group-13" transform="translate(0.000000, 1104.000000)">
+                <g id="Group-11" transform="translate(52.000000, 80.000000)">
+                    <g id="Group-4">
+                        <g id="Group-6">
+                            <g id="Group-7">
+                                <g id="Group-3" transform="translate(133.000000, 0.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Oval" fill="#007D3B" xlink:href="#path-1"></use>
+                                    <circle id="Oval" fill="#00A634" mask="url(#mask-2)" cx="133.5" cy="133.5" r="88.5"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,190 @@
+.winners {
+  background: url(../img/winners/bg.jpg) center no-repeat;
+  background-size: cover;
+  padding: svw(20) 0;
+  color: $white;
+  @include breakpoint(medium) {
+    padding: mvw(20) 0;
+  }
+  @include breakpoint(large) {
+    padding: rem(60) 0;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      text-align: left;
+      margin-bottom: mvw(20);
+    }
+    @include breakpoint(large) {
+      text-align: center;
+      margin-bottom: rem(20);
+    }
+  }
+  &__tabs-head {
+    display: flex;
+    margin-bottom: svw(20);
+    @include breakpoint(medium) {
+      margin-bottom: mvw(30);
+      justify-content: space-around;
+    }
+    @include breakpoint(large) {
+      margin-bottom: rem(45);
+    }
+  }
+  &__tabs-name {
+    border: svw(1) solid $white;
+    padding: svw(10) svw(10);
+    font-size: svw(12);
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    @include breakpoint(medium) {
+      width: auto;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: mvw(2) dashed $white;
+      padding: 0;
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      display: inline-block;
+      font-size: rem(28);
+      border-bottom-width: rem(2);
+    }
+    &:hover {
+      @include breakpoint(medium) {
+        border-bottom-color: transparent;
+      }
+    }
+    &:not(:first-child) {
+      border-left: 0;
+    }
+    &.active {
+      background-color: rgba($white, .25);
+      @include breakpoint(medium) {
+        color: $primary;
+        background-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+  &__tabs-body {
+    overflow-x: auto;
+  }
+  &__table {
+    width: 100%;
+    @include breakpoint(medium) {
+      font-size: mvw(18);
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+    }
+    td {
+      padding: svw(5);
+      border: svw(2) solid rgba($white, .5);
+      @include breakpoint(medium) {
+        padding: mvw(10);
+        border-width: mvw(2);
+      }
+      @include breakpoint(large) {
+        padding: rem(20) rem(40);
+        border-width: rem(2);
+      }
+    }
+  }
+  &__select {
+    width: svw(150);
+    display: block;
+    background-color: transparent;
+    border: 0;
+    margin: 0 auto svw(20);
+    position: relative;
+    @include breakpoint(medium) {
+      width: mvw(180);
+      margin-bottom: mvw(30);
+    }
+    @include breakpoint(large) {
+      width: rem(250);
+      margin-bottom: rem(30);
+    }
+    &:focus {
+      outline: 0;
+    }
+    &.active {
+      .winners__select-text:after {
+        border-top: 0;
+        border-bottom: svw(7) solid $white;
+        @include breakpoint(medium) {
+          border-bottom-width: mvw(7);
+        }
+        @include breakpoint(large) {
+          border-bottom-width: rem(7);
+        }
+      }
+      .winners__select-list {
+        display: block;
+      }
+    }
+  }
+  &__select-text {
+    color: white;
+    font-size: svw(14);
+    position: relative;
+    cursor: pointer;
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+    }
+    @include breakpoint(large) {
+      font-size: rem(28);
+    }
+    &:after {
+      content: '';
+      display: block;
+      border-top: svw(7) solid $white;
+      border-left: svw(7) solid transparent;
+      border-right: svw(7) solid transparent;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      @include breakpoint(medium) {
+        border-top-width: mvw(7);
+        border-left-width: mvw(7);
+        border-right-width: mvw(7);
+      }
+      @include breakpoint(large) {
+        border-top-width: rem(7);
+        border-left-width: rem(7);
+        border-right-width: rem(7);
+      }
+    }
+  }
+  &__select-list {
+    display: none;
+    background-color: $white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  &__select-link {
+    display: block;
+    color: $black;
+    font-size: svw(14);
+    padding: svw(5) svw(15);
+    text-decoration: none;
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+      padding: mvw(5) mvw(15);
+    }
+    @include breakpoint(large) {
+      font-size: rem(28);
+      padding: rem(5) rem(15);
+    }
+    &:hover {
+      background-color: $frostee;
+    }
+  }
+}

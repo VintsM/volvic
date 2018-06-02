@@ -13,21 +13,6 @@ import 'jquery-validation/dist/additional-methods.js';
             'LoginForm[password]': {
                 required: true
             }
-        },
-        submitHandler: function submitHandler(form) {
-          $.ajax({
-            url: $(form).attr('action'),
-            method: 'POST',
-            data: $('#login-form').serialize(),
-            success: function (resp) {
-              if (!$.isEmptyObject(resp)) {
-                // $(form).find('.form__common-error').text(resp.message).show();
-                // $(form).parents('.modal-login').addClass('error');
-              } else {
-                window.location.reload();
-              }
-            }
-          });
         }
     });
 

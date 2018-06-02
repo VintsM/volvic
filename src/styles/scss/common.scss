@@ -1,8 +1,11 @@
+html {
+  font-size: 80%;
+}
+
 html,
 body {
   height: 100%;
   font-family: $main-font;
-  font-size: 100%;
 }
 
 html.locked {
@@ -33,4 +36,8 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.scroll-effect {
+  overflow: hidden;
 }

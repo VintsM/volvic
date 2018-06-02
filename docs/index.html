@@ -41,7 +41,7 @@
           <div class="l-page__container">
             <div class="top__content">
               <h1 class="title title_1 top__title">Пробуди в себе силу фаната</h1>
-              <div class="top__button-container"><a class="button button_blot top__button" href="#check"><span class="button__text">Зарегистрировать код</span></a></div><a class="top__link" href="#">Подробные условия участия в акции</a></div>
+              <div class="top__button-container"><a class="button button_blot top__button" href="#check"><span class="button__text">Зарегистрировать чек</span></a></div><a class="top__link" href="#" target="_blank">Подробные правила участия в акции</a></div>
           </div>
         </div><a id="rules"></a>
         <div class="steps">
@@ -62,8 +62,8 @@
           </div>
         </div><a id="prizes"></a>
         <div class="prizes">
-          <div class="prizes__round prizes__round_1"></div>
-          <div class="prizes__round prizes__round_2"></div>
+          <div class="prizes__round prizes__round_1" data-870="transform: translateY(300px);" data-2400="transform: translateY(-500px);"></div>
+          <div class="prizes__round prizes__round_2" data-870="transform: translateY(300px);" data-2400="transform: translateY(-500px);"></div>
           <div class="l-page__container prizes__container">
             <h2 class="title title_1 prizes__title">Участвуй и выигрывай призы</h2>
             <div class="prizes__inner">
@@ -71,18 +71,17 @@
                 <div class="prizes__img-container"><img class="prizes__img" src="./img/prizes/match.png" alt="МАТЧ!"></div>
                 <div class="prizes__text">Гарантированный приз: Подписка на 1 месяц пакета «Футбол» в мобильном приложении «МАТЧ! КЛУБ»</div>
               </div>
-              <div class="prizes__item prizes__item_ball">
+              <div class="prizes__item prizes__item_ball" data-870="transform: translateY(600px);" data-2400="transform: translateY(-800px);">
                 <div class="prizes__img-container"><img class="prizes__img" src="./img/prizes/ball.png" alt="Hover ball"></div>
                 <div class="prizes__text">Hover ball для настоящих ценителей футбола</div>
               </div>
-              <div class="prizes__item prizes__item_camera">
+              <div class="prizes__item prizes__item_camera" data-870="transform: translateY(600px);" data-2400="transform: translateY(-800px);">
                 <div class="prizes__img-container"><img class="prizes__img" src="./img/prizes/camera.png"></div>
                 <div class="prizes__text">Главный приз- камера GoPro HERO5. Запечатли лучшие моменты вместе с Volvic</div>
               </div>
             </div>
           </div>
         </div><a id="faq"></a>
-        <!---->
         <div class="faq">
           <div class="l-page__container faq__container">
             <h2 class="title title_1 faq__title">FAQ</h2>
@@ -93,7 +92,42 @@
               </div>
               <div class="faq__item">
                 <div class="faq__question js-faq-question">Когда я узнаю результаты еженедельного розыгрыша призов?</div>
-                <div class="faq__answer js-faq-answer">Nunc laoreet dolor ut fermentum pulvinar. Nullam consectetur, mauris placerat rhoncus molestie, diam sem dictum orci, a ultricies nisi lectus in velit.</div>
+                <div class="faq__answer js-faq-answer">
+                  <table class="faq-table">
+                    <tbody>
+                      <tr>
+                        <th>№</th>
+                        <th>Период регистрации на Сайте Акции</th>
+                        <th>Определение обладателей Еженедельных призов</th>
+                        <th>Количество еженедельных призов за соответствующий период (М)</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>с 00:00:00 05.06.2018 <br />по 23:59:59 11.06.2018</td>
+                        <td>до 19.06.2018 включительно</td>
+                        <td>3 (три)</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>с 00:00:00 12.06.2018 <br />по 23:59:59 18.06.2018</td>
+                        <td>до 26.06.2018 включительно</td>
+                        <td>3 (три)</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>с 00:00:00 19.06.2018 <br />по 23:59:59 25.06.2018</td>
+                        <td>до 03.07.2018 включительно</td>
+                        <td>3 (три)</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>с 00:00:00 26.06.2018 <br />по 23:59:59 02.07.2018</td>
+                        <td>до 12.07.2018 включительно</td>
+                        <td>3 (три)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div class="faq__item">
                 <div class="faq__question js-faq-question">Как я могу принять участие в акции?</div>
@@ -197,9 +231,14 @@
                       </ul><span class="form-field__error"></span></div>
                   </div>
                 </div>
-                <div class="form__field">
+                <div class="form__field form__field_m-50">
                   <div class="form-field">
-                    <div class="input input_lp form-field__input"><input class="input__field" type="text" name="CheckForm[data]" required=""><span class="input__placeholder">Дата и номер покупки <span class="grey">(данные из чека)</span></span><span class="form-field__error"></span></div>
+                    <div class="input input_lp form-field__input"><input class="input__field" type="text" name="CheckForm[date]" required="" data-date="true"><span class="input__placeholder">Дата покупки <span class="grey">(данные из чека)</span></span><span class="form-field__error"></span></div>
+                  </div>
+                </div>
+                <div class="form__field form__field_m-50">
+                  <div class="form-field">
+                    <div class="input input_lp form-field__input"><input class="input__field" type="text" name="CheckForm[number]" required=""><span class="input__placeholder">Номер покупки <span class="grey">(данные из чека)</span></span><span class="form-field__error"></span></div>
                   </div>
                 </div>
                 <div class="form__field">
@@ -222,13 +261,99 @@
               </div>
               <div class="form__row">
                 <div class="form__field form__field_small-margin">
-                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreeMatch]" required=""/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с Пользовательским соглашением сервиса "МАТЧ! КЛУБ"</span></label></div>
+                  <div class="control"><label class="control__label"><input class="control__input" type="checkbox" name="CheckForm[agreeMatch]" required=""/><span class="control__check"></span><span class="control__text">Ознакомлен и согласен с <a href="#" target="_blank">Пользовательским соглашением</a> сервиса "МАТЧ! КЛУБ"</span></label></div>
                 </div>
               </div>
-              <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Зарегистрировать код</span></button></div>
+              <div class="form__controls"><button class="button button_blot button_green" type="submit"><span class="button__text">Зарегистрировать чек</span></button></div>
             </form>
           </div>
-        </div><a id="winners"></a></div>
+        </div><a id="winners"></a>
+        <div class="winners">
+          <div class="l-page__container winners__container">
+            <h2 class="title title_1 winners__title">Победители недели</h2>
+            <div class="winners__select">
+              <div class="winners__select-text">С 1 по 8 мая</div>
+              <div class="winners__select-list"><a class="winners__select-link" href="#">С 1 по 8 мая</a><a class="winners__select-link" href="#">С 8 по 16 мая</a><a class="winners__select-link" href="#">С 16 по 24 мая</a><a class="winners__select-link" href="#">С 24 по 2 июня</a></div>
+            </div>
+            <div class="tabs js-tabs winners__tabs">
+              <div class="winners__tabs-head">
+                <div class="js-tabs-name winners__tabs-name active" data-tab="1">Еженедельные призы</div>
+                <div class="js-tabs-name winners__tabs-name" data-tab="2">Главные призы</div>
+              </div>
+              <div class="winners__tabs-body">
+                <div class="js-tabs-content tabs__content active" data-tab="1">
+                  <table class="winners__table">
+                    <tr>
+                      <td>123456</td>
+                      <td>Константин Константинопольский</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>456960</td>
+                      <td>Лариса Игнатьева</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>342808</td>
+                      <td>Иван Иванов</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>231397</td>
+                      <td>Валерия Помидорова</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>221802</td>
+                      <td>Николай Подольский</td>
+                      <td>Hover ball</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="js-tabs-content tabs__content" data-tab="2">
+                  <table class="winners__table">
+                    <tr>
+                      <td>456960</td>
+                      <td>Лариса Игнатьева</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>123456</td>
+                      <td>Константин Константинопольский</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>342808</td>
+                      <td>Иван Иванов</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>231397</td>
+                      <td>Валерия Помидорова</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>221802</td>
+                      <td>Николай Подольский</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>123456</td>
+                      <td>Константин Константинопольский</td>
+                      <td>Hover ball</td>
+                    </tr>
+                    <tr>
+                      <td>456960</td>
+                      <td>Лариса Игнатьева</td>
+                      <td>Hover ball</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="modal modal-login" data-state="login">

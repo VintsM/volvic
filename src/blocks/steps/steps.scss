@@ -12,6 +12,10 @@
       background: url(../img/steps/step-1.png) center no-repeat;
       background-size: cover;
       transform-origin: left center;
+      .steps__num {
+        background: url(../img/1.svg) center no-repeat;
+        background-size: contain;
+      }
       .steps__img {
         width: svw(103);
         @include breakpoint(medium) {
@@ -23,6 +27,10 @@
       background: url(../img/steps/step-2.png) center no-repeat;
       background-size: cover;
       transform-origin: center;
+      .steps__num {
+        background: url(../img/2.svg) center no-repeat;
+        background-size: contain;
+      }
       .steps__img {
         width: svw(147);
         @include breakpoint(medium) {
@@ -34,6 +42,10 @@
       background: url(../img/steps/step-3.png) center no-repeat;
       background-size: cover;
       transform-origin: right center;
+      .steps__num {
+        background: url(../img/3.svg) center no-repeat;
+        background-size: contain;
+      }
       .steps__img {
         width: svw(137);
         @include breakpoint(medium) {
@@ -71,7 +83,6 @@
   &__num {
     display: none;
     border-radius: 50%;
-    background-color: $jungle-green;
     color: $white;
     text-align: center;
     font-family: $alt-font;

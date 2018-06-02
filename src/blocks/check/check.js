@@ -16,25 +16,6 @@ import 'jquery-validation/dist/additional-methods.js';
         'CheckForm[file]': {
           required: true
         }
-      },
-      submitHandler: function submitHandler(form) {
-        let formData = new FormData(form);
-
-        $.ajax({
-          url: $(form).attr('action'),
-          method: 'POST',
-          enctype: 'multipart/form-data',
-          processData: false,
-          contentType: false,
-          data: formData,
-          success: function (resp) {
-            if (!$.isEmptyObject(resp)) {
-              // TODO
-            } else {
-              window.location.reload();
-            }
-          }
-        });
       }
     });
   });

@@ -40,4 +40,7 @@ import 'inputmask/dist/inputmask/jquery.inputmask.js';
 
   // Маска на паспорт
   $('[data-passport="true"]').inputmask('9999 999999', {showMaskOnHover: false});
+
+  // Маска на дату
+  $('[data-date="true"]').inputmask('99.99.9999', {showMaskOnHover: false});
 })(jQuery);

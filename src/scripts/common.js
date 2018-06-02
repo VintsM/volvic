@@ -25,18 +25,21 @@
   $(document).ready(function () {
     $('body').pageStatus();
 
-    // $(window).on('scroll', function() {
-    //   if (window.STATE === 'large') {
-    //     parallaxScroll();
-    //   } else {
-    //     $('.js-parallax').attr('style', '');
-    //   }
-    // });
-    //
-    // function parallaxScroll(){
-    //   var scrolled = $(window).scrollTop();
-    //   $('.js-parallax-1').css({transform: `rotate(${(scrolled*.2)}deg)`});
-    // }
+    let s;
+
+    if (window.STATE === 'large') {
+      s = skrollr.init();
+    } else {
+      if (s != undefined) skrollr.destroy();
+    }
+
+    $(document).on('changeState', function () {
+      if (window.STATE === 'large') {
+        s = skrollr.init();
+      } else {
+        if (s != undefined) skrollr.destroy();
+      }
+    });
 
     $('a[href^="#"]').on('click', function (event) {
       var target = $("[id='" + this.getAttribute('href').replace('#', '') + "']");

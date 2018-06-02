@@ -1,0 +1,100 @@
+-
+  var winners = [
+    {
+      code: '123456',
+      name: 'Константин Константинопольский',
+      prize: 'Hover ball'
+    },
+    {
+      code: '456960',
+      name: 'Лариса Игнатьева',
+      prize: 'Hover ball'
+    },
+    {
+      code: '342808',
+      name: 'Иван Иванов',
+      prize: 'Hover ball'
+    },
+    {
+      code: '231397',
+      name: 'Валерия Помидорова',
+      prize: 'Hover ball'
+    },
+    {
+      code: '221802',
+      name: 'Николай Подольский',
+      prize: 'Hover ball'
+    }
+  ]
+
+  var winners2 = [
+    {
+      code: '456960',
+      name: 'Лариса Игнатьева',
+      prize: 'Hover ball'
+    },
+    {
+      code: '123456',
+      name: 'Константин Константинопольский',
+      prize: 'Hover ball'
+    },
+    {
+      code: '342808',
+      name: 'Иван Иванов',
+      prize: 'Hover ball'
+    },
+    {
+      code: '231397',
+      name: 'Валерия Помидорова',
+      prize: 'Hover ball'
+    },
+    {
+      code: '221802',
+      name: 'Николай Подольский',
+      prize: 'Hover ball'
+    },
+    {
+      code: '123456',
+      name: 'Константин Константинопольский',
+      prize: 'Hover ball'
+    },
+    {
+      code: '456960',
+      name: 'Лариса Игнатьева',
+      prize: 'Hover ball'
+    }
+  ]
+
+.winners
+  .l-page__container.winners__container
+    +title({
+      tag: 'h2',
+      text: 'Победители недели',
+      mods: 'title_1 winners__title'
+    })
+    .winners__select
+      .winners__select-text С 1 по 8 мая
+      .winners__select-list
+        a(href='#').winners__select-link С 1 по 8 мая
+        a(href='#').winners__select-link С 8 по 16 мая
+        a(href='#').winners__select-link С 16 по 24 мая
+        a(href='#').winners__select-link С 24 по 2 июня
+    .tabs.js-tabs.winners__tabs
+      .winners__tabs-head
+        .js-tabs-name.winners__tabs-name.active(data-tab='1') Еженедельные призы
+        .js-tabs-name.winners__tabs-name(data-tab='2') Главные призы
+      .winners__tabs-body
+        .js-tabs-content.tabs__content.active(data-tab='1')
+          table.winners__table
+            each winner in winners
+              tr
+                td= winner.code
+                td= winner.name
+                td= winner.prize
+        .js-tabs-content.tabs__content(data-tab='2')
+          table.winners__table
+            each winner in winners2
+              tr
+                td= winner.code
+                td= winner.name
+                td= winner.prize

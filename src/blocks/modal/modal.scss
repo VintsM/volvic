@@ -125,6 +125,7 @@
   &__text {
     font-size: svw(16);
     line-height: 1.2;
+    overflow-x: auto;
     @include breakpoint(medium) {
       font-size: mvw(20);
     }
