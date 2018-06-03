@@ -10,7 +10,7 @@
     padding: mvw(178) 0 mvw(420);
   }
   @include breakpoint(large) {
-    padding: rem(161) 0 rem(420);
+    padding: rem(80) 0 rem(420);
   }
   &__content {
     @include breakpoint(medium) {

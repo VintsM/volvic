@@ -11,6 +11,18 @@
       max-width: $global-width;
     }
   }
+  &__header {
+    height: svw(55);
+    @include breakpoint(medium) {
+      height: mvw(98);
+    }
+    @include breakpoint(large) {
+      height: rem(101);
+    }
+  }
+  &__content {
+    position: relative;
+  }
   &__section {
     padding-top: 30px;
     padding-bottom: 50px;

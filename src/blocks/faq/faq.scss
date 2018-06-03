@@ -158,6 +158,10 @@
   }
 }
 
+.faq-table-wrapper {
+  overflow-x: auto;
+}
+
 .faq-table {
   border: svw(2) solid $black;
   border-collapse: collapse;
