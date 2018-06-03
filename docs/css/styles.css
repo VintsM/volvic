@@ -370,6 +370,88 @@ a:hover {
   display: none;
 }
 
+.button {
+  font-family: 'Lucida Grande',Arial,Helvetica,sans-serif;
+  font-size: 5vw;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 60.9375vw;
+  padding: 4.6875vw 6.25vw;
+  cursor: pointer;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border-width: .9375vw;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 7.8125vw;
+  background: 0 0;
+}
+
+.button.button_green {
+  color: #00a634;
+  border-color: #00a634;
+}
+
+.button.button_green:focus,
+.button.button_green:hover {
+  color: #fff;
+  border-color: #00a634;
+  background-color: #00a634;
+}
+
+.button.button_blot {
+  line-height: 18.75vw;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  background: url(../img/button/bg-red.png) center no-repeat;
+  background-size: contain;
+}
+
+.button.button_blot:focus,
+.button.button_blot:hover {
+  color: #fff;
+  background: url(../img/button/bg-green.png) center no-repeat;
+  background-size: contain;
+}
+
+.button.button_blot.button_green {
+  background: url(../img/button/bg-green.png) center no-repeat;
+  background-size: contain;
+}
+
+.button.button_blot.button_green:focus,
+.button.button_blot.button_green:hover {
+  color: #fff;
+  background: url(../img/button/bg-red.png) center no-repeat;
+  background-size: contain;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:focus,
+.button:hover {
+  text-decoration: none;
+  color: #3d3d3d;
+  background-color: #fff;
+}
+
+.button__icon+.button__text {
+  margin-left: 6.25vw;
+}
+
+.button__icon {
+  fill: #fff;
+}
+
 .brand {
   position: relative;
   overflow: hidden;
@@ -504,88 +586,6 @@ a:hover {
   bottom: 6.25rem;
 }
 
-.button {
-  font-family: 'Lucida Grande',Arial,Helvetica,sans-serif;
-  font-size: 5vw;
-  line-height: 1;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  min-width: 60.9375vw;
-  padding: 4.6875vw 6.25vw;
-  cursor: pointer;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  border-width: .9375vw;
-  border-style: solid;
-  border-color: #fff;
-  border-radius: 7.8125vw;
-  background: 0 0;
-}
-
-.button.button_green {
-  color: #00a634;
-  border-color: #00a634;
-}
-
-.button.button_green:focus,
-.button.button_green:hover {
-  color: #fff;
-  border-color: #00a634;
-  background-color: #00a634;
-}
-
-.button.button_blot {
-  line-height: 18.75vw;
-  padding: 0;
-  color: #fff;
-  border: 0;
-  border-radius: 0;
-  background: url(../img/button/bg-red.png) center no-repeat;
-  background-size: contain;
-}
-
-.button.button_blot:focus,
-.button.button_blot:hover {
-  color: #fff;
-  background: url(../img/button/bg-green.png) center no-repeat;
-  background-size: contain;
-}
-
-.button.button_blot.button_green {
-  background: url(../img/button/bg-green.png) center no-repeat;
-  background-size: contain;
-}
-
-.button.button_blot.button_green:focus,
-.button.button_blot.button_green:hover {
-  color: #fff;
-  background: url(../img/button/bg-red.png) center no-repeat;
-  background-size: contain;
-}
-
-.button:focus {
-  outline: 0;
-}
-
-.button:focus,
-.button:hover {
-  text-decoration: none;
-  color: #3d3d3d;
-  background-color: #fff;
-}
-
-.button__icon+.button__text {
-  margin-left: 6.25vw;
-}
-
-.button__icon {
-  fill: #fff;
-}
-
 .check {
   padding: 6.25vw 0;
   background: url(../img/check/bg.jpg) center no-repeat;
@@ -595,6 +595,70 @@ a:hover {
 .check__title {
   margin-bottom: 6.25vw;
   text-align: center;
+}
+
+.control {
+  position: relative;
+  color: #fff;
+}
+
+.control.error .control__check,
+.form-field.error .form-field__input .input__textarea,
+.form-field.error .form-field__input .select__main,
+.form-field.error .form-field__input input,
+.form-field.error .form-field__upload .button {
+  border-color: #e73635;
+}
+
+.control__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.control__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.control__input:checked+.control__check {
+  background-color: #00a634;
+  background-image: url(../img/control/ok.svg);
+}
+
+.control__check {
+  position: relative;
+  display: inline-block;
+  width: 11.875vw;
+  height: 11.875vw;
+  margin-right: 7.8125vw;
+  border: 1.25vw solid #00a634;
+  border-radius: 2.5vw;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.control__text {
+  font-size: 5.625vw;
+  line-height: 1.33;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.control__text a {
+  text-decoration: underline;
+  color: #fff;
 }
 
 .faq {
@@ -717,68 +781,8 @@ a:hover {
   border: .625vw solid #000;
 }
 
-.control {
-  position: relative;
-  color: #fff;
-}
-
-.control.error .control__check,
-.form-field.error .form-field__input .input__textarea,
-.form-field.error .form-field__input .select__main,
-.form-field.error .form-field__input input,
-.form-field.error .form-field__upload .button {
-  border-color: #e73635;
-}
-
-.control__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
-
-.control__input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.control__input:checked+.control__check {
-  background-color: #00a634;
-  background-image: url(../img/control/ok.svg);
-}
-
-.control__check {
-  position: relative;
-  display: inline-block;
-  width: 11.875vw;
-  height: 11.875vw;
-  margin-right: 7.8125vw;
-  border: 1.25vw solid #00a634;
-  border-radius: 2.5vw;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: auto;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.control__text {
-  font-size: 5.625vw;
-  line-height: 1.33;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.control__text a {
-  text-decoration: underline;
-  color: #fff;
+.feedback-form .form__controls {
+  text-align: center;
 }
 
 .form__row {
@@ -1945,6 +1949,29 @@ textarea.input__field {
   display: block;
 }
 
+.top {
+  padding: 23.4375vw 0 93.75vw;
+  text-align: center;
+  background: url(../img/top/top-mobile-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.top__title {
+  margin-bottom: 9.375vw;
+  text-align: left;
+}
+
+.top__button-container {
+  margin-bottom: 3.125vw;
+}
+
+.top__link {
+  font-size: 4.375vw;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #fff;
+}
+
 .title_1 {
   font-family: 'Feast',Arial,Helvetica,sans-serif;
   font-size: 12.5vw;
@@ -1968,29 +1995,6 @@ textarea.input__field {
   font-size: 6.25vw;
   line-height: 1.1;
   color: #00a634;
-}
-
-.top {
-  padding: 23.4375vw 0 93.75vw;
-  text-align: center;
-  background: url(../img/top/top-mobile-bg.jpg) center no-repeat;
-  background-size: cover;
-}
-
-.top__title {
-  margin-bottom: 9.375vw;
-  text-align: left;
-}
-
-.top__button-container {
-  margin-bottom: 3.125vw;
-}
-
-.top__link {
-  font-size: 4.375vw;
-  font-weight: 700;
-  text-decoration: underline;
-  color: #fff;
 }
 
 .upload {
@@ -2111,13 +2115,30 @@ textarea.input__field {
   background-color: #ceedd8;
 }
 
-.feedback-form .form__controls {
-  text-align: center;
-}
-
 @media screen and (min-width:768px) {
   .lk__section {
     margin-bottom: 6.51042vw;
+  }
+
+  .button {
+    font-size: 3.125vw;
+    width: auto;
+    min-width: 32.55208vw;
+    padding: 1.95313vw 2.60417vw;
+    border-width: .39063vw;
+  }
+
+  .button.button_blot {
+    font-size: 3.38542vw;
+    line-height: 11.06771vw;
+    display: inline-block;
+    width: 51.04167vw;
+    height: 11.06771vw;
+    padding: 0;
+  }
+
+  .button__icon+.button__text {
+    margin-left: 2.60417vw;
   }
 
   .brand {
@@ -2158,27 +2179,6 @@ textarea.input__field {
     font-size: 2.34375vw;
   }
 
-  .button {
-    font-size: 3.125vw;
-    width: auto;
-    min-width: 32.55208vw;
-    padding: 1.95313vw 2.60417vw;
-    border-width: .39063vw;
-  }
-
-  .button.button_blot {
-    font-size: 3.38542vw;
-    line-height: 11.06771vw;
-    display: inline-block;
-    width: 51.04167vw;
-    height: 11.06771vw;
-    padding: 0;
-  }
-
-  .button__icon+.button__text {
-    margin-left: 2.60417vw;
-  }
-
   .check {
     padding: 5.20833vw 0;
   }
@@ -2186,6 +2186,18 @@ textarea.input__field {
   .check__title {
     margin-bottom: 3.90625vw;
     text-align: left;
+  }
+
+  .control__check {
+    width: 4.94792vw;
+    height: 4.94792vw;
+    margin-right: 3.25521vw;
+    border: .52083vw solid #00a634;
+    border-radius: 1.04167vw;
+  }
+
+  .control__text {
+    font-size: 2.60417vw;
   }
 
   .faq {
@@ -2247,18 +2259,6 @@ textarea.input__field {
   .faq-table th {
     padding: 1.30208vw;
     border-width: .26042vw;
-  }
-
-  .control__check {
-    width: 4.94792vw;
-    height: 4.94792vw;
-    margin-right: 3.25521vw;
-    border: .52083vw solid #00a634;
-    border-radius: 1.04167vw;
-  }
-
-  .control__text {
-    font-size: 2.60417vw;
   }
 
   .form__row {
@@ -2830,23 +2830,6 @@ textarea.input__field {
     padding: 3.90625vw 1.95313vw 2.60417vw;
   }
 
-  .title_1 {
-    font-size: 11.19792vw;
-  }
-
-  .title_2 {
-    font-size: 7.8125vw;
-  }
-
-  .title_3 {
-    font-size: 3.90625vw;
-  }
-
-  .title_4 {
-    font-family: 'Feast',Arial,Helvetica,sans-serif;
-    font-size: 7.8125vw;
-  }
-
   .top {
     padding: 23.17708vw 0 54.6875vw;
     text-align: left;
@@ -2868,6 +2851,23 @@ textarea.input__field {
 
   .top__link {
     font-size: 1.82292vw;
+  }
+
+  .title_1 {
+    font-size: 11.19792vw;
+  }
+
+  .title_2 {
+    font-size: 7.8125vw;
+  }
+
+  .title_3 {
+    font-size: 3.90625vw;
+  }
+
+  .title_4 {
+    font-family: 'Feast',Arial,Helvetica,sans-serif;
+    font-size: 7.8125vw;
   }
 
   .winners {
@@ -2942,6 +2942,25 @@ textarea.input__field {
 @media screen and (min-width:1280px) {
   .lk__section {
     margin-bottom: 5rem;
+  }
+
+  .button {
+    font-size: 1.5rem;
+    min-width: 19.0625rem;
+    padding: .9375rem 1.25rem;
+    border-width: .1875rem;
+  }
+
+  .button.button_blot {
+    font-size: 1.625rem;
+    line-height: 5.3125rem;
+    width: 24.5rem;
+    height: 5.3125rem;
+    padding: 0;
+  }
+
+  .button__icon+.button__text {
+    margin-left: 1.25rem;
   }
 
   .brand {
@@ -3060,25 +3079,6 @@ textarea.input__field {
     color: #fff;
   }
 
-  .button {
-    font-size: 1.5rem;
-    min-width: 19.0625rem;
-    padding: .9375rem 1.25rem;
-    border-width: .1875rem;
-  }
-
-  .button.button_blot {
-    font-size: 1.625rem;
-    line-height: 5.3125rem;
-    width: 24.5rem;
-    height: 5.3125rem;
-    padding: 0;
-  }
-
-  .button__icon+.button__text {
-    margin-left: 1.25rem;
-  }
-
   .check {
     padding: 3.75rem 0;
   }
@@ -3086,6 +3086,18 @@ textarea.input__field {
   .check__title {
     margin-bottom: 2.5rem;
     text-align: center;
+  }
+
+  .control__check {
+    width: 2.375rem;
+    height: 2.375rem;
+    margin-right: 1.5625rem;
+    border: .25rem solid #00a634;
+    border-radius: .5rem;
+  }
+
+  .control__text {
+    font-size: 1.5rem;
   }
 
   .faq {
@@ -3148,18 +3160,6 @@ textarea.input__field {
   .faq-table th {
     padding: .625rem;
     border-width: .125rem;
-  }
-
-  .control__check {
-    width: 2.375rem;
-    height: 2.375rem;
-    margin-right: 1.5625rem;
-    border: .25rem solid #00a634;
-    border-radius: .5rem;
-  }
-
-  .control__text {
-    font-size: 1.5rem;
   }
 
   .form__row {
@@ -3647,24 +3647,8 @@ textarea.input__field {
     padding: 2.5rem 1.25rem .9375rem;
   }
 
-  .title_1 {
-    font-size: 6.25rem;
-  }
-
-  .title_2 {
-    font-size: 5rem;
-  }
-
-  .title_3 {
-    font-size: 2.125rem;
-  }
-
-  .title_4 {
-    font-size: 5rem;
-  }
-
   .top {
-    padding: 5rem 0 26.25rem;
+    padding: 12.5rem 0 26.25rem;
   }
 
   .top__content {
@@ -3681,6 +3665,22 @@ textarea.input__field {
 
   .top__link {
     font-size: 1rem;
+  }
+
+  .title_1 {
+    font-size: 6.25rem;
+  }
+
+  .title_2 {
+    font-size: 5rem;
+  }
+
+  .title_3 {
+    font-size: 2.125rem;
+  }
+
+  .title_4 {
+    font-size: 5rem;
   }
 
   .winners {
