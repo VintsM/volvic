@@ -24,7 +24,7 @@
 
     function dropRotate(e) {
       e = e.originalEvent;
-      accum += e.deltaY;
+      accum += (e.deltaY || -e.wheelDelta);
       var angle = accum/100*5;
       var universalAngle = (angle%360 + 360) % 360;
 
