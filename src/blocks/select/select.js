@@ -19,8 +19,13 @@
       mainText.text('');
       list.find('.js-select-input').attr('checked', false);
     };
-    main.on('click', function () {
-      select.open();
+    main.on('click', function (e) {
+      e.stopPropagation();
+      if (elem.hasClass('active')) {
+        select.close();
+      } else {
+        select.open();
+      }
     });
     listItem.on('click', function (e) {
       e.stopPropagation();
@@ -33,8 +38,8 @@
       elem.trigger('select:select');
       list.find('.js-select-input').valid();
     });
-    $(document).on('click', function (e) {
-      if ($(e.target).closest(main).length == 0) select.close();
+    $(document).on('click', function () {
+      select.close();
     });
   };
 

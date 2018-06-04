@@ -1,5 +1,6 @@
 import './jquery-global';
 import './slick';
+import './jquery.nanoscroller';
 import './common';
 import '../blocks/header/header';
 import '../blocks/select/select';

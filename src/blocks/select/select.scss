@@ -8,7 +8,7 @@
       &__icon {
         transform: rotate(180deg);
       }
-      &__list {
+      &__list-wrapper {
         z-index: 10;
       }
     }
@@ -90,21 +90,45 @@
       height: rem(10);
     }
   }
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    background-color: $white;
-    border-right-width: svw(4);
-    border-left-width: svw(4);
-    border-bottom-style: solid;
-    border-bottom-color: $white;
+  &__list-wrapper {
     position: absolute;
     top: 100%;
     left: 0;
     display: none;
     overflow: hidden;
+    height: svw(204);
+    @include breakpoint(medium) {
+      height: mvw(204);
+    }
+    @include breakpoint(large) {
+      height: rem(255);
+    }
+    &.nano {
+      & >.nano-pane {
+        opacity: 1;
+        background-color: transparent;
+        & >.nano-slider {
+          background-color: $alto;
+          border-radius: svw(8);
+          @include breakpoint(medium) {
+            border-radius: mvw(8);
+          }
+          @include breakpoint(large) {
+            border-radius: rem(8);
+          }
+        }
+      }
+    }
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $white;
+    border-right-width: svw(4);
+    border-left-width: svw(4);
+    border-bottom-style: solid;
+    border-bottom-color: $white;
     @include breakpoint(medium) {
       border-right-width: mvw(4);
       border-left-width: mvw(4);

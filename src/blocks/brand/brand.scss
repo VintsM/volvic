@@ -20,7 +20,7 @@
       margin-bottom: mvw(250);
     }
     @include breakpoint(large) {
-      padding-top: rem(90);
+      padding-top: rem(10);
       margin-bottom: 0;
       position: absolute;
       width: 100%;
@@ -46,7 +46,7 @@
       border: rem(2) solid $white;
       border-radius: 50%;
       position: absolute;
-      top: rem(90);
+      top: rem(10);
       left: 50%;
       transform: translateX(-50%);
     }
@@ -101,7 +101,7 @@
       padding: 0 mvw($large-container-padding) mvw($large-container-padding);
       position: relative;
       max-width: $global-width;
-      height: rem(1000);
+      height: rem(780);
       margin: 0 auto;
     }
   }
@@ -153,32 +153,32 @@
         opacity: 1;
       }
       &:nth-child(1) {
-        top: rem(75);
+        top: rem(15);
         left: rem(30);
         width: rem(522);
         padding: rem(32) rem(27) rem(23) rem(90);
       }
       &:nth-child(2) {
-        top: rem(75);
+        top: rem(15);
         right: rem(30);
         width: rem(540);
         padding: rem(36) rem(27) rem(18) rem(81);
       }
       &:nth-child(3) {
-        top: rem(350);
+        top: rem(280);
         right: rem(30);
         width: rem(432);
         padding: rem(27) rem(27) rem(27) rem(72);
       }
       &:nth-child(4) {
-        bottom: rem(100);
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         width: rem(495);
         padding: rem(27) rem(27) rem(27) rem(72);
       }
       &:nth-child(5) {
-        top: rem(450);
+        top: rem(380);
         left: rem(-30);
         width: rem(550);
         padding: rem(36) rem(27) rem(40) rem(72);

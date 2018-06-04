@@ -8,6 +8,11 @@
       }
     });
 
+    $('.header__mobile-link').on('click', function () {
+      $('.header__burger').removeClass('active');
+      $('.header__mobile-nav').hide();
+    });
+
     $('.header__burger').on('click', function () {
       $(this).toggleClass('active');
       $('.header__mobile-nav').toggle();

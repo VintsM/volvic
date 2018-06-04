@@ -25,8 +25,10 @@
   $(document).ready(function () {
     $('body').pageStatus();
 
-    $('a[href^="#"]').on('click', function (event) {
-      var target = $("[id='" + this.getAttribute('href').replace('#', '') + "']");
+    $('.nano').nanoScroller();
+
+    $('a[href*="#"]').on('click', function (event) {
+      var target = $(`#${this.getAttribute('href').split('#').pop()}`);
       if (target.length) {
         event.preventDefault();
         var targetOffsetTop = target.offset().top - $('.header').outerHeight();
