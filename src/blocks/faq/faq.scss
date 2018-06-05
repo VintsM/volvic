@@ -123,9 +123,9 @@
     @include breakpoint(medium) {
       flex-direction: row;
       margin-top: mvw(40);
+      justify-content: center;
     }
     @include breakpoint(large) {
-      justify-content: center;
       margin-top: rem(40);
     }
   }
@@ -134,6 +134,15 @@
     color: $white;
     border-bottom: svw(1px) dashed $white;
     text-decoration: none;
+    font-size: svw(16);
+    @include breakpoint(medium) {
+      font-size: mvw(20);
+      border-bottom: mvw(1px) dashed $white;
+    }
+    @include breakpoint(large) {
+      font-size: rem(24);
+      border-bottom: rem(1px) dashed $white;
+    }
     &:hover {
       border-bottom-color: transparent;
       text-decoration: none;
@@ -147,13 +156,6 @@
       @include breakpoint(large) {
         margin-right: rem(15);
       }
-    }
-    @include breakpoint(medium) {
-      border-bottom: mvw(1px) dashed $white;
-    }
-    @include breakpoint(large) {
-      font-size: rem(24);
-      border-bottom: rem(1px) dashed $white;
     }
   }
 }

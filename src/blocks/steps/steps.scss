@@ -8,6 +8,18 @@
     padding: svw(20) svw($small-container-padding) svw(10);
     position: relative;
     transition: $transition;
+    @include breakpoint(medium) {
+      width: 33.333%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding: mvw(80) mvw($medium-container-padding) mvw(50);
+      border-bottom: mvw(1) solid $algae;
+    }
+    @include breakpoint(large) {
+      padding: rem(80) 0 rem(50);
+      border-bottom: rem(1) solid $algae;
+    }
     &:nth-child(1) {
       background: url(../img/steps/step-1.png) center no-repeat;
       background-size: cover;
@@ -68,17 +80,6 @@
         box-shadow: 0 0 rem(25) rem(10) rgba($algae, .7);
       }
     }
-    @include breakpoint(medium) {
-      width: 33.333%;
-      display: flex;
-      flex-flow: column nowrap;
-      padding: mvw(80) mvw($medium-container-padding) mvw(50);
-      border-bottom: mvw(1) solid $algae;
-    }
-    @include breakpoint(large) {
-      padding: rem(80) 0 rem(50);
-      border-bottom: rem(1) solid $algae;
-    }
   }
   &__num {
     display: none;
@@ -120,6 +121,13 @@
     @include breakpoint(large) {
       font-size: rem(24);
       margin: 0 auto rem(45);
+    }
+    a {
+      color: $white;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   &__img-container {

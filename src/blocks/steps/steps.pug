@@ -7,7 +7,7 @@
     },
     {
       num: '2',
-      text: 'Зарегистрируй чек после покупки на этом сайте',
+      text: '<a href="/#check">Зарегистрируй</a> чек после покупки на этом сайте',
       img: './img/steps/macbook.png'
     },
     {
@@ -21,6 +21,6 @@
   each step in steps
     .steps__item
       .steps__num= step.num
-      .steps__text= step.text
+      .steps__text!= step.text
       .steps__img-container
         img.steps__img(src=step.img alt=step.text)

@@ -155,33 +155,35 @@
       &:nth-child(1) {
         top: rem(15);
         left: rem(30);
-        width: rem(522);
-        padding: rem(32) rem(27) rem(23) rem(90);
+        width: rem(540);
+        padding: rem(36) rem(27) rem(18) rem(81);
+
+
       }
       &:nth-child(2) {
         top: rem(15);
         right: rem(30);
-        width: rem(540);
-        padding: rem(36) rem(27) rem(18) rem(81);
+        width: rem(550);
+        padding: rem(36) rem(27) rem(40) rem(72);
       }
       &:nth-child(3) {
         top: rem(280);
         right: rem(30);
-        width: rem(432);
+        width: rem(495);
         padding: rem(27) rem(27) rem(27) rem(72);
       }
       &:nth-child(4) {
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: rem(495);
-        padding: rem(27) rem(27) rem(27) rem(72);
+        width: rem(522);
+        padding: rem(32) rem(27) rem(23) rem(90);
       }
       &:nth-child(5) {
         top: rem(380);
-        left: rem(-30);
-        width: rem(550);
-        padding: rem(36) rem(27) rem(40) rem(72);
+        left: rem(50);
+        width: rem(432);
+        padding: rem(27) rem(27) rem(27) rem(72);
       }
     }
     &:not(:last-child) {

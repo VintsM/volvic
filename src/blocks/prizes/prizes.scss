@@ -56,7 +56,7 @@
       height: mvw(450);
     }
     @include breakpoint(large) {
-      height: rem(800);
+      height: rem(600);
     }
     .slick-track {
       display: flex;
@@ -134,9 +134,9 @@
         right: 0;
       }
       @include breakpoint(large) {
-        height: rem(290);
-        width: rem(290);
-        top: rem(-100);
+        height: rem(340);
+        width: rem(340);
+        top: rem(-200);
         right: 0;
       }
       .prizes__img-container {
@@ -168,9 +168,9 @@
         @include breakpoint(large) {
           top: rem(65);
           left: rem(20);
-          width: rem(250);
+          width: rem(300);
           height: rem(120);
-          font-size: rem(18);
+          font-size: rem(20);
         }
       }
     }
