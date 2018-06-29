@@ -159,6 +159,15 @@
   }
 }
 
+.modal-notify {
+  .modal {
+    &__inner {
+      max-width: 400px;
+      text-align: center;
+    }
+  }
+}
+
 .modal-login {
   .modal {
     &__content {

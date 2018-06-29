@@ -28,8 +28,9 @@
     $('.nano').nanoScroller();
 
     $('a[href*="#"]').on('click', function (event) {
-      var target = $(`#${this.getAttribute('href').split('#').pop()}`);
-      if (target.length) {
+      var anchor = this.getAttribute('href').split('#').pop();
+      if (anchor.length) {
+        var target = $('#' + anchor);
         event.preventDefault();
         var targetOffsetTop = target.offset().top - $('.header').outerHeight();
         $('html, body').animate({
